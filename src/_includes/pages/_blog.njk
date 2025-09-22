@@ -1,0 +1,151 @@
+---
+layout: layout/base.njk
+colorHeader: has-light-menu
+---
+
+{% set noheroimage = [] %}
+{% import "macros/_insert.njk" as insert %}
+
+<div class="main-article">
+
+  {% include 'templates_md/introCta_2.njk' %}
+
+
+
+  <!-- Sección de artículos del blog -->
+  <section class="bg-light inview">
+    <div class="container-global mx-auto ptr-120 pbr-120">
+      <div class="row">
+        <div class="col-xs-12">
+          <h2 class="fluid-3-b mb-48 text-center">Artículos del Blog</h2>
+        </div>
+      </div>
+      
+      <div class="row">
+        {% for post in collections.blog %}
+          {% if post.data.title and post.data.title != "titulo" %}
+          <div class="col-xs-12 col-sm-6 col-md-4 mb-32">
+            <div class="blog-card bg-white p-24 radius-8 shadow-sm">
+              {% if post.data.image %}
+              <div class="blog-card-image mb-16">
+                <img src="{{ post.data.image }}" alt="{{ post.data.imageAlt or post.data.title }}" class="w-100 radius-4" style="height: 200px; object-fit: cover;">
+              </div>
+              {% endif %}
+              
+              <div class="blog-card-content">
+                <div class="blog-card-meta mb-8">
+                  <span class="text-small text-muted">{{ post.data.date }}</span>
+                  {% if post.data.tags %}
+                  <span class="text-small text-muted ml-8">
+                    {% for tag in post.data.tags %}
+                      {% if not loop.last %}{{ tag }}, {% else %}{{ tag }}{% endif %}
+                    {% endfor %}
+                  </span>
+                  {% endif %}
+                </div>
+                
+                <h3 class="fluid-5-b mb-12">
+                  <a href="{{ post.url }}" class="text-dark text-decoration-none">
+                    {{ post.data.title }}
+                  </a>
+                </h3>
+                
+                {% if post.data.subtitle %}
+                <p class="fluid-8-r text-muted mb-16">{{ post.data.subtitle }}</p>
+                {% endif %}
+                
+                {% if post.data.descripcion %}
+                <p class="fluid-8-r text-muted mb-16">{{ post.data.descripcion }}</p>
+                {% endif %}
+                
+                <div class="blog-card-footer">
+                  <a href="{{ post.url }}" class="btn btn-outline-primary btn-sm">
+                    Leer más
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+      
+      {% if collections.blog | length == 0 %}
+      <div class="row">
+        <div class="col-xs-12 text-center">
+          <p class="fluid-6-r text-muted">No hay artículos disponibles en este momento.</p>
+        </div>
+      </div>
+      {% endif %}
+    </div>
+  </section>
+
+  <!-- Sección de categorías -->
+  <section class="bg-white inview">
+    <div class="container-global mx-auto ptr-80 pbr-80">
+      <div class="row">
+        <div class="col-xs-12">
+          <h2 class="fluid-3-b mb-48 text-center">Categorías del Blog</h2>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-3 mb-24">
+          <div class="category-card text-center p-24 bg-light radius-8">
+            <div class="category-icon mb-16">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#007bff" stroke-width="2" stroke-linejoin="round"/>
+                <path d="M2 17L12 22L22 17" stroke="#007bff" stroke-width="2" stroke-linejoin="round"/>
+                <path d="M2 12L12 17L22 12" stroke="#007bff" stroke-width="2" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h4 class="fluid-6-b mb-8">Sentencias Explicadas</h4>
+            <p class="fluid-8-r text-muted">Análisis de sentencias judiciales sobre discapacidad</p>
+          </div>
+        </div>
+        
+        <div class="col-xs-12 col-sm-6 col-md-3 mb-24">
+          <div class="category-card text-center p-24 bg-light radius-8">
+            <div class="category-icon mb-16">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9 12L11 14L15 10" stroke="#28a745" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="#28a745" stroke-width="2"/>
+              </svg>
+            </div>
+            <h4 class="fluid-6-b mb-8">Guías Prácticas</h4>
+            <p class="fluid-8-r text-muted">Recursos y herramientas para entender tus derechos</p>
+          </div>
+        </div>
+        
+        <div class="col-xs-12 col-sm-6 col-md-3 mb-24">
+          <div class="category-card text-center p-24 bg-light radius-8">
+            <div class="category-icon mb-16">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" stroke="#ffc107" stroke-width="2" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h4 class="fluid-6-b mb-8">Reflexiones Jurídicas</h4>
+            <p class="fluid-8-r text-muted">Artículos y análisis sobre derecho y discapacidad</p>
+          </div>
+        </div>
+        
+        <div class="col-xs-12 col-sm-6 col-md-3 mb-24">
+          <div class="category-card text-center p-24 bg-light radius-8">
+            <div class="category-icon mb-16">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="#dc3545" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M9 11C11.2091 11 13 9.20914 13 7C13 4.79086 11.2091 3 9 3C6.79086 3 5 4.79086 5 7C5 9.20914 6.79086 11 9 11Z" stroke="#dc3545" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M23 21V19C22.9993 18.1137 22.7044 17.2528 22.1614 16.5523C21.6184 15.8519 20.8581 15.3516 20 15.13" stroke="#dc3545" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M16 3.13C16.8604 3.35031 17.623 3.85071 18.1676 4.55232C18.7122 5.25392 19.0078 6.11683 19.0078 7.005C19.0078 7.89318 18.7122 8.75608 18.1676 9.45769C17.623 10.1593 16.8604 10.6597 16 10.88" stroke="#dc3545" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h4 class="fluid-6-b mb-8">Historias Reales</h4>
+            <p class="fluid-8-r text-muted">Casos reales y experiencias de familias</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {% include "components/banner.njk" %}
+</div>

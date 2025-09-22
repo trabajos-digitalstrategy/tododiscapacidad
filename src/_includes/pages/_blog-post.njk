@@ -1,0 +1,74 @@
+---
+layout: layout/base.njk
+colorHeader: has-dark-menu
+---
+
+{% import "macros/_insert.njk" as insert %}
+
+
+  <!-- Hero Section -->
+  <section class="bg-color inview">
+    <div class="container-global mx-auto height-md ptr-120 pbr-120">
+      <div class="row section-x align-middle">
+        <div class="col-xs-12 col-sm-7 front-text">
+          <div class="vertical-wrap mb-24">
+            <div class="vertical-inner">
+              <h1 class="fluid-5-b">{{ title }}</h1> 
+            </div>
+          </div>
+          <div class="vertical-wrap-2 pb-24">
+            <div class="vertical-inner">
+              <h2 class="fluid-8-r mb-8">{{ subtitle }}</h2>
+            </div>
+          </div>
+        </div>
+        {% if image %}
+        <div class="col-xs-12 col-sm-4">
+          <img class="video-cover" width="100%" height="auto" src="{{ image }}" alt="{{ imageAlt or title }}" />
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+
+  <!-- Content Section -->
+  <article class="container-fluid pt-32 bg-light">
+    <div class="container-global mx-auto">
+      <div class="row innermarkdown md:reverse">
+        <div class="col-xs-12 col-md-8">
+          {{ content | safe }}
+        </div>
+        <div class="col-xs-12 col-md-1"></div>
+        <div class="col-xs-12 col-md-3">
+          {{ content | toc | safe }}
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- Pagination -->
+  <div class="container-fluid l-top bg-white">
+    <div class="col-xs-12">
+      {% set next = collections.blog | nextInCollection(page.fileSlug) %}
+      {% set previous = collections.blog | prevInCollection(page.fileSlug) %}
+      {% if next or previous %}
+      <div class="pagination">
+        {% if previous %}
+        <a href="{{ previous.url }}" class="pagination-item pagination-item-prev">
+          Post anterior
+        </a>
+        {% endif %}
+        {% if next %}
+        <a href="{{ next.url }}" class="pagination-item pagination-item-next">
+          Siguiente post
+        </a>
+        {% endif %}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+
+  <div>{% include "components/banner.njk" %}</div>
+
+  <!-- TOC JavaScript -->
+  <script src="/assets/js/toc.js"></script>

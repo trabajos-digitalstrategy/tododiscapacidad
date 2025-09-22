@@ -1,0 +1,23 @@
+{
+  "name": "TodoDiscapacidad",
+  "description": "El derecho, si no se entiende, no es un derecho. Explicamos la discapacidad y el derecho de forma clara y accesible.",
+  "url": "https://tododiscapacidad.com",
+  "email": "info@tododiscapacidad.com",
+  "phone": "",
+  "address": "",
+  "logo": "/assets/static/images/logo.png",
+  "favicon": "/assets/static/images/favicon.ico",
+  "social": {
+    "facebook": "",
+    "twitter": "",
+    "linkedin": "",
+    "instagram": "",
+    "youtube": ""
+  },
+  "seo": {
+    "googleAnalytics": "",
+    "googleTagManager": "",
+    "metaKeywords": "discapacidad, derecho, accesibilidad, inclusión, prestaciones, ayudas, CUME, incapacidad, patrimonio protegido",
+    "metaDescription": "TodoDiscapacidad - El derecho, si no se entiende, no es un derecho. Explicamos la discapacidad y el derecho de forma clara y accesible."
+  }
+}

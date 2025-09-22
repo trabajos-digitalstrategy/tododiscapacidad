@@ -1,0 +1,98 @@
+{
+  "base_modules": "macros/",
+  "search_console": "VJczrBeO31v4cRQZR4yNkB6NO117Ll6bUrrOMFnD3pk",
+  "c_gray": "#727272",
+  "c_primary": "#000000",
+  "c_secondary": "#000000",
+  "c_accent": "#179CAA",
+  "bg_dark": "#1D1E23",
+  "bg_light": "#f3f2f0",
+  "c_bg_light": "#2b2a28",
+  "c_bg_dark": "#f7f6f5",
+  "bg_primary": "linear-gradient(120deg, #E14EF7 0%, #8E44F6 30%, #3D40F5 100%)",
+  "btn_radius": "8px",
+  "padding-": "16px",
+  "title": "TodoDiscapacidad",
+  "lang": "es-es",
+  
+  "footer": "",
+  "footer_3": "TODODISCAPACIDAD © 2024",
+  "url": "https://tododiscapacidad.com",
+  "legal_nombre_titular": "TodoDiscapacidad",
+  "legal_nif_titular": "número de identificación fiscal",
+  "legal_direccion_titular": "dirección del titular",
+  "empresa_legal_direccion": "",
+  "empresa_legal": "TodoDiscapacidad",
+  "empresa_corto": "TodoDiscapacidad",
+  "website": "www.tododiscapacidad.com",
+  "whatsapp": "",
+  "direction_link": "enlace de ubicación",
+  "empresa_copyright": " © 2023 Boilerplate",
+  "author": "Manuel Ruiz",
+  "authorweb": "design-systems.es",
+  "imageDir": "/assets/static/images/",
+  "contact_img": "/assets/static/images/1.jpg",
+  "home_image": "/assets/static/images/casa2.webp",
+  "home_video": "https://res.cloudinary.com/manuel-ruiz/video/upload/v1758560130/tododiscapacidad33_jyfdnh.mp4",
+  "seo_title": "título seo",
+  "seo_description": "descripción seo",
+  "tag_manager": "",
+  "googlemaps_link": "",
+  "googlemaps_iframe": "",
+  "social_linkedin": "https://www.linkedin.com/",
+  "social_youtube": "https://www.youtube.com/",
+  "social_instagram": "https://www.instagram.com/",
+  "hero_description": "BIENVENIDO A TODODISCAPACIDAD",
+  "hero_title": "EL DERECHO, SI NO SE ^ ENTIENDE, NO ES UN ^ DERECHO",
+  "hero_btn": "CONOCE MÁS",
+  "introbenefits2_subtitle": "Nuestra misión",
+  "introbenefits2_content": "TodoDiscapacidad nace de una idea muy sencilla pero poderosa: el derecho, si no se entiende, no es un derecho. Durante años he visto cómo familias, madres, padres y trabajadores se enfrentan a papeles, siglas y leyes que parecen escritas en otro idioma.",
+  "introbenefits2_subcontent": "También cómo muchas empresas y Centros Especiales de Empleo quieren hacer bien las cosas, pero se pierden en un mar de normas y resoluciones. En ese camino, descubrí algo: explicar el derecho de forma clara es, en sí mismo, una forma de justicia.",
+  "introbenefits2_subcontent2": "Por eso decidí crear TodoDiscapacidad. Un espacio donde lo complicado se convierte en sencillo. Un lugar donde hablar de discapacidad, de trabajo, de ayudas, de prestaciones... sin miedo a no entenderlo. Donde una madre que cuida de su hijo, un trabajador con discapacidad o un responsable de RRHH pueda encontrar respuestas reales a problemas reales.",
+  
+  
+  
+  "service_subtitle": "¿De qué hablamos aquí?",
+  "service_title": "NUESTRAS SECCIONES",
+  "services": [
+    {
+      "service_name": "Sentencias Explicadas",
+      "service_content": "Analizamos las últimas sentencias relacionadas con discapacidad y las explicamos con palabras sencillas, para que cualquier persona pueda entender sus derechos.",
+      "service_img": "servicio_1",
+      "service_link": "sentencias-explicadas"
+    },
+    {
+      "service_name": "Guías Prácticas",
+      "service_content": "Plantillas descargables, guías paso a paso, checklists de derechos y herramientas prácticas para entender y ejercer tus derechos.",
+      "service_img": "servicio_2",
+            "service_link": "guias-practicas"
+    },
+    {
+      "service_name": "Reflexiones Jurídicas",
+      "service_content": "Artículos y reflexiones sobre cómo el derecho impacta en la vida diaria de las familias y las empresas. Novedades jurídicas sin tecnicismos.",
+      "service_img": "servicio_3",
+          "service_link": "reflexiones-juridicas"
+    },
+    {
+      "service_name": "Sobre Nosotros",
+      "service_content": "Conoce la historia y misión de TodoDiscapacidad. Un espacio donde el derecho se explica de forma clara y accesible para todos.",
+      "service_img": "servicio_4",
+      "service_link": "sobre-nosotros"
+    }
+  ],
+  "introbenefits_title": "Nuestros valores",
+  "introbenefits_subtitle": "un espacio para dar luz",
+  "introbenefits_1title": "Claridad",
+  "introbenefits_1description": "Explicamos el derecho de forma sencilla, sin tecnicismos, para que cualquier persona pueda entender sus derechos y cómo ejercerlos.",
+  "introbenefits_2title": "Acompañamiento",
+  "introbenefits_2description": "Más que un blog jurídico, somos un puente entre el derecho y la vida real, recordando que la discapacidad no es un límite, sino un derecho.",
+  "introbenefits_3title": "Justicia",
+  "introbenefits_3description": "Creemos que explicar el derecho de forma clara es, en sí mismo, una forma de justicia. El conocimiento debe ser accesible para todos.",
+
+  "whytitle1_title": "¿Qué es TodoDiscapacidad?",
+  "whytitle1_subtitle": "NUESTRA ESENCIA",
+  "whytitle1_description": "TodoDiscapacidad es mucho más que un blog jurídico. Es un espacio para dar luz, un puente entre el derecho y la vida real, y un recordatorio de que la discapacidad no es un límite, sino un derecho que merece ser protegido y entendido.",
+  "whytitle1_description2": "Aquí encontrarás conocimiento, pero también acompañamiento. Porque el derecho no es solo leyes, es también personas, familias e historias. Un lugar donde hablar de discapacidad, de trabajo, de ayudas, de prestaciones... sin miedo a no entenderlo. ^^ Donde una madre que cuida de su hijo, un trabajador con discapacidad o un responsable de RRHH pueda encontrar respuestas reales a problemas reales.",  
+  "box_img_title": "Lo que vendrá - Temas que trataremos",
+  "box_img_description": "No hace falta que tu hijo esté hospitalizado para cobrar la CUME - lo que dicen las últimas sentencias. Discapacidad e incapacidad no son lo mismo - claves para no perder derechos. Europa reconoce a los padres y madres cuidadores - un derecho que cambia la forma de entender la conciliación."
+}

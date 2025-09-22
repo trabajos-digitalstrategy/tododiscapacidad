@@ -1,0 +1,42 @@
+---
+layout: layout/base.njk
+colorHeader: has-light-menu
+---
+
+
+
+{% set noheroimage = [] %}
+{% import "macros/_insert.njk" as insert %}
+
+
+
+
+<div class="main-article">
+  {% include 'templates_md/introCta_2.njk' %}
+
+  {% include "templates_md/introBenefits_2.njk" %}
+
+
+
+  {% include "templates_md/benefits_2.njk" %}
+
+  {% if whytitle1_subtitle %}
+
+  {% include "templates_md/content_foto.njk" %}
+  {% endif %}
+  {% if box_img_title %}
+    {% include "templates_md/box_img.njk" %}
+  {% endif %}
+
+  {% include "templates_md/servicios_slide.njk" %}
+
+
+
+  {% include "templates_md/contacta_4.njk" %}
+
+
+  {% include "templates_md/maxilogo.njk" %}
+
+</div>
+
+

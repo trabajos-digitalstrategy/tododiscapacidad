@@ -1,0 +1,16 @@
+<!-- blog-loop.njk -->
+<div class="blog-loop">
+  {% for post in collections.blog %}
+  <article class="blog-item">
+    <div class="blog-content">
+      <h3><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
+      <p>{{ post.data.subtitle or post.templateContent | striptags | truncate(150) }}</p>
+      <div class="blog-meta">
+        <time datetime="{{ post.date | date('YYYY-MM-DD') }}">
+          {{ post.date | date('DD/MM/YYYY') }}
+        </time>
+      </div>
+    </div>
+  </article>
+  {% endfor %}
+</div>

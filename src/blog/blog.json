@@ -1,0 +1,9 @@
+
+{
+	"layout": "pages/_blog-post.njk",
+	"author": "TodoDiscapacidad",
+	"tags": ["blog"],
+	"tag": "post",
+	"categoryName": "Blog",
+	"permalink": "blog/{{ page.fileSlug }}/"
+}

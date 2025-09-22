@@ -1,0 +1,55 @@
+<!-- servicios_slide.njk -->
+<section class="bg-light  ptr-120 pbr-120 ">
+    <div class="container-global mx-auto">
+        <div class="row ">
+            <div class="col-xs-12 col-sm-12 text-center">
+   
+                <h3 class="h2 mb-24"> {{servicios}}</h3>
+            </div>
+        </div>
+    </div>
+    <div class="ov-hidden popular">
+        <!-- Slider main container -->
+        <div class="swiper-container-img">
+            <!-- Additional required wrapper -->
+            <ul class="swiper-wrapper" itemscope itemtype="http://schema.org/ImageGallery">
+                {% for servicio in global_index.services %}
+                    {% if servicio.service_name != seccion %}
+                        <li class="swiper-slide border-20" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                            <a class="slide-link" href="/{{servicio.service_link}}/"  
+                                aria-label="Haz clic para ampliar el servicio {{ servicio.service_name }}">
+                                
+                                <div class="swiper-slide-info">
+                                    <div class="h4 mb-16">{{ servicio.service_name }}</div>
+                                    <div class="p2 mb-16">{{ servicio.service_content }}</div>
+
+                                    <button class="btn btn-primary">
+                                        SABER MÁS +
+                                    </button>    
+                                 
+                                </div>
+                                
+                                <div class="ar-3-35">
+                                    <img class="parallax-box"
+                                        src="/assets/static/images/servicios/{{ servicio.service_img }}.jpg" itemprop="thumbnail"
+                                        alt="Imagen del servicio {{ servicio.service_name }}" />
+                                </div>
+                            </a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="col-xs-6 col-sm-12"> </div>
+        {# <div class="col-xs-6 col-sm-12 text-right">
+            <div class="swiper-arrows-img">
+                <button class="swiper-prev" aria-label="Anterior slide">
+                    <div> ← </div>
+                </button>
+                <button class="swiper-next" aria-label="Siguiente slide">
+                    <div>→ </div>
+                </button>
+            </div>
+        </div> #}
+    </div>
+</section>

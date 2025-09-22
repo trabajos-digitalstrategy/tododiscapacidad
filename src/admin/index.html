@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMS - Magna Urbis</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f5f5f5;
+        }
+        .loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #179CAA;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 1rem;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .error {
+            color: #721c24;
+            background: #f8d7da;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem;
+            text-align: center;
+        }
+
+        /* Estilos del Modal de Login */
+        .login-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 1;
+            transition: opacity 0.2s ease;
+        }
+
+        .login-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 400px;
+            margin: 1rem;
+            position: relative;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: #999;
+            cursor: pointer;
+            width: 2rem;
+            height: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            line-height: 1;
+        }
+
+        .close-modal:hover {
+            background: #f5f5f5;
+            color: #333;
+        }
+
+        .login-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .login-header h2 {
+            color: #179CAA;
+            margin-bottom: 0.5rem;
+            font-size: 1.8rem;
+        }
+
+        .login-header p {
+            color: #666;
+            margin: 0;
+        }
+
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .form-group input {
+            padding: 0.75rem;
+            border: 2px solid #e1e5e9;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #179CAA;
+        }
+
+        .login-btn {
+            background: #179CAA;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .login-btn:hover {
+            background: #148a96;
+        }
+
+        .login-error {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .login-error p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Modal de Login -->
+    <div id="loginModal" class="login-modal">
+        <div class="login-container">
+            <button id="closeModal" class="close-modal" aria-label="Cerrar modal">×</button>
+            <div class="login-header">
+                <h2>Acceso al CMS</h2>
+                <p>Magna Urbis - Panel de Administración</p>
+            </div>
+            <form id="loginForm" class="login-form">
+                <div class="form-group">
+                    <p style="text-align: center; color: #666; margin-bottom: 1rem;">
+                        Haz clic en el botón para iniciar sesión en Magnaurbis
+                    </p>
+                </div>
+                <button type="submit" class="login-btn">Iniciar Sesión Magna Urbis</button>
+            </form>
+            <div id="loginError" class="login-error" style="display: none;">
+                <p>Usuario o contraseña incorrectos</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="loading" class="loading" style="display: none;">
+        <div class="spinner"></div>
+        <p>Cargando CMS...</p>
+    </div>
+    
+    <div id="error" class="error" style="display: none;">
+        <h3>Error al cargar el CMS</h3>
+        <p>Por favor, verifica la configuración.</p>
+    </div>
+
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+    
+    <script>
+        // Configuración del CMS
+        const config = {
+            backend: {
+                name: "git-gateway",
+                branch: "main"
+            },
+            media_library: {
+                name: "cloudinary",
+                config: {
+                    cloud_name: "XXXX",
+                    api_key: "XXXX"
+                }
+            },
+            locale: "es",
+            previewStyles: [
+                {
+                    label: 'Estilos principales',
+                    url: 'https://magnaurbis.com/assets/css/style.css'
+                },
+                {
+                    label: 'Estilos de preview',
+                    url: 'https://magnaurbis.com/assets/css/style.css'
+                }
+            ],
+            collections: [
+                {
+                    name: "administracion",
+                    label: "Administración de Fincas",
+                    files: [
+                        {
+                            label: "Página de Administración",
+                            name: "administracion",
+                            file: "src/pages/administracion.md",
+                            fields: [
+                                {label: "Permalink", name: "permalink", widget: "string"},
+                                {label: "Meta title", name: "metaTitle", widget: "string"},
+                                {label: "Meta description", name: "metaDescription", widget: "text"},
+                                {label: "Meta keywords", name: "metaKeywords", widget: "string"},
+                                {label: "Meta robots", name: "metaRobots", widget: "string", default: "index, follow"},
+                                {label: "Sección", name: "seccion", widget: "string"},
+                                {label: "Hero Description", name: "hero_description", widget: "string"},
+                                {label: "Hero Title", name: "hero_title", widget: "string"},
+                                {label: "Hero Button", name: "hero_btn", widget: "string"},
+                                {label: "Home Image", name: "home_image", widget: "image"}
+                            ]
+                        }
+                    ]
+                },
+                {
+                    name: "contacta",
+                    label: "Contacta",
+                    files: [
+                        {
+                            label: "Página de Contacto",
+                            name: "contacta",
+                            file: "src/pages/contacta.md",
+                            fields: [
+                                {label: "Permalink", name: "permalink", widget: "string"},
+                                {label: "Meta title", name: "metaTitle", widget: "string"},
+                                {label: "Meta description", name: "metaDescription", widget: "text"},
+                                {label: "Meta keywords", name: "metaKeywords", widget: "string"},
+                                {label: "Meta robots", name: "metaRobots", widget: "string", default: "index, follow"},
+                                {label: "Sección", name: "seccion", widget: "string"},
+                                {label: "Hero Description", name: "hero_description", widget: "string"},
+                                {label: "Hero Title", name: "hero_title", widget: "string"},
+                                {label: "Hero Button", name: "hero_btn", widget: "string"},
+                                {label: "Home Image", name: "home_image", widget: "image"}
+                            ]
+                        }
+                    ]
+                }
+            ]
+        };
+
+        // Función para mostrar error de login
+        function showLoginError(message = 'Error de autenticación') {
+            const errorDiv = document.getElementById('loginError');
+            errorDiv.querySelector('p').textContent = message;
+            errorDiv.style.display = 'block';
+            setTimeout(() => {
+                errorDiv.style.display = 'none';
+            }, 5000);
+        }
+
+        // Función para inicializar el CMS
+        function initializeCMS() {
+            if (typeof CMS !== 'undefined') {
+                try {
+                    CMS.init({ config });
+                    document.getElementById('loginModal').style.display = 'none';
+                    document.getElementById('loading').style.display = 'none';
+                } catch (error) {
+                    console.error('Error al inicializar CMS:', error);
+                    document.getElementById('loading').style.display = 'none';
+                    document.getElementById('error').style.display = 'block';
+                    document.getElementById('error').innerHTML = '<h3>Error al cargar el CMS</h3><p>Error: ' + error.message + '</p>';
+                }
+            } else {
+                console.error('Decap CMS no está disponible');
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('error').style.display = 'block';
+            }
+        }
+
+        // Función para abrir el modal de Netlify Identity
+        function openNetlifyIdentity() {
+            if (typeof netlifyIdentity !== 'undefined') {
+                // Cerrar el modal personalizado primero
+                closeModal();
+                // Abrir el modal de Netlify Identity
+                netlifyIdentity.open();
+            } else {
+                showLoginError('Netlify Identity no está disponible');
+            }
+        }
+
+        // Función para cerrar el modal
+        function closeModal() {
+            const modal = document.getElementById('loginModal');
+            modal.style.opacity = '0';
+            setTimeout(() => {
+                modal.style.display = 'none';
+                modal.style.opacity = '1'; // Reset para la próxima vez
+            }, 200);
+        }
+
+        // Manejar el formulario de login
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            openNetlifyIdentity();
+        });
+
+        // Manejar el botón de cerrar modal
+        document.getElementById('closeModal').addEventListener('click', function(e) {
+            e.preventDefault();
+            closeModal();
+        });
+
+        // Cerrar modal al hacer clic fuera de él
+        document.getElementById('loginModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Cerrar modal con la tecla Escape
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                const modal = document.getElementById('loginModal');
+                if (modal.style.display !== 'none') {
+                    closeModal();
+                }
+            }
+        });
+
+        // Inicializar cuando se carga la página
+        window.addEventListener('load', function() {
+            // Verificar si Netlify Identity está disponible
+            if (typeof netlifyIdentity !== 'undefined') {
+                netlifyIdentity.init();
+                
+                // Verificar si ya hay un usuario logueado
+                netlifyIdentity.on('init', user => {
+                    if (user) {
+                        // Usuario ya logueado, inicializar CMS directamente
+                        initializeCMS();
+                    } else {
+                        // No hay usuario, mostrar modal de login
+                        console.log('Usuario no autenticado, mostrando modal de login');
+                    }
+                });
+
+                // Manejar login exitoso
+                netlifyIdentity.on('login', user => {
+                    console.log('Usuario logueado:', user);
+                    initializeCMS();
+                });
+
+                // Manejar logout
+                netlifyIdentity.on('logout', () => {
+                    console.log('Usuario deslogueado');
+                    // Mostrar el modal personalizado con animación
+                    const modal = document.getElementById('loginModal');
+                    modal.style.display = 'flex';
+                    modal.style.opacity = '0';
+                    setTimeout(() => {
+                        modal.style.opacity = '1';
+                    }, 10);
+                });
+
+                // Manejar errores
+                netlifyIdentity.on('error', err => {
+                    console.error('Error en Netlify Identity:', err);
+                    showLoginError('Error de autenticación: ' + err.message);
+                });
+
+            } else {
+                console.error('Netlify Identity no está disponible');
+                showLoginError('Netlify Identity no está configurado. Por favor, verifica la configuración en Netlify.');
+            }
+        });
+    </script>
+</body>
+</html>
