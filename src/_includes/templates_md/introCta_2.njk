@@ -4,8 +4,8 @@
   <div class="video-bg2">
     {% if home_image %}
     {% if home_video %}
-    <video>
-      <source autoplay muted loop playsinline src="{{ home_video }}" type="video/mp4" />
+    <video autoplay loop muted playsinline>
+      <source  src="{{ home_video }}" type="video/mp4" />
     </video>
     {% else %}
     <img class="parallax-image">
