@@ -449,3 +449,44 @@ $({ Counter: 0 }).animate({
     $('.animated-counter').text(Math.ceil(this.Counter));
   }
 });
+
+// Parallax Effect
+function initParallax() {
+  const parallaxElements = document.querySelectorAll('.parallax-layer');
+  
+  if (parallaxElements.length === 0) return;
+  
+  function updateParallax() {
+    const scrolled = window.pageYOffset;
+    
+    parallaxElements.forEach(element => {
+      const speed = element.dataset.speed || 0.5;
+      const yPos = -(scrolled * speed);
+      element.style.transform = `translate3d(0, ${yPos}px, 0)`;
+    });
+  }
+  
+  // Usar requestAnimationFrame para mejor rendimiento
+  let ticking = false;
+  
+  function requestTick() {
+    if (!ticking) {
+      requestAnimationFrame(updateParallax);
+      ticking = true;
+    }
+  }
+  
+  function handleScroll() {
+    ticking = false;
+    requestTick();
+  }
+  
+  // Throttle del evento scroll
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  
+  // Inicializar posición
+  updateParallax();
+}
+
+// Inicializar parallax cuando el DOM esté listo
+document.addEventListener('DOMContentLoaded', initParallax);

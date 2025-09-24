@@ -1083,23 +1083,40 @@ html.lenis, html.lenis body {
 }
 
 
-#parallax-container {
-  position: relative;
-  height: 100vh;
+.parallax-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
+  z-index: 1;
+}
+
+.parallax-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120%; // Más alto para el efecto parallax
+  will-change: transform;
+}
+
+.parallax-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transform: translateZ(0); // Acelera la renderización
 }
 
 .bgc-size{
   background-size: 200%;
 }
 
-.parallax-layer {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-
-
-  background-position: top ;
+#parallax-container {
+  position: relative;
+  height: 100vh;
   overflow: hidden;
 }
 
