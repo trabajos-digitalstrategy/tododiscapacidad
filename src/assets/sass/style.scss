@@ -1162,6 +1162,52 @@ html.lenis, html.lenis body {
   }
 }
 
+// Hero blog card (first post - most recent)
+.blog-card-hero {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid transparent;
+  
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15) !important;
+    border-color: #007bff;
+  }
+}
+
+.blog-card-image-hero {
+  position: relative;
+  overflow: hidden;
+  
+  img {
+    transition: transform 0.4s ease;
+  }
+  
+  &:hover img {
+    transform: scale(1.08);
+  }
+}
+
+.blog-card-content-hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 350px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+}
+
+.featured-badge-hero {
+  display: inline-block;
+  background: linear-gradient(120deg, #E14EF7 0%, #8E44F6 30%, #3D40F5 100%);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 15px rgba(225, 78, 247, 0.3);
+}
+
 // Featured blog card (last post in blog listing)
 .blog-card-featured {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -1204,8 +1250,28 @@ html.lenis, html.lenis body {
   letter-spacing: 0.5px;
 }
 
-// Responsive adjustments for featured blog card
+// Responsive adjustments for hero and featured blog cards
 @media (max-width: 768px) {
+  .blog-card-hero {
+    .row {
+      flex-direction: column;
+    }
+    
+    .blog-card-image-hero {
+      order: 1;
+      
+      img {
+        min-height: 250px;
+      }
+    }
+    
+    .blog-card-content-hero {
+      order: 2;
+      min-height: auto;
+      padding: 24px !important;
+    }
+  }
+  
   .blog-card-featured {
     .row {
       flex-direction: column;
@@ -1224,6 +1290,11 @@ html.lenis, html.lenis body {
       min-height: auto;
       padding: 24px !important;
     }
+  }
+  
+  .featured-badge-hero {
+    font-size: 10px;
+    padding: 6px 12px;
   }
   
   .featured-badge-small {

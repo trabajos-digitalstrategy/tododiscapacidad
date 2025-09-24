@@ -20,12 +20,57 @@ colorHeader: has-dark-menu
       </div>
       
       <div class="row">
-        {% for post in collections.blog %}
+        {% set sortedPosts = collections.blog | sort(false, false, 'date') | reverse %}
+        {% for post in sortedPosts %}
           {% if post.data.title and post.data.title != "titulo" %}
+            {% set isFirstPost = loop.first %}
             {% set isLastPost = loop.last %}
             
-            {% if isLastPost %}
-              <!-- Último post - Diseño full-width -->
+            {% if isFirstPost %}
+              <!-- Primer post (más reciente) - Diseño hero destacado -->
+              <div class="col-xs-12 mb-32">
+                <div class="blog-card-hero bg-white radius-8 shadow-sm overflow-hidden">
+                  <div class="row no-gutters">
+                    <div class="col-xs-12 col-md-6">
+                      {% if post.data.image %}
+                      <div class="blog-card-image-hero">
+                        <img src="{{ post.data.image }}" alt="{{ post.data.imageAlt or post.data.title }}" class="w-100 h-100" style="object-fit: cover; min-height: 350px;">
+                      </div>
+                      {% endif %}
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                      <div class="blog-card-content-hero p-40">
+                        <div class="blog-card-meta mb-20">
+                          <span class="featured-badge-hero">Artículo Destacado</span>
+                          <span class="text-small text-muted ml-16">{{ post.data.date | date('DD/MM/YYYY') }}</span>
+                        </div>
+                        
+                        <h2 class="fluid-3-b mb-20">
+                          <a href="{{ post.url }}" class="text-dark text-decoration-none">
+                            {{ post.data.title }}
+                          </a>
+                        </h2>
+                        
+                        {% if post.data.subtitle %}
+                        <p class="fluid-5-r text-muted mb-24">{{ post.data.subtitle }}</p>
+                        {% endif %}
+                        
+                        {% if post.data.descripcion %}
+                        <p class="fluid-6-r text-muted mb-32">{{ post.data.descripcion }}</p>
+                        {% endif %}
+                        
+                        <div class="blog-card-footer">
+                          <a href="{{ post.url }}" class="btn btn-primary btn-lg">
+                            Leer artículo completo
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            {% elif isLastPost %}
+              <!-- Último post (más antiguo) - Diseño full-width horizontal -->
               <div class="col-xs-12 mb-32">
                 <div class="blog-card-featured bg-white radius-8 shadow-sm overflow-hidden">
                   <div class="row no-gutters">
@@ -39,7 +84,7 @@ colorHeader: has-dark-menu
                     <div class="col-xs-12 col-md-6">
                       <div class="blog-card-content-featured p-32">
                         <div class="blog-card-meta mb-16">
-                          <span class="featured-badge-small">Artículo Reciente</span>
+                          <span class="featured-badge-small">Artículo Anterior</span>
                           <span class="text-small text-muted ml-16">{{ post.data.date | date('DD/MM/YYYY') }}</span>
                         </div>
                         
