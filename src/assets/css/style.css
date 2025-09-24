@@ -16579,6 +16579,23 @@ html.lenis, html.lenis body {
   margin-bottom: 16px;
 }
 
+.herohome .container-fluid {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+@media (min-width: 1200px) {
+  .herohome .container-fluid {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
+@media (min-width: 1600px) {
+  .herohome .container-fluid {
+    padding-left: 6rem;
+    padding-right: 6rem;
+  }
+}
+
 .hero-meta {
   display: flex;
   gap: 20px;
