@@ -5,12 +5,54 @@ colorHeader: has-dark-menu
 
 {% import "macros/_insert.njk" as insert %}
 
+{% set isFirstPost = collections.blog[0].fileSlug === page.fileSlug %}
 
-  <!-- Hero Section -->
+{% if isFirstPost %}
+  <!-- Hero Section - Featured Post (First Post) -->
+  <section class="herohome inview o-hidden bg-hero height-full p-relative">
+    {% if image %}
+    <div class="parallax-container" style="background-image: url('{{ image }}');">
+      <div class="parallax-layer" data-speed="0.3"></div>
+    </div>
+    {% endif %}
+    
+    <div class="container-global mx-auto">
+      <div class="row section-x align-middle height-full">
+        <div class="col-xs-12 col-md-6 col-lg-6">
+          <div class="front-text">
+            <div class="vertical-wrap mb-24">
+              <div class="vertical-inner">
+                <span class="featured-badge">Artículo Destacado</span>
+                <h1 class="fluid-5-b">{{ title }}</h1> 
+              </div>
+            </div>
+            <div class="vertical-wrap-2 pb-24">
+              <div class="vertical-inner">
+                <h2 class="fluid-8-r mb-8">{{ subtitle }}</h2>
+              </div>
+            </div>
+            <div class="hero-meta">
+              <span class="post-date">{{ page.date | date('DD/MM/YYYY') }}</span>
+              <span class="read-time">5 min de lectura</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-6 col-lg-6">
+          {% if image %}
+          <div class="hero-image-container">
+            <img class="hero-image" src="{{ image }}" alt="{{ imageAlt or title }}" />
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </section>
+{% else %}
+  <!-- Hero Section - Regular Post -->
   <section class="bg-color inview">
-    <div class="container-global mx-auto height-md ptr-120 pbr-120">
+    <div class="container-3 mx-auto height-md ptr-120 pbr-120">
       <div class="row section-x align-middle">
-        <div class="col-xs-12 col-sm-7 front-text">
+        <div class="col-xs-12 front-text text-center">
           <div class="vertical-wrap mb-24">
             <div class="vertical-inner">
               <h1 class="fluid-5-b">{{ title }}</h1> 
@@ -23,17 +65,18 @@ colorHeader: has-dark-menu
           </div>
         </div>
         {% if image %}
-        <div class="col-xs-12 col-sm-4">
+        <div class="col-xs-12 ar-16-9">
           <img class="video-cover" width="100%" height="auto" src="{{ image }}" alt="{{ imageAlt or title }}" />
         </div>
         {% endif %}
       </div>
     </div>
   </section>
+{% endif %}
 
   <!-- Content Section -->
   <article class="container-fluid pt-32 bg-light">
-    <div class="container-global mx-auto">
+    <div class="container-11 mx-auto">
       <div class="row innermarkdown md:reverse">
         <div class="col-xs-12 col-md-8">
           {{ content | safe }}
