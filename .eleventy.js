@@ -118,6 +118,27 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("postDate", (dateObj) => {
     return DateTime.fromJSDate(dateObj).toLocaleString(DateTime.DATE_MED);
   });
+  
+  // Filtro de fecha personalizado para formateo
+  eleventyConfig.addFilter("date", (dateObj, format, locale = 'es') => {
+    if (!dateObj) return '';
+    const dt = DateTime.fromJSDate(dateObj);
+    
+    switch (format) {
+      case 'DD/MM/YYYY':
+        return dt.setLocale(locale).toFormat('dd/MM/yyyy');
+      case 'MM/DD/YYYY':
+        return dt.setLocale(locale).toFormat('MM/dd/yyyy');
+      case 'YYYY-MM-DD':
+        return dt.setLocale(locale).toFormat('yyyy-MM-dd');
+      case 'DD MMM YYYY':
+        return dt.setLocale(locale).toFormat('dd MMM yyyy');
+      case 'DD MMMM YYYY':
+        return dt.setLocale(locale).toFormat('dd MMMM yyyy');
+      default:
+        return dt.setLocale(locale).toFormat('dd/MM/yyyy');
+    }
+  });
   function getIndex(collection, currentSlug) {
     return collection.findIndex((page) => page.fileSlug === currentSlug);
   }
