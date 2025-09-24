@@ -22,48 +22,96 @@ colorHeader: has-dark-menu
       <div class="row">
         {% for post in collections.blog %}
           {% if post.data.title and post.data.title != "titulo" %}
-          <div class="col-xs-12 col-sm-6 col-md-4 mb-32">
-            <div class="blog-card bg-white p-24 radius-8 shadow-sm">
-              {% if post.data.image %}
-              <div class="blog-card-image mb-16">
-                <img src="{{ post.data.image }}" alt="{{ post.data.imageAlt or post.data.title }}" class="w-100 radius-4" style="height: 200px; object-fit: cover;">
+            {% set isLastPost = loop.last %}
+            
+            {% if isLastPost %}
+              <!-- Último post - Diseño full-width -->
+              <div class="col-xs-12 mb-32">
+                <div class="blog-card-featured bg-white radius-8 shadow-sm overflow-hidden">
+                  <div class="row no-gutters">
+                    <div class="col-xs-12 col-md-6">
+                      {% if post.data.image %}
+                      <div class="blog-card-image-featured">
+                        <img src="{{ post.data.image }}" alt="{{ post.data.imageAlt or post.data.title }}" class="w-100 h-100" style="object-fit: cover; min-height: 300px;">
+                      </div>
+                      {% endif %}
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                      <div class="blog-card-content-featured p-32">
+                        <div class="blog-card-meta mb-16">
+                          <span class="featured-badge-small">Artículo Reciente</span>
+                          <span class="text-small text-muted ml-16">{{ post.data.date | date('DD/MM/YYYY') }}</span>
+                        </div>
+                        
+                        <h3 class="fluid-4-b mb-16">
+                          <a href="{{ post.url }}" class="text-dark text-decoration-none">
+                            {{ post.data.title }}
+                          </a>
+                        </h3>
+                        
+                        {% if post.data.subtitle %}
+                        <p class="fluid-6-r text-muted mb-20">{{ post.data.subtitle }}</p>
+                        {% endif %}
+                        
+                        {% if post.data.descripcion %}
+                        <p class="fluid-7-r text-muted mb-24">{{ post.data.descripcion }}</p>
+                        {% endif %}
+                        
+                        <div class="blog-card-footer">
+                          <a href="{{ post.url }}" class="btn btn-primary">
+                            Leer artículo completo
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-              {% endif %}
-              
-              <div class="blog-card-content">
-                <div class="blog-card-meta mb-8">
-                  <span class="text-small text-muted">{{ post.data.date }}</span>
-                  {% if post.data.tags %}
-                  <span class="text-small text-muted ml-8">
-                    {% for tag in post.data.tags %}
-                      {% if not loop.last %}{{ tag }}, {% else %}{{ tag }}{% endif %}
-                    {% endfor %}
-                  </span>
+            {% else %}
+              <!-- Posts regulares -->
+              <div class="col-xs-12 col-sm-6 col-md-4 mb-32">
+                <div class="blog-card bg-white p-24 radius-8 shadow-sm">
+                  {% if post.data.image %}
+                  <div class="blog-card-image mb-16">
+                    <img src="{{ post.data.image }}" alt="{{ post.data.imageAlt or post.data.title }}" class="w-100 radius-4" style="height: 200px; object-fit: cover;">
+                  </div>
                   {% endif %}
-                </div>
-                
-                <h3 class="fluid-5-b mb-12">
-                  <a href="{{ post.url }}" class="text-dark text-decoration-none">
-                    {{ post.data.title }}
-                  </a>
-                </h3>
-                
-                {% if post.data.subtitle %}
-                <p class="fluid-8-r text-muted mb-16">{{ post.data.subtitle }}</p>
-                {% endif %}
-                
-                {% if post.data.descripcion %}
-                <p class="fluid-8-r text-muted mb-16">{{ post.data.descripcion }}</p>
-                {% endif %}
-                
-                <div class="blog-card-footer">
-                  <a href="{{ post.url }}" class="btn btn-outline-primary btn-sm">
-                    Leer más
-                  </a>
+                  
+                  <div class="blog-card-content">
+                    <div class="blog-card-meta mb-8">
+                      <span class="text-small text-muted">{{ post.data.date | date('DD/MM/YYYY') }}</span>
+                      {% if post.data.tags %}
+                      <span class="text-small text-muted ml-8">
+                        {% for tag in post.data.tags %}
+                          {% if not loop.last %}{{ tag }}, {% else %}{{ tag }}{% endif %}
+                        {% endfor %}
+                      </span>
+                      {% endif %}
+                    </div>
+                    
+                    <h3 class="fluid-5-b mb-12">
+                      <a href="{{ post.url }}" class="text-dark text-decoration-none">
+                        {{ post.data.title }}
+                      </a>
+                    </h3>
+                    
+                    {% if post.data.subtitle %}
+                    <p class="fluid-8-r text-muted mb-16">{{ post.data.subtitle }}</p>
+                    {% endif %}
+                    
+                    {% if post.data.descripcion %}
+                    <p class="fluid-8-r text-muted mb-16">{{ post.data.descripcion }}</p>
+                    {% endif %}
+                    
+                    <div class="blog-card-footer">
+                      <a href="{{ post.url }}" class="btn btn-outline-primary btn-sm">
+                        Leer más
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
+            {% endif %}
           {% endif %}
         {% endfor %}
       </div>
