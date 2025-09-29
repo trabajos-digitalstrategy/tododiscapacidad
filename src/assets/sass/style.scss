@@ -1466,6 +1466,13 @@ ul>li.special-class{
 }
 
 // Newsletter Styles
+.newsletter-benefits {
+  p {
+    margin: 0;
+    line-height: 1.4;
+  }
+}
+
 .newsletter-form {
   .form-group {
     position: relative;
