@@ -1,5 +1,5 @@
 ---
-layout: layout/base.njk
+layout: templates_md/newsletter_1.njk
 title: Newsletter - Suscríbete
 description: Suscríbete a nuestra newsletter para recibir las últimas noticias sobre discapacidad y derechos
 newsletter_title: Suscríbete a la newsletter más necesaria de todo internet
@@ -15,4 +15,4 @@ newsletter_privacy_text: Al suscribirte, aceptas nuestra política de privacidad
 newsletter_privacy_link: /legal/politica-de-privacidad
 ---
 
-{% include "templates_md/newsletter_1.njk" %}
+

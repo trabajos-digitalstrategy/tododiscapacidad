@@ -29,6 +29,25 @@ introbenefits2_subcontent: >
   camino, descubrí algo: explicar el derecho de forma clara es, en sí mismo, 
   una forma de justicia.
 
+
+
+
+description: Suscríbete a nuestra newsletter para recibir las últimas noticias sobre discapacidad y derechos
+newsletter_title: Suscríbete a la newsletter más necesaria de todo internet
+newsletter_subtitle: Recibe contenido exclusivo sobre derechos de discapacidad, sentencias explicadas y guías prácticas directamente en tu correo
+newsletter_benefits: podcast, contenido adicional exclusivo y mucho más
+newsletter_placeholder: Tu dirección de email
+newsletter_button: Suscribirse
+newsletter_image: /assets/static/images/newsletter-hero.jpg
+newsletter_image_alt: Newsletter sobre discapacidad
+
+newsletter_privacy_text: Al suscribirte, aceptas nuestra política de privacidad y recibir emails ocasionales.
+
+# Clips Section
+clips_title: Explora los clips más destacados
+clips_description: Accede a la biblioteca de clips y episodios completos del podcast.
+
+# Servicios Section
 servicios: ¿De qué hablamos aquí?
 servicios_description: CONTENIDO ESPECIALIZADO
 
@@ -81,20 +100,20 @@ box_img_description2: >
 
 
 
-contacta_4_title: ¿Tienes alguna pregunta?,
-contacta_4_subtitle: PONTE EN CONTACTO CON NOSOTROS,
-contacta_5_title: Conecta con nosotros,
-contacta_5_subtitle: ESTAMOS AQUÍ PARA AYUDARTE,
+contacta_4_title: ¿Tienes alguna pregunta?
+contacta_4_subtitle: PONTE EN CONTACTO CON NOSOTROS
+contacta_5_title: Conecta con nosotros
+contacta_5_subtitle: ESTAMOS AQUÍ PARA AYUDARTE
 contacta_map: ""
 banner_button: ENVIAR
 
 
 direction: ""
 telefono: ""
-email: info@tododiscapacidad.com,
-footer_1: tododiscapacidad.com,
-footer_2: TodoDiscapacidad - El derecho, si no se entiende, no es un derecho.,
-footer_3: © tododiscapacidad.com, 2024. Todos los derechos reservados.,
+email: info@tododiscapacidad.com
+footer_1: tododiscapacidad.com
+footer_2: TodoDiscapacidad - El derecho, si no se entiende, no es un derecho
+footer_3: © tododiscapacidad.com, 2024. Todos los derechos reservados
 footer_4: Derecho y discapacidad explicados de forma clara
 
 ---
