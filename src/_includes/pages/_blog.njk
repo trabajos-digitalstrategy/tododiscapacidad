@@ -33,7 +33,7 @@ colorHeader: has-dark-menu
                   <div class="row no-gutters">
                     <div class="col-xs-12 col-md-6">
                       {% if post.data.image %}
-                      <div class="blog-card-image-hero">
+                      <div class="blog-card-image-hero h-100">
                         <img src="{{ post.data.image }}" alt="{{ post.data.imageAlt or post.data.title }}" class="w-100 h-100" style="object-fit: cover; min-height: 350px;">
                       </div>
                       {% endif %}
@@ -42,21 +42,21 @@ colorHeader: has-dark-menu
                       <div class="blog-card-content-hero p-40">
                         <div class="blog-card-meta mb-20">
                           <span class="featured-badge-hero">Artículo Destacado</span>
-                          <span class="text-small text-muted ml-16">{{ post.data.date | date('DD/MM/YYYY') }}</span>
+                          <span class=" text-muted ml-16">{{ post.data.date | date('DD/MM/YYYY') }}</span>
                         </div>
                         
-                        <h2 class="fluid-3-b mb-20">
+                        <h2 class="fluid-6-b mb-20">
                           <a href="{{ post.url }}" class="text-dark text-decoration-none">
                             {{ post.data.title }}
                           </a>
                         </h2>
                         
                         {% if post.data.subtitle %}
-                        <p class="fluid-5-r text-muted mb-24">{{ post.data.subtitle }}</p>
+                        <p class="fluid-8-r text-muted mb-24">{{ post.data.subtitle }}</p>
                         {% endif %}
                         
                         {% if post.data.descripcion %}
-                        <p class="fluid-6-r text-muted mb-32">{{ post.data.descripcion }}</p>
+                        <p class="fluid-9-r text-muted mb-32">{{ post.data.descripcion }}</p>
                         {% endif %}
                         
                         <div class="blog-card-footer">
@@ -88,18 +88,18 @@ colorHeader: has-dark-menu
                           <span class="text-small text-muted ml-16">{{ post.data.date | date('DD/MM/YYYY') }}</span>
                         </div>
                         
-                        <h3 class="fluid-4-b mb-16">
+                        <h3 class="fluid-6-b mb-16">
                           <a href="{{ post.url }}" class="text-dark text-decoration-none">
                             {{ post.data.title }}
                           </a>
                         </h3>
                         
                         {% if post.data.subtitle %}
-                        <p class="fluid-6-r text-muted mb-20">{{ post.data.subtitle }}</p>
+                        <p class="fluid-7-r text-muted mb-20">{{ post.data.subtitle }}</p>
                         {% endif %}
                         
                         {% if post.data.descripcion %}
-                        <p class="fluid-7-r text-muted mb-24">{{ post.data.descripcion }}</p>
+                        <p class="fluid-8-r text-muted mb-24">{{ post.data.descripcion }}</p>
                         {% endif %}
                         
                         <div class="blog-card-footer">
@@ -134,7 +134,7 @@ colorHeader: has-dark-menu
                       {% endif %}
                     </div>
                     
-                    <h3 class="fluid-5-b mb-12">
+                    <h3 class="fluid-7-b mb-12">
                       <a href="{{ post.url }}" class="text-dark text-decoration-none">
                         {{ post.data.title }}
                       </a>
@@ -145,7 +145,7 @@ colorHeader: has-dark-menu
                     {% endif %}
                     
                     {% if post.data.descripcion %}
-                    <p class="fluid-8-r text-muted mb-16">{{ post.data.descripcion }}</p>
+                    <p class="fluid-9-r text-muted mb-16">{{ post.data.descripcion }}</p>
                     {% endif %}
                     
                     <div class="blog-card-footer">

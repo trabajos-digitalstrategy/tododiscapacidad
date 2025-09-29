@@ -1,0 +1,56 @@
+<!-- newsletter_1.njk -->
+
+<section class="ptr-120 pbr-120">
+  <div class="container {{ newsletter_bg_color or 'bg-light' }} {{ newsletter_border_radius or 'border-20' }} {{ newsletter_height or 'height-sm' }} {{ newsletter_padding or 'p-32' }}">
+    <div class="row">
+      <div class="col-xs-12 col-md-6">
+        <div class="fluid-6-b mb-24">
+          {{ newsletter_title or 'Suscríbete a la newsletter más necesaria de todo internet' }}
+        </div>
+        
+        {% if newsletter_subtitle %}
+        <p class="fluid-8-r text-muted mb-24">{{ newsletter_subtitle }}</p>
+        {% endif %}
+
+        <form action="#" method="post" class="newsletter-form" data-success="{{ newsletter_success_message or '¡Gracias por suscribirte!' }}" data-error="{{ newsletter_error_message or 'Error al procesar la suscripción' }}">
+          <div class="form-group mb-16">
+            <input 
+              class="input w-100" 
+              type="email" 
+              name="email" 
+              placeholder="{{ newsletter_placeholder or 'Tu dirección de email' }}"
+              required
+            >
+          </div>
+          <button class="btn btn-primary btn--sm" type="submit">
+            {{ newsletter_button or 'Suscribirse' }}
+          </button>
+          
+          {% if newsletter_privacy_text %}
+          <div class="newsletter-privacy mt-16">
+            <small class="text-muted">
+              {{ newsletter_privacy_text }}
+              {% if newsletter_privacy_link %}
+              <a href="{{ newsletter_privacy_link }}" class="text-primary" target="_blank">Leer más</a>
+              {% endif %}
+            </small>
+          </div>
+          {% endif %}
+        </form>
+      </div>
+      
+      <div class="col-xs-12 col-md-6">
+        {% if newsletter_image %}
+        <div class="newsletter-image-container">
+          <img 
+            src="{{ newsletter_image }}" 
+            alt="{{ newsletter_image_alt or 'Newsletter' }}"
+            class="w-100 h-100"
+            style="object-fit: cover; border-radius: 8px;"
+          >
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>

@@ -56,15 +56,19 @@ rect{
 }
 .menu-desktop {
   display: none;
+  
   @media (min-width: $break-lg) {
     display: flex;
     align-items: flex-start;
+        align-items: center;
+        align-content: center;
+      }
     li {
     
       text-align: left;
     }
   }
-}
+
 
 .logo-blanco,.logo-negro{
   position:absolute;
