@@ -1548,3 +1548,68 @@ ul>li.special-class{
   }
 }
 
+// Clips Video Styles
+.clips-video-container {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.clips-video-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.clips-video-thumbnail {
+  position: relative;
+  aspect-ratio: 9/16; // YouTube Shorts aspect ratio
+  overflow: hidden;
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  &:hover img {
+    transform: scale(1.05);
+  }
+}
+
+.clips-play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  
+  svg {
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+  }
+}
+
+.clips-video-container:hover .clips-play-button {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+// Responsive adjustments for clips
+@media (max-width: 768px) {
+  .clips-video-thumbnail {
+    aspect-ratio: 1/1; // Square on mobile
+  }
+  
+  .clips-play-button svg {
+    width: 36px;
+    height: 36px;
+  }
+}
+

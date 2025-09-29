@@ -46,6 +46,10 @@ newsletter_privacy_text: Al suscribirte, aceptas nuestra política de privacidad
 # Clips Section
 clips_title: Explora los clips más destacados
 clips_description: Accede a la biblioteca de clips y episodios completos del podcast.
+clips_video_1: 4KT9bH5yIBI
+clips_video_2: 4KT9bH5yIBI
+clips_video_3: iQlpQ-7Xs3s
+clips_video_4: iQlpQ-7Xs3s
 
 # Servicios Section
 servicios: ¿De qué hablamos aquí?
