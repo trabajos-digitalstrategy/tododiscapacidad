@@ -44,12 +44,12 @@ newsletter_image_alt: Newsletter sobre discapacidad
 newsletter_privacy_text: Al suscribirte, aceptas nuestra política de privacidad y recibir emails ocasionales.
 
 # Clips Section
-clips_title: Explora los clips más destacados
+clips_title: Explora los clips -más destacados-
 clips_description: Accede a la biblioteca de clips y episodios completos del podcast.
-clips_video_1: 4KT9bH5yIBI
+clips_video_1: 3rnydPf4HW8
 clips_video_2: 4KT9bH5yIBI
 clips_video_3: iQlpQ-7Xs3s
-clips_video_4: iQlpQ-7Xs3s
+clips_video_4: 6blxNuwXoa8 
 
 # Servicios Section
 servicios: ¿De qué hablamos aquí?
@@ -85,16 +85,18 @@ whytitle1_description2: Aquí encontrarás conocimiento, pero también acompaña
 
 
 box_img_img: /assets/static/images/servicio_3.jpg
-box_img_title: Lo que vendrá - Temas que trataremos
-box_img_description: >
-  'No hace falta que tu hijo esté hospitalizado para cobrar la CUME' - 
-  lo que dicen las últimas sentencias. 'Discapacidad e incapacidad no son 
-  lo mismo' - claves para no perder derechos. 'Europa reconoce a los padres 
-  y madres cuidadores' - un derecho que cambia la forma de entender la conciliación.
+box_img_title: Pedro López cerro
+box_img_description: En enfoque de mi desempeño siempre ha sido escuchar atentamente, entender profundamente y actuar con honestidad y diligencia. Mi experiencia me ha enseñado que cada caso es único y merece una atención personalizada. Estoy comprometido a brindar esa atención a cada uno de nuestros clientes, guiándolos a través de sus desafíos legales con empatía y experiencia.
+
 box_img_description2: >
-  'Bonificaciones en los CEE: qué hacer cuando la Seguridad Social las 
-  deniega' - cómo defender lo que corresponde. 'Cómo asegurar el futuro de 
-  tu hijo con discapacidad' - el patrimonio protegido explicado sin tecnicismos. 
+  - Letrado experto en derecho laboral y discapacidad.
+  - Diplomado en Relaciones Laborales.
+  - Licenciado en Ciencias del Trabajo.
+  - Graduado en Derecho.
+  - Master Acceso a la Abogacía.
+  - Abogado colegiado en el Ilustre Colegio de Sevilla.
+  - Experto en Discapacidad e Incapacidad.
+  - Asesor y conferenciante para diferentes entidades destacando entre otras Asperger, Autismo, TDHA
 
 
 
@@ -104,10 +106,10 @@ box_img_description2: >
 
 
 
-contacta_4_title: ¿Tienes alguna pregunta?
-contacta_4_subtitle: PONTE EN CONTACTO CON NOSOTROS
-contacta_5_title: Conecta con nosotros
-contacta_5_subtitle: ESTAMOS AQUÍ PARA AYUDARTE
+contacta_4_title: "¿Tienes alguna pregunta?"
+contacta_4_subtitle: "PONTE EN CONTACTO CON NOSOTROS"
+contacta_5_title: "Conecta con nosotros"
+contacta_5_subtitle: "ESTAMOS AQUÍ PARA AYUDARTE"
 contacta_map: ""
 banner_button: ENVIAR
 

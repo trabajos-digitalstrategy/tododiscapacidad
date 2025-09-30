@@ -1,13 +1,13 @@
 .btn-primary {
   color: $c-white;
-  background-color: #179CAA;
-  border: 1px solid #179CAA;
+  background-color: #40BED6;
+  border: 1px solid #40BED6;
   border-radius: 8px;
 }
 .btn-secondary {
-  color: #179CAA;
+  color: #40BED6;
   background-color: #ffffff;
-  border: 1px solid #179CAA;
+  border: 1px solid #40BED6;
   border-radius: 8px;
 }
 
@@ -18,7 +18,7 @@
   border-radius: 8px;
 }
 .c-accent {
-  color: #179CAA;
+  color: #40BED6;
 }
 b {
   @include font-bold;
@@ -30,7 +30,7 @@ b {
   color: $c-secondary;
 }
 .bold {
-  background-color: #179CAA;
+  background-color: #40BED6;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -104,7 +104,6 @@ b {
   }
 }
 .logo-simple {
-  margin-left: 20px;
   position:relative;
   width: 232px;
   height:54px;
@@ -146,7 +145,7 @@ b {
   text-transform: uppercase;
 }
 .swiper-slide {
-  background-image: linear-gradient(to bottom, #179CAA, #179CAA);
+  background-image: linear-gradient(to bottom, #40BED6, #40BED6);
 }
 .slide-link {
   .swiper-slide-info {

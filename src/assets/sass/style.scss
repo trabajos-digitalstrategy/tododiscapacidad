@@ -1554,6 +1554,7 @@ ul>li.special-class{
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border: 2px solid #ffffff;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   
   &:hover {
@@ -1578,6 +1579,7 @@ ul>li.special-class{
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
+    transform: scale(1.01);
   }
   
   &:hover img {

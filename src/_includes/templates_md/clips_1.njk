@@ -1,88 +1,93 @@
 <!-- clips_1.njk -->
 
 <section class="ptr-120 pbr-120">
-  <div class="container bg-light border-20 height-sm p-32">
-    <div class="row">
-      <div class="col-xs-12 text-center">
-        <div class="fluid-6-b mb-24">{{ clips_title }}</div>
-        <div class="fluid-8-r mb-24">
-          {{ clips_description }}
+  <div class="container ">
+
+
+    <div class=" border-20 height-sm p-32">
+      <div class="row">
+        <div class="col-xs-12 text-center">
+          <div class="fluid-6-b mb-8">{{ clips_title | mdbr | safe }}</div>
+          <div class="fluid-9-r mb-64">
+            {{ clips_description }}
+          </div>
         </div>
+      </div>
+      
+      <div class="row">
+        {% if clips_video_1 %}
+        <div class="col-xs-6 col-md-3 mb-16">
+          <div class="clips-video-container">
+            <a href="https://youtube.com/shorts/{{ clips_video_1 }}" target="_blank" class="clips-video-link">
+              <div class="clips-video-thumbnail">
+                <img src="https://img.youtube.com/vi/{{ clips_video_1 }}/maxresdefault.jpg" alt="Video clip 1" class="w-100">
+                <div class="clips-play-button">
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="10" fill="rgba(0,0,0,0.7)"/>
+                    <path d="M10 8L16 12L10 16V8Z" fill="white"/>
+                  </svg>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        {% endif %}
+      
+        {% if clips_video_2 %}
+        <div class="col-xs-6 col-md-3 mb-16">
+          <div class="clips-video-container">
+            <a href="https://youtube.com/shorts/{{ clips_video_2 }}" target="_blank" class="clips-video-link">
+              <div class="clips-video-thumbnail">
+                <img src="https://img.youtube.com/vi/{{ clips_video_2 }}/maxresdefault.jpg" alt="Video clip 2" class="w-100">
+                <div class="clips-play-button">
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="10" fill="rgba(0,0,0,0.7)"/>
+                    <path d="M10 8L16 12L10 16V8Z" fill="white"/>
+                  </svg>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        {% endif %}
+      
+        {% if clips_video_3 %}
+        <div class="col-xs-6 col-md-3 mb-16">
+          <div class="clips-video-container">
+            <a href="https://youtube.com/shorts/{{ clips_video_3 }}" target="_blank" class="clips-video-link">
+              <div class="clips-video-thumbnail">
+                <img src="https://img.youtube.com/vi/{{ clips_video_3 }}/maxresdefault.jpg" alt="Video clip 3" class="w-100">
+                <div class="clips-play-button">
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="10" fill="rgba(0,0,0,0.7)"/>
+                    <path d="M10 8L16 12L10 16V8Z" fill="white"/>
+                  </svg>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        {% endif %}
+      
+        {% if clips_video_4 %}
+        <div class="col-xs-6 col-md-3 mb-16">
+          <div class="clips-video-container">
+            <a href="https://youtube.com/shorts/{{ clips_video_4 }}" target="_blank" class="clips-video-link">
+              <div class="clips-video-thumbnail">
+                <img src="https://img.youtube.com/vi/{{ clips_video_4 }}/maxresdefault.jpg" alt="Video clip 4" class="w-100">
+                <div class="clips-play-button">
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="10" fill="rgba(0,0,0,0.7)"/>
+                    <path d="M10 8L16 12L10 16V8Z" fill="white"/>
+                  </svg>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        {% endif %}
       </div>
     </div>
-    
-    <div class="row">
-      {% if clips_video_1 %}
-      <div class="col-xs-6 col-md-3 mb-16">
-        <div class="clips-video-container">
-          <a href="https://youtube.com/shorts/{{ clips_video_1 }}" target="_blank" class="clips-video-link">
-            <div class="clips-video-thumbnail">
-              <img src="https://img.youtube.com/vi/{{ clips_video_1 }}/maxresdefault.jpg" alt="Video clip 1" class="w-100">
-              <div class="clips-play-button">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="12" cy="12" r="10" fill="rgba(0,0,0,0.7)"/>
-                  <path d="M10 8L16 12L10 16V8Z" fill="white"/>
-                </svg>
-              </div>
-            </div>
-          </a>
-        </div>
-      </div>
-      {% endif %}
-      
-      {% if clips_video_2 %}
-      <div class="col-xs-6 col-md-3 mb-16">
-        <div class="clips-video-container">
-          <a href="https://youtube.com/shorts/{{ clips_video_2 }}" target="_blank" class="clips-video-link">
-            <div class="clips-video-thumbnail">
-              <img src="https://img.youtube.com/vi/{{ clips_video_2 }}/maxresdefault.jpg" alt="Video clip 2" class="w-100">
-              <div class="clips-play-button">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="12" cy="12" r="10" fill="rgba(0,0,0,0.7)"/>
-                  <path d="M10 8L16 12L10 16V8Z" fill="white"/>
-                </svg>
-              </div>
-            </div>
-          </a>
-        </div>
-      </div>
-      {% endif %}
-      
-      {% if clips_video_3 %}
-      <div class="col-xs-6 col-md-3 mb-16">
-        <div class="clips-video-container">
-          <a href="https://youtube.com/shorts/{{ clips_video_3 }}" target="_blank" class="clips-video-link">
-            <div class="clips-video-thumbnail">
-              <img src="https://img.youtube.com/vi/{{ clips_video_3 }}/maxresdefault.jpg" alt="Video clip 3" class="w-100">
-              <div class="clips-play-button">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="12" cy="12" r="10" fill="rgba(0,0,0,0.7)"/>
-                  <path d="M10 8L16 12L10 16V8Z" fill="white"/>
-                </svg>
-              </div>
-            </div>
-          </a>
-        </div>
-      </div>
-      {% endif %}
-      
-      {% if clips_video_4 %}
-      <div class="col-xs-6 col-md-3 mb-16">
-        <div class="clips-video-container">
-          <a href="https://youtube.com/shorts/{{ clips_video_4 }}" target="_blank" class="clips-video-link">
-            <div class="clips-video-thumbnail">
-              <img src="https://img.youtube.com/vi/{{ clips_video_4 }}/maxresdefault.jpg" alt="Video clip 4" class="w-100">
-              <div class="clips-play-button">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="12" cy="12" r="10" fill="rgba(0,0,0,0.7)"/>
-                  <path d="M10 8L16 12L10 16V8Z" fill="white"/>
-                </svg>
-              </div>
-            </div>
-          </a>
-        </div>
-      </div>
-      {% endif %}
-    </div>
+
   </div>
 </section>
