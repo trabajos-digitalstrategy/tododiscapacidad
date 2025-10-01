@@ -38,7 +38,7 @@ newsletter_subtitle: Recibe contenido exclusivo sobre derechos de discapacidad, 
 newsletter_benefits: podcast, contenido adicional exclusivo y mucho más
 newsletter_placeholder: Tu dirección de email
 newsletter_button: Suscribirse
-newsletter_image: /assets/static/images/newsletter-hero.jpg
+newsletter_image: /assets/static/images/image.png
 newsletter_image_alt: Newsletter sobre discapacidad
 
 newsletter_privacy_text: Al suscribirte, aceptas nuestra política de privacidad y recibir emails ocasionales.
