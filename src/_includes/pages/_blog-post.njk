@@ -63,6 +63,24 @@ colorHeader: has-dark-menu
               <h2 class="fluid-8-r mb-8">{{ subtitle }}</h2>
             </div>
           </div>
+          
+          <!-- Post Meta Information -->
+          <div class="post-meta text-center mb-24">
+            <div class="post-meta-item">
+              <span class="post-date-icon">📅</span>
+              <span class="post-date">{{ page.date | date('DD/MM/YYYY', 'es') }}</span>
+            </div>
+            {% if author %}
+            <div class="post-meta-item">
+              <span class="post-author-icon">👤</span>
+              <span class="post-author">{{ author }}</span>
+            </div>
+            {% endif %}
+            <div class="post-meta-item">
+              <span class="read-time-icon">⏱️</span>
+              <span class="read-time">5 min de lectura</span>
+            </div>
+          </div>
         </div>
         {% if image %}
         <div class="col-xs-12 ar-16-9">
@@ -76,7 +94,7 @@ colorHeader: has-dark-menu
 
   <!-- Content Section -->
   <article class="container-fluid pt-32 bg-light">
-    <div class="container-11 mx-auto">
+    <div class="container mx-auto">
       <div class="row innermarkdown md:reverse">
         <div class="col-xs-12 col-md-8">
           {{ content | safe }}

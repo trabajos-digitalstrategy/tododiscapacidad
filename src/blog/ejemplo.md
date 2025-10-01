@@ -7,6 +7,7 @@ metaKeywords: key1,key2
 metaRobots: index, follow
 date: 2023-06-23
 fecha: 23 de marzo de 2023
+author: Pedro López Cerro
 tags: ["post", "key"]
 image: 
 imageAlt: 

@@ -1622,3 +1622,53 @@ ul>li.special-class{
   }
 }
 
+// Post Meta Information Styles
+.post-meta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin: 16px 0;
+}
+
+.post-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #666;
+  font-weight: 500;
+}
+
+.post-date-icon,
+.post-author-icon,
+.read-time-icon {
+  font-size: 16px;
+  opacity: 0.8;
+}
+
+.post-date,
+.post-author,
+.read-time {
+  font-size: 14px;
+  color: #666;
+}
+
+.post-author {
+  font-weight: 600;
+  color: #333;
+}
+
+// Responsive adjustments for post meta
+@media (max-width: 768px) {
+  .post-meta {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .post-meta-item {
+    font-size: 13px;
+  }
+}
+

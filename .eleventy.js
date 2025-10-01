@@ -21,7 +21,7 @@ const mdAnchorOpts = {
   permalink: markdownItAnchor.permalink.ariaHidden({
     placement: 'before',
     class: 'anchor-link',
-    symbol: '#',
+    symbol: '',
     level: [1, 2, 3, 4],
   })
 };
