@@ -6,7 +6,7 @@ metaDescription: "El patrimonio protegido es una herramienta fundamental para as
 metaKeywords: "patrimonio protegido, discapacidad, futuro, herencia, protección, derechos"
 metaRobots: "index, follow"
 date: "2024-01-30"
-author: "TodoDiscapacidad"
+author: "Pedro López"
 tags: ["Patrimonio Protegido", "Futuro", "Herencia", "Protección", "Derechos"]
 featured: true
 image: "/assets/static/images/servicio_4.jpg"
