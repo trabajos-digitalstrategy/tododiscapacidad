@@ -16872,6 +16872,7 @@ ul > li.special-class {
   border-radius: 8px;
   font-size: 16px;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: #fff;
 }
 .newsletter-form .input:focus {
   outline: none;
