@@ -67,12 +67,7 @@
       "service_img": "servicio_2",
             "service_link": "guias-practicas"
     },
-    {
-      "service_name": "Reflexiones Jurídicas",
-      "service_content": "Artículos y reflexiones sobre cómo el derecho impacta en la vida diaria de las familias y las empresas. Novedades jurídicas sin tecnicismos.",
-      "service_img": "servicio_3",
-          "service_link": "reflexiones-juridicas"
-    },
+
     {
       "service_name": "Sobre Nosotros",
       "service_content": "Conoce la historia y misión de TodoDiscapacidad. Un espacio donde el derecho se explica de forma clara y accesible para todos.",

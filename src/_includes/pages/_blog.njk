@@ -42,7 +42,7 @@ colorHeader: has-dark-menu
                       <div class="blog-card-content-hero p-40">
                         <div class="blog-card-meta mb-20">
                           <span class="featured-badge-hero">Artículo Destacado</span>
-                          <span class=" text-muted ml-16">{{ post.data.date | date('DD/MM/YYYY') }}</span>
+                          <span class=" text-muted ml-16">{{ post.data.date | date('DD/MM/YYYY', 'es') }}</span>
                         </div>
                         
                         <h2 class="fluid-6-b mb-20">
@@ -85,7 +85,7 @@ colorHeader: has-dark-menu
                       <div class="blog-card-content-featured p-32">
                         <div class="blog-card-meta mb-16">
                           <span class="featured-badge-small">Artículo Anterior</span>
-                          <span class="text-small text-muted ml-16">{{ post.data.date | date('DD/MM/YYYY') }}</span>
+                          <span class="text-small text-muted ml-16">{{ post.data.date | date('DD/MM/YYYY', 'es') }}</span>
                         </div>
                         
                         <h3 class="fluid-6-b mb-16">
@@ -124,7 +124,7 @@ colorHeader: has-dark-menu
                   
                   <div class="blog-card-content">
                     <div class="blog-card-meta mb-8">
-                      <span class="text-small text-muted">{{ post.data.date | date('DD/MM/YYYY') }}</span>
+                      <span class="text-small text-muted">{{ post.data.date | date('DD/MM/YYYY', 'es') }}</span>
                       {% if post.data.tags %}
                       <span class="text-small text-muted ml-8">
                         {% for tag in post.data.tags %}
