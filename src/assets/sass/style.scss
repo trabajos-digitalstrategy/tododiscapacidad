@@ -1092,6 +1092,8 @@ html.lenis, html.lenis body {
   height: 100%;
   overflow: hidden;
   z-index: 1;
+  background-size: cover;
+
 }
 
 .parallax-layer {
@@ -1461,8 +1463,12 @@ ul>li.special-class{
 }
 
 .herohome{
-  margin: 100px;
+  margin: 100px 16px 16px 16px ;
   border-radius:50px;
+
+  @media (min-width: $break-sm) {
+    margin: 100px;
+  }
 }
 
 // Newsletter Styles
