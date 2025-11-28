@@ -10,7 +10,7 @@ date: "2024-01-25"
 author: "TodoDiscapacidad"
 tags: ["Conciliación", "Europa", "Cuidadores", "Trabajo", "Derechos"]
 featured: true
-image: "/assets/static/images/servicio_3.jpg"
+image: "/assets/static/images/servicios/parallax_1.jpg"
 imageAlt: "Conciliación familiar en Europa"
 descripcion: "Europa ha reconocido el derecho de los padres y madres cuidadores a la conciliación familiar. Te explicamos qué significa esto."
 ---

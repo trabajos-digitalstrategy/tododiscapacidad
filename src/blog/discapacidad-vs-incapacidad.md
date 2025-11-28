@@ -9,7 +9,7 @@ date: "2024-01-20"
 author: "TodoDiscapacidad"
 tags: ["Discapacidad", "Incapacidad", "Derechos", "Prestaciones"]
 featured: true
-image: "/assets/static/images/servicio_2.jpg"
+image: "/assets/static/images/servicios/servicio_3.jpg"
 imageAlt: "Discapacidad e incapacidad"
 descripcion: "Discapacidad e incapacidad son conceptos diferentes que confunden a muchas familias. Te explicamos las diferencias."
 ---

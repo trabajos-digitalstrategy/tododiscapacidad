@@ -114,6 +114,7 @@ $c-black: $c-primary;
 
 
 $padding-top: (
+  ptr-32: ( 32px, 32px, 32px, 32px ),
    ptr-64: ( 64px, 64px, 64px, 64px ),
    ptr-120: ( 64px, 64px, 120px, 120px ),
    ptr-200: ( 120px, 120px, 200px, 200px )
@@ -121,6 +122,7 @@ $padding-top: (
 
 
 $padding-bottom: (
+  pbr-32: ( 32px, 32px, 32px, 32px ),
    pbr-64: ( 64px, 64px, 64px, 64px ),
    pbr-120: ( 64px, 64px, 120px, 120px ),
    pbr-200: ( 120px, 120px, 200px, 200px )

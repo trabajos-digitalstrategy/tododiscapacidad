@@ -9,14 +9,18 @@ date: "2024-01-30"
 author: "Pedro López"
 tags: ["Patrimonio Protegido", "Futuro", "Herencia", "Protección", "Derechos"]
 featured: true
-image: "/assets/static/images/servicio_4.jpg"
+image: "/assets/static/images/servicios/servicio_4.jpg"
 imageAlt: "Patrimonio protegido para el futuro"
 descripcion: "El patrimonio protegido es una herramienta fundamental para asegurar el futuro de las personas con discapacidad. Te explicamos cómo funciona."
 ---
 
-# Cómo asegurar el futuro de tu hijo con discapacidad: El patrimonio protegido
 
-Una de las mayores preocupaciones de las familias con hijos con discapacidad es **cómo asegurar su futuro** cuando los padres ya no estén. El **patrimonio protegido** es una herramienta fundamental para proteger los intereses de las personas con discapacidad.
+
+## Una de las mayores preocupaciones de las familias con hijos con discapacidad es **cómo asegurar su futuro** cuando los padres ya no estén. El **patrimonio protegido** es una herramienta fundamental para proteger los intereses de las personas con discapacidad.
+
+![Patrimonio protegido para el futuro](/assets/static/images/servicio_3.jpg "Patrimonio protegido para el futuro")
+
+
 
 ## ¿Qué es el patrimonio protegido?
 
@@ -116,7 +120,7 @@ El **patrimonio protegido** es un régimen especial que permite:
 
 ### Sentencia del Tribunal Supremo (2023)
 
-El TS ha reconocido que **"el patrimonio protegido es una herramienta fundamental"** para la protección de las personas con discapacidad. Una familia que constituyó un patrimonio protegido para su hijo:
+El TS ha reconocido que **"el patrimonio protegido es una herramienta fundamental"** para la protección de las personas con discapacidad.   familia que constituyó un patrimonio protegido para su hijo:
 
 - **Consiguió protección fiscal** para las aportaciones
 - **Aseguró el futuro** de su hijo con discapacidad

@@ -1176,6 +1176,8 @@ html.lenis, html.lenis body {
 .blog-card-image-hero {
   position: relative;
   overflow: hidden;
+  aspect-ratio: 16/9;
+  width: 100%;
   
   img {
     transition: transform 0.4s ease;
@@ -1625,8 +1627,8 @@ ul>li.special-class{
 // Post Meta Information Styles
 .post-meta {
   display: flex;
-  justify-content: center;
-  align-items: center;
+
+
   gap: 24px;
   flex-wrap: wrap;
   margin: 16px 0;
@@ -1640,7 +1642,15 @@ ul>li.special-class{
   color: #666;
   font-weight: 500;
 }
-
+.post-author-icon{
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #40BED6;
+}
 .post-date-icon,
 .post-author-icon,
 .read-time-icon {

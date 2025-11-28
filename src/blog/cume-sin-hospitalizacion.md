@@ -9,7 +9,7 @@ date: "2024-01-15"
 author: "TodoDiscapacidad"
 tags: ["CUME", "Sentencias", "Dependencia", "Prestaciones"]
 featured: true
-image: "/assets/static/images/servicio_1.jpg"
+image: "/assets/static/images/servicios/servicio_2.jpg"
 imageAlt: "CUME sin hospitalización"
 descripcion: "Las últimas sentencias judiciales confirman que la CUME no requiere hospitalización de la persona dependiente."
 ---

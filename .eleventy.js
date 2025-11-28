@@ -122,21 +122,43 @@ module.exports = function (eleventyConfig) {
   // Filtro de fecha personalizado para formateo
   eleventyConfig.addFilter("date", (dateObj, format, locale = 'es') => {
     if (!dateObj) return '';
-    const dt = DateTime.fromJSDate(dateObj);
     
-    switch (format) {
-      case 'DD/MM/YYYY':
-        return dt.setLocale(locale).toFormat('dd/MM/yyyy');
-      case 'MM/DD/YYYY':
-        return dt.setLocale(locale).toFormat('MM/dd/yyyy');
-      case 'YYYY-MM-DD':
-        return dt.setLocale(locale).toFormat('yyyy-MM-dd');
-      case 'DD MMM YYYY':
-        return dt.setLocale(locale).toFormat('dd MMM yyyy');
-      case 'DD MMMM YYYY':
-        return dt.setLocale(locale).toFormat('dd MMMM yyyy');
-      default:
-        return dt.setLocale(locale).toFormat('dd/MM/yyyy');
+    try {
+      let dt;
+      
+      // Si es un string, intentar parsearlo
+      if (typeof dateObj === 'string') {
+        dt = DateTime.fromISO(dateObj);
+      } else if (dateObj instanceof Date) {
+        dt = DateTime.fromJSDate(dateObj);
+      } else {
+        // Intentar convertir a DateTime directamente
+        dt = DateTime.fromJSDate(new Date(dateObj));
+      }
+      
+      // Verificar si la fecha es válida
+      if (!dt.isValid) {
+        console.warn('Invalid date:', dateObj);
+        return '';
+      }
+      
+      switch (format) {
+        case 'DD/MM/YYYY':
+          return dt.setLocale(locale).toFormat('dd/MM/yyyy');
+        case 'MM/DD/YYYY':
+          return dt.setLocale(locale).toFormat('MM/dd/yyyy');
+        case 'YYYY-MM-DD':
+          return dt.setLocale(locale).toFormat('yyyy-MM-dd');
+        case 'DD MMM YYYY':
+          return dt.setLocale(locale).toFormat('dd MMM yyyy');
+        case 'DD MMMM YYYY':
+          return dt.setLocale(locale).toFormat('dd MMMM yyyy');
+        default:
+          return dt.setLocale(locale).toFormat('dd/MM/yyyy');
+      }
+    } catch (error) {
+      console.error('Date formatting error:', error, 'Input:', dateObj);
+      return '';
     }
   });
   function getIndex(collection, currentSlug) {

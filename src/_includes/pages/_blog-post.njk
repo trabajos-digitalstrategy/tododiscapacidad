@@ -50,12 +50,25 @@ colorHeader: has-dark-menu
 {% else %}
   <!-- Hero Section - Regular Post -->
   <section class="bg-color inview">
-    <div class="container-3 mx-auto height-md ptr-120 pbr-120">
+    <div class="container-3 mx-auto height-md ptr-120 pbr-32">
       <div class="row section-x align-middle">
-        <div class="col-xs-12 front-text text-center">
+        <div class="col-xs-12 front-text">
+
+
+          <div class="is-flex mb-32">
+            <div class="post-meta-item">
+        
+              <span class="post-date">{{ page.date | date('DD/MM/YYYY', 'es') }}</span>
+            </div>
+            <div class="post-meta-item">
+              <span class="read-time-icon"></span>
+              <span class="read-time"> | 5 min de lectura</span>
+            </div>
+          </div>
+
           <div class="vertical-wrap mb-24">
             <div class="vertical-inner">
-              <h1 class="fluid-5-b">{{ title }}</h1> 
+              <h1 class="fluid-5-m">{{ title }}</h1> 
             </div>
           </div>
           <div class="vertical-wrap-2 pb-24">
@@ -65,28 +78,18 @@ colorHeader: has-dark-menu
           </div>
           
           <!-- Post Meta Information -->
-          <div class="post-meta text-center mb-24">
-            <div class="post-meta-item">
-              <span class="post-date-icon">📅</span>
-              <span class="post-date">{{ page.date | date('DD/MM/YYYY', 'es') }}</span>
-            </div>
+          <div class="post-meta  mb-24">
+        
             {% if author %}
             <div class="post-meta-item">
               <span class="post-author-icon">👤</span>
-              <span class="post-author">{{ author }}</span>
+              <span class="post-author">{{ author }} Abogado</span>
             </div>
             {% endif %}
-            <div class="post-meta-item">
-              <span class="read-time-icon">⏱️</span>
-              <span class="read-time">5 min de lectura</span>
-            </div>
+
           </div>
         </div>
-        {% if image %}
-        <div class="col-xs-12 ar-16-9">
-          <img class="video-cover border-20" width="100%" height="auto" src="{{ image }}" alt="{{ imageAlt or title }}" />
-        </div>
-        {% endif %}
+
       </div>
     </div>
   </section>
@@ -94,15 +97,15 @@ colorHeader: has-dark-menu
 
   <!-- Content Section -->
   <article class="container-fluid pt-32 bg-light">
-    <div class="container mx-auto">
+    <div class="container-3 mx-auto">
       <div class="row innermarkdown md:reverse">
-        <div class="col-xs-12 col-md-8">
+        <div class="col-xs-12 ">
           {{ content | safe }}
         </div>
-        <div class="col-xs-12 col-md-1"></div>
-        <div class="col-xs-12 col-md-3">
-          {{ content | toc | safe }}
-        </div>
+     
+
+          {# {{ content | toc | safe }} #}
+      
       </div>
     </div>
   </article>

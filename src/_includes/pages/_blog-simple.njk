@@ -37,7 +37,7 @@ colorHeader: has-dark-menu
     <div class="container-global mx-auto ptr-120 pbr-120">
       <div class="row">
         <div class="col-xs-12">
-          <h2 class="fluid-3-b mb-48 text-center">Artículos del Blog</h2>
+          <h2 class="fluid-3-b mb-48 text-center">Artículos del Blogdd</h2>
         </div>
       </div>
       
@@ -58,7 +58,7 @@ colorHeader: has-dark-menu
                   {% if post.data.tags %}
                   <span class="text-small text-muted ml-8">
                     {% for tag in post.data.tags %}
-                      {% if not loop.last %}{{ tag }}, {% else %}{{ tag }}{% endif %}
+                      {% if not loop.last %}<div class="tag-badge">{{ tag }}</div>, {% else %}<div class="tag-badge">{{ tag }}</div>{% endif %}
                     {% endfor %}
                   </span>
                   {% endif %}
