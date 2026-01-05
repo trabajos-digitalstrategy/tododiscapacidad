@@ -1,21 +1,21 @@
 ---
-metaTitle: "Blog TodoDiscapacidad - Artículos sobre derecho y discapacidad"
-metaDescription: "Blog especializado en derecho y discapacidad. Artículos, sentencias explicadas, reflexiones jurídicas y guías prácticas para entender tus derechos."
-metaKeywords: "blog discapacidad, artículos derecho discapacidad, sentencias explicadas, reflexiones jurídicas, guías prácticas"
+metaTitle: "Newsletter TodoDiscapacidad - Artículos sobre derecho y discapacidad"
+metaDescription: "Newsletter especializada en derecho y discapacidad. Artículos, sentencias explicadas, reflexiones jurídicas y guías prácticas para entender tus derechos."
+metaKeywords: "newsletter discapacidad, artículos derecho discapacidad, sentencias explicadas, reflexiones jurídicas, guías prácticas"
 metaRobots: "index, follow"
-seccion: "Blog"
+seccion: "Newsletter"
 hero_description: "CONTENIDO"
-hero_title: "BLOG ^ TODODISCAPACIDAD"
+hero_title: "NEWSLETTER ^ TODODISCAPACIDAD"
 hero_btn: "LEE MÁS"
 home_image: "/assets/static/images/servicio_1.jpg"
 introbenefits2_subtitle: "Artículos especializados en derecho y discapacidad"
 introbenefits2_content: >
-  En nuestro blog encontrarás artículos especializados que explican el derecho 
+  En nuestra newsletter encontrarás artículos especializados que explican el derecho 
   relacionado con la discapacidad de forma clara y accesible. Sentencias 
   explicadas, reflexiones jurídicas y guías prácticas para entender y ejercer 
   tus derechos.
 introbenefits_title: "Tipos de contenido"
-introbenefits_subtitle: "¿Qué encontrarás en nuestro blog? ^"
+introbenefits_subtitle: "¿Qué encontrarás en nuestra newsletter? ^"
 introbenefits_1title: "SENTENCIAS EXPLICADAS"
 introbenefits_1description: >
   Analizamos las últimas sentencias relacionadas con discapacidad y las 
@@ -49,7 +49,7 @@ contacta_4_title: "¿Tienes alguna pregunta?"
 contacta_4_subtitle: "CONTACTA CON NOSOTROS"
 introbenefits_class: "bg-dark"
 priority: 2
-box_img_title: "Últimos artículos del blog"
+box_img_title: "Últimos artículos de la newsletter"
 box_img_description: "Mantente informado sobre las últimas novedades en derecho y discapacidad"
 box_img_img: "/assets/static/images/servicio_3.jpg"
 layout: "pages/_blog.njk"

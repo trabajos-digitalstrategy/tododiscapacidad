@@ -28,7 +28,6 @@ $width-left: calc((1280px + (100vw - 1600px) / 2));
 @include space($breakpoints, $padding-bottom, $pb);
 @import "./theme.scss";
 @import "./_animations.scss";
-@import "./theme.scss";
 @import "./header2.scss";
 @import "./_menu.scss";
 @import "./componentes/_brands.scss";
@@ -533,6 +532,7 @@ a:has(.product) {
   .product-sistema {
     display: -webkit-box;
     -webkit-line-clamp: 4;
+    line-clamp: 4;
     /* Establece el número máximo de líneas permitidas */
     -webkit-box-orient: vertical;
     overflow: hidden;

@@ -12,6 +12,7 @@ display: -webkit-box;
 margin-bottom: 16px;
 
 -webkit-line-clamp: 3;
+line-clamp: 3;
 -webkit-box-orient: vertical;
 overflow: hidden;
 transition: max-height 0.5s ease;
@@ -21,6 +22,7 @@ transition: max-height 0.5s ease;
 .google-text{
   max-height: 300px;
   -webkit-line-clamp: 6;
+  line-clamp: 6;
 }
 }
 

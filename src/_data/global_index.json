@@ -60,19 +60,6 @@
       "service_content": "Analizamos las últimas sentencias relacionadas con discapacidad y las explicamos con palabras sencillas, para que cualquier persona pueda entender sus derechos.",
       "service_img": "servicio_1",
       "service_link": "sentencias-explicadas"
-    },
-    {
-      "service_name": "Guías Prácticas",
-      "service_content": "Plantillas descargables, guías paso a paso, checklists de derechos y herramientas prácticas para entender y ejercer tus derechos.",
-      "service_img": "servicio_2",
-            "service_link": "guias-practicas"
-    },
-
-    {
-      "service_name": "Sobre Nosotros",
-      "service_content": "Conoce la historia y misión de TodoDiscapacidad. Un espacio donde el derecho se explica de forma clara y accesible para todos.",
-      "service_img": "servicio_4",
-      "service_link": "sobre-nosotros"
     }
   ],
   "introbenefits_title": "Nuestros valores",
@@ -80,13 +67,13 @@
   "introbenefits_1title": "Claridad",
   "introbenefits_1description": "Explicamos el derecho de forma sencilla, sin tecnicismos, para que cualquier persona pueda entender sus derechos y cómo ejercerlos.",
   "introbenefits_2title": "Acompañamiento",
-  "introbenefits_2description": "Más que un blog jurídico, somos un puente entre el derecho y la vida real, recordando que la discapacidad no es un límite, sino un derecho.",
+  "introbenefits_2description": "Más que una newsletter jurídica, somos un puente entre el derecho y la vida real, recordando que la discapacidad no es un límite, sino un derecho.",
   "introbenefits_3title": "Justicia",
   "introbenefits_3description": "Creemos que explicar el derecho de forma clara es, en sí mismo, una forma de justicia. El conocimiento debe ser accesible para todos.",
 
   "whytitle1_title": "¿Qué es TodoDiscapacidad?",
   "whytitle1_subtitle": "NUESTRA ESENCIA",
-  "whytitle1_description": "TodoDiscapacidad es mucho más que un blog jurídico. Es un espacio para dar luz, un puente entre el derecho y la vida real, y un recordatorio de que la discapacidad no es un límite, sino un derecho que merece ser protegido y entendido.",
+  "whytitle1_description": "TodoDiscapacidad es mucho más que una newsletter jurídica. Es un espacio para dar luz, un puente entre el derecho y la vida real, y un recordatorio de que la discapacidad no es un límite, sino un derecho que merece ser protegido y entendido.",
   "whytitle1_description2": "Aquí encontrarás conocimiento, pero también acompañamiento. Porque el derecho no es solo leyes, es también personas, familias e historias. Un lugar donde hablar de discapacidad, de trabajo, de ayudas, de prestaciones... sin miedo a no entenderlo. ^^ Donde una madre que cuida de su hijo, un trabajador con discapacidad o un responsable de RRHH pueda encontrar respuestas reales a problemas reales.",  
   "box_img_title": "Lo que vendrá - Temas que trataremos",
   "box_img_description": "No hace falta que tu hijo esté hospitalizado para cobrar la CUME - lo que dicen las últimas sentencias. Discapacidad e incapacidad no son lo mismo - claves para no perder derechos. Europa reconoce a los padres y madres cuidadores - un derecho que cambia la forma de entender la conciliación."

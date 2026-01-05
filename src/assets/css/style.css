@@ -2830,18 +2830,18 @@ mark {
 }
 .fluid-6-l {
   font-size: 20px;
-  line-height: 1.2;
+  line-height: 1;
 }
 @media (min-width: 320px) {
   .fluid-6-l {
     font-size: calc(20px + 20 * (100vw - 320px) / 1180);
-    line-height: 1.2;
+    line-height: 1;
   }
 }
 @media (min-width: 1500px) {
   .fluid-6-l {
     font-size: 40px;
-    line-height: 1.2;
+    line-height: 1;
   }
 }
 
@@ -2851,18 +2851,18 @@ mark {
 }
 .fluid-6-r {
   font-size: 20px;
-  line-height: 1.2;
+  line-height: 1;
 }
 @media (min-width: 320px) {
   .fluid-6-r {
     font-size: calc(20px + 20 * (100vw - 320px) / 1180);
-    line-height: 1.2;
+    line-height: 1;
   }
 }
 @media (min-width: 1500px) {
   .fluid-6-r {
     font-size: 40px;
-    line-height: 1.2;
+    line-height: 1;
   }
 }
 
@@ -2872,18 +2872,18 @@ mark {
 }
 .fluid-6-m {
   font-size: 20px;
-  line-height: 1.2;
+  line-height: 1;
 }
 @media (min-width: 320px) {
   .fluid-6-m {
     font-size: calc(20px + 20 * (100vw - 320px) / 1180);
-    line-height: 1.2;
+    line-height: 1;
   }
 }
 @media (min-width: 1500px) {
   .fluid-6-m {
     font-size: 40px;
-    line-height: 1.2;
+    line-height: 1;
   }
 }
 
@@ -2893,18 +2893,18 @@ mark {
 }
 .fluid-6-sb {
   font-size: 20px;
-  line-height: 1.2;
+  line-height: 1;
 }
 @media (min-width: 320px) {
   .fluid-6-sb {
     font-size: calc(20px + 20 * (100vw - 320px) / 1180);
-    line-height: 1.2;
+    line-height: 1;
   }
 }
 @media (min-width: 1500px) {
   .fluid-6-sb {
     font-size: 40px;
-    line-height: 1.2;
+    line-height: 1;
   }
 }
 
@@ -2914,18 +2914,18 @@ mark {
 }
 .fluid-6-b {
   font-size: 20px;
-  line-height: 1.2;
+  line-height: 1;
 }
 @media (min-width: 320px) {
   .fluid-6-b {
     font-size: calc(20px + 20 * (100vw - 320px) / 1180);
-    line-height: 1.2;
+    line-height: 1;
   }
 }
 @media (min-width: 1500px) {
   .fluid-6-b {
     font-size: 40px;
-    line-height: 1.2;
+    line-height: 1;
   }
 }
 
@@ -11915,11 +11915,17 @@ b {
 
 .watermark {
   position: absolute;
-  width: 50%;
+  height: 100%;
+  width: 100%;
+  opacity: 0.1;
+}
+.watermark svg {
+  height: 80%;
 }
 @media (min-width: 992px) {
   .watermark {
-    width: 50%;
+    height: 100%;
+    width: 100%;
   }
 }
 
@@ -14023,214 +14029,6 @@ b {
   animation-delay: 70000ms;
 }
 
-.btn-primary {
-  color: #ffffff;
-  background-color: #40BED6;
-  border: 1px solid #40BED6;
-  border-radius: 8px;
-}
-
-.btn-secondary {
-  color: #40BED6;
-  background-color: #ffffff;
-  border: 1px solid #40BED6;
-  border-radius: 8px;
-}
-
-.btn-black {
-  color: #ffffff;
-  background-color: #232323;
-  border: 1px solid #232323;
-  border-radius: 8px;
-}
-
-.c-accent {
-  color: #40BED6;
-}
-
-b {
-  font-family: "font-bold", Helvetica, "Arial ", "Lucida Grande", sans-serif;
-  font-weight: 900;
-}
-
-strong {
-  color: var(--c-secondary);
-}
-
-b {
-  color: var(--c-secondary);
-}
-
-.bold {
-  background-color: #40BED6;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: 200 !important;
-}
-
-.btn.btn--icon {
-  width: 300px;
-  height: 80px;
-  background-color: #ffffff;
-  border-color: #ffffff;
-}
-.btn.btn--icon:hover {
-  opacity: 1;
-  background-color: #ffffff;
-  border-color: #ffffff;
-}
-.btn.btn--icon:hover .btn__circle {
-  -webkit-clip-path: inset(0 round 4.25rem);
-  clip-path: inset(0 round 4.25rem);
-}
-.btn.btn--icon .btn--icon-text {
-  position: absolute;
-  left: 32px;
-  top: 32px;
-  line-height: 1;
-}
-
-.has-light .btn-primary {
-  color: #ffffff;
-  border: 1px solid var(--c-accent);
-  background-color: var(--c-accent);
-}
-.has-light a {
-  color: white;
-}
-.has-light b {
-  color: white;
-}
-.has-light .menu-toogle-bars span {
-  background-color: #ffffff;
-}
-.scrolled .has-light .menu-toogle-bars span {
-  background-color: #000;
-}
-.scrolled .has-light #menu-toggle rect {
-  fill: black;
-}
-.menu-open .has-light .menu-toogle-bars span {
-  background-color: #000;
-}
-
-.btn.btn--big {
-  font-size: 12px;
-}
-@media (min-width: 992px) {
-  .btn.btn--big {
-    font-size: 14px;
-  }
-}
-
-.logo-simple {
-  position: relative;
-  width: 232px;
-  height: 54px;
-}
-.logo-simple svg {
-  width: 100%;
-  height: 100%;
-}
-@media (min-width: 992px) {
-  .logo-simple {
-    width: 242px;
-    height: 54px;
-  }
-}
-
-.watermark {
-  position: absolute;
-  width: 50%;
-}
-@media (min-width: 992px) {
-  .watermark {
-    width: 50%;
-  }
-}
-
-.form-input-label-2 .input,
-.form-input-label-2 .textarea,
-.form-input-label-2 .select select {
-  border: 1px solid #DCDCDC;
-  border-color: #DCDCDC;
-  border-width: 1px;
-  padding-inline: 16px;
-  border-radius: 8px;
-}
-
-.form-input-label-2 > input,
-.form-input-label-2 > label,
-.form-input-label-2 > textarea,
-.error-zone > input,
-.error-zone > label {
-  padding-left: 16px;
-  font-weight: normal;
-  font-size: 12px;
-  text-transform: uppercase;
-}
-
-.swiper-slide {
-  background-image: linear-gradient(to bottom, #40BED6, #40BED6);
-}
-
-.slide-link .swiper-slide-info {
-  /* Frame 3 */
-  color: white;
-  /* Auto layout */
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 16px;
-  gap: 16px;
-  bottom: 0px;
-  position: absolute;
-  min-height: 160px;
-  width: calc(100% - 32px);
-  margin: 16px;
-  background: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(8px);
-  /* Note: backdrop-filter has minimal browser support */
-  border-radius: 16px;
-  z-index: 1000;
-}
-
-.full-logo svg {
-  width: 100%;
-  height: 100%;
-  margin-top: -4px;
-}
-
-.border-b {
-  border-bottom: 1px solid #A1A1A1;
-}
-
-.c-direction-block_item {
-  font-size: 10vw;
-  font-weight: 600;
-  line-height: 1;
-  text-transform: uppercase;
-  white-space: nowrap;
-}
-.c-direction-block_item span {
-  background-color: #fff;
-  display: block;
-  padding: 0;
-  white-space: nowrap;
-}
-
-.form-input-label-2 > input,
-.form-input-label-2 > label,
-.form-input-label-2 > textarea,
-.error-zone > input,
-.error-zone > label {
-  text-transform: initial !important;
-}
-
-.scrolled .cls-1, .has-dark-menu .cls-1 {
-  fill: #3da4b2;
-}
-
 #menu-white {
   position: fixed;
   top: 0;
@@ -14722,6 +14520,7 @@ svg#bubble-whatsapp-icon path {
   display: -webkit-box;
   margin-bottom: 16px;
   -webkit-line-clamp: 3;
+  line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
   transition: max-height 0.5s ease;
@@ -14730,6 +14529,7 @@ svg#bubble-whatsapp-icon path {
 .google-open .google-text {
   max-height: 300px;
   -webkit-line-clamp: 6;
+  line-clamp: 6;
 }
 
 .google-seemore:hover {
@@ -15942,6 +15742,7 @@ a:has(.product):hover {
 .product .product-sistema {
   display: -webkit-box;
   -webkit-line-clamp: 4;
+  line-clamp: 4;
   /* Establece el número máximo de líneas permitidas */
   -webkit-box-orient: vertical;
   overflow: hidden;

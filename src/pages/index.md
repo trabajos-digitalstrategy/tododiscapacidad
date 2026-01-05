@@ -33,9 +33,9 @@ introbenefits2_subcontent: >
 
 
 description: Suscríbete a nuestra newsletter para recibir las últimas noticias sobre discapacidad y derechos
-newsletter_title: Suscríbete a la newsletter más necesaria de todo internet
-newsletter_subtitle: Recibe contenido exclusivo sobre derechos de discapacidad, sentencias explicadas y guías prácticas directamente en tu correo
-newsletter_benefits: podcast, contenido adicional exclusivo y mucho más
+newsletter_title: Suscríbete a la -newsletter- más necesaria de todo internet
+newsletter_subtitle: Recibe contenido exclusivo sobre derechos de discapacidad, sentencias explicadas y guías prácticas directamente en tu correo.
+newsletter_benefits: 
 newsletter_placeholder: Tu dirección de email
 newsletter_button: Suscribirse
 newsletter_image: /assets/static/images/image.png
@@ -68,7 +68,7 @@ introbenefits_1title: CLARIDAD
 introbenefits_1description: Explicamos el derecho de forma sencilla, sin tecnicismos, para que cualquier persona pueda entender sus derechos y cómo ejercerlos.
 
 introbenefits_2title: ACOMPAÑAMIENTO
-introbenefits_2description: Más que un blog jurídico, somos un puente entre el derecho y la vida real, recordando que la discapacidad no es un límite, sino un derecho.
+introbenefits_2description: Más que una newsletter jurídica, somos un puente entre el derecho y la vida real, recordando que la discapacidad no es un límite, sino un derecho.
 
 introbenefits_3title: JUSTICIA
 introbenefits_3description: Creemos que explicar el derecho de forma clara es, en sí mismo, una forma de justicia. El conocimiento debe ser accesible para todos.
@@ -77,7 +77,7 @@ introbenefits_3description: Creemos que explicar el derecho de forma clara es, e
 
 whytitle1_title: ¿Qué es TodoDiscapacidad?
 whytitle1_subtitle: NUESTRA ESENCIA
-whytitle1_description: TodoDiscapacidad es mucho más que un blog jurídico. Es un espacio para dar luz, un puente entre el derecho y la vida real, y un recordatorio de que la discapacidad no es un límite, sino un derecho que merece ser protegido y entendido.
+whytitle1_description: TodoDiscapacidad es mucho más que una newsletter jurídica. Es un espacio para dar luz, un puente entre el derecho y la vida real, y un recordatorio de que la discapacidad no es un límite, sino un derecho que merece ser protegido y entendido.
 
 
 
