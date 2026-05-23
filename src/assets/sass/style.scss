@@ -1471,6 +1471,28 @@ ul>li.special-class{
   @media (min-width: $break-sm) {
     margin: 100px;
   }
+
+  // Cuando el hero ocupa toda la pantalla (homepage), ajustamos la altura
+  // para que el contenido entre en el viewport teniendo en cuenta los márgenes
+  // y la barra de navegación fija (~ 80-100px).
+  &.height-full {
+    min-height: 0; // anulamos el min-height: 100vh genérico
+    height: calc(100vh - 116px); // 100px margen-superior + 16px margen-inferior en móvil
+    max-height: -webkit-fill-available; // fallback iOS Safari address bar
+
+    @media (min-width: $break-sm) {
+      height: calc(100vh - 200px); // 100px arriba + 100px abajo en desktop
+    }
+
+    // Soporte para dynamic viewport units (recomendado en móvil con barras dinámicas)
+    @supports (height: 100dvh) {
+      height: calc(100dvh - 116px);
+
+      @media (min-width: $break-sm) {
+        height: calc(100dvh - 200px);
+      }
+    }
+  }
 }
 
 // Newsletter Styles
