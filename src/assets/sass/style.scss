@@ -1479,6 +1479,9 @@ ul>li.special-class{
     min-height: 0; // anulamos el min-height: 100vh genérico
     height: calc(100vh - 116px); // 100px margen-superior + 16px margen-inferior en móvil
     max-height: -webkit-fill-available; // fallback iOS Safari address bar
+    display: flex;
+    align-items: center; // contenido centrado verticalmente en lugar de anclado abajo
+    overflow: hidden; // por si algún elemento se sale, no rompe layout
 
     @media (min-width: $break-sm) {
       height: calc(100vh - 200px); // 100px arriba + 100px abajo en desktop
@@ -1491,6 +1494,39 @@ ul>li.special-class{
       @media (min-width: $break-sm) {
         height: calc(100dvh - 200px);
       }
+    }
+
+    // Ajuste fino del H1 dentro del hero para que el CTA quede a la vista
+    // sin necesidad de hacer scroll. Sobrescribimos el .h1 global (72px desktop).
+    .h1 {
+      font-size: clamp(28px, 6vw, 56px) !important;
+      line-height: 1.05 !important;
+      margin-bottom: 16px !important;
+    }
+
+    // Pre-titulo y descripcion mas compactos
+    .fluid-8-r {
+      font-size: clamp(13px, 2vw, 16px) !important;
+      line-height: 1.3 !important;
+      margin-bottom: 8px !important;
+    }
+
+    // Padding inferior del hero menos agresivo para no desplazar el CTA
+    .section-x.pbr-64,
+    .pbr-64 {
+      padding-bottom: 24px !important;
+
+      @media (min-width: $break-sm) {
+        padding-bottom: 32px !important;
+      }
+    }
+
+    // El boton CTA siempre visible
+    .animate-box2 {
+      opacity: 1 !important;
+      visibility: visible !important;
+      display: block !important;
+      margin-top: 8px;
     }
   }
 }
