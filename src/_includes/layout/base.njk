@@ -59,6 +59,10 @@
   <link rel="preconnect" href="https://res.cloudinary.com" crossorigin />
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+  <!-- Editorial typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap" />
   <link rel="dns-prefetch" href="https://img.youtube.com" />
   <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
   {% if page.url == '/' and home_image %}
@@ -275,17 +279,25 @@
   </script>
   {% endif %}
 </head>
-<body class="contain {{ colorHeader }} {% if page.url == '/' %}home{% endif %}">
+<body class="contain {{ colorHeader }} {% if page.url == '/' %}home{% endif %} {% if editorial %}editorial{% endif %}">
   <!-- Google Tag Manager (noscript) -->
   {% if global_index.tag_manager %}
   <noscript><iframe title="googletagmanager"
       src="https://www.googletagmanager.com/ns.html?id={{ global_index.tag_manager }}" height="0" width="0"
       style="display:none;visibility:hidden"></iframe></noscript>
   {% endif %}
-  {% include 'components/header.njk' %}
+  {% if editorial %}
+    {% include 'components/header-editorial.njk' %}
+  {% else %}
+    {% include 'components/header.njk' %}
+  {% endif %}
   <div data-scroll-container>
     {{ content | safe }}
-    {% include 'templates_md/footer_2.njk' %}
+    {% if editorial %}
+      {% include 'templates_md/footer-editorial.njk' %}
+    {% else %}
+      {% include 'templates_md/footer_2.njk' %}
+    {% endif %}
   </div>
   <!-- Scripts -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>

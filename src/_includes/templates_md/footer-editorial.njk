@@ -1,0 +1,55 @@
+{# ============================================================
+   Editorial FOOTER — TodoDiscapacidad
+============================================================ #}
+<footer class="ed-footer" itemscope itemtype="https://schema.org/WPFooter">
+  <div class="ed-foot-wrap">
+    <div class="ed-foot-grid">
+      <div class="ed-foot-col ed-foot-brand">
+        <a href="/" class="ed-logo">
+          <span class="ed-logo-mark" aria-hidden="true"></span>
+          <span class="ed-logo-name">Todo<span>Discapacidad</span></span>
+        </a>
+        <p>Derecho y discapacidad explicados de forma clara por un abogado experto en España.</p>
+        <a href="/sobre-pedro-lopez-cerro/" class="arrow-link">Sobre Pedro López Cerro →</a>
+      </div>
+
+      <div class="ed-foot-col">
+        <h5>Temas principales</h5>
+        <ul>
+          <li><a href="/incapacidad-permanente/">Incapacidad permanente</a></li>
+          <li><a href="/ayudas-prestaciones/">Ayudas y prestaciones</a></li>
+          <li><a href="/patrimonio-protegido/">Patrimonio protegido</a></li>
+          <li><a href="/sentencias/">Sentencias explicadas</a></li>
+        </ul>
+      </div>
+
+      <div class="ed-foot-col">
+        <h5>Recursos</h5>
+        <ul>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/contacta/">Contacto</a></li>
+          <li><a href="/sitemap.xml">Mapa del sitio</a></li>
+        </ul>
+      </div>
+
+      <div class="ed-foot-col">
+        <h5>Legal</h5>
+        <ul>
+          <li><a href="/legal/politica-de-privacidad">Política de Privacidad</a></li>
+          <li><a href="/legal/aviso-legal">Aviso Legal</a></li>
+          <li><a href="/legal/cookies">Política de Cookies</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="ed-foot-bottom">
+      <div>© 2026 TodoDiscapacidad · Todos los derechos reservados</div>
+      <div class="ed-foot-socials">
+        {% if global_index.social_linkedin and global_index.social_linkedin != 'https://www.linkedin.com/' %}<a href="{{ global_index.social_linkedin }}" rel="me noopener" target="_blank" aria-label="LinkedIn">in</a>{% endif %}
+        {% if global_index.social_youtube and global_index.social_youtube != 'https://www.youtube.com/' %}<a href="{{ global_index.social_youtube }}" rel="me noopener" target="_blank" aria-label="YouTube">YT</a>{% endif %}
+        {% if global_index.social_instagram and global_index.social_instagram != 'https://www.instagram.com/' %}<a href="{{ global_index.social_instagram }}" rel="me noopener" target="_blank" aria-label="Instagram">IG</a>{% endif %}
+        {% if global_index.whatsapp %}<a href="https://wa.me/{{ global_index.whatsapp }}" rel="noopener" target="_blank" aria-label="WhatsApp">WA</a>{% endif %}
+      </div>
+    </div>
+  </div>
+</footer>

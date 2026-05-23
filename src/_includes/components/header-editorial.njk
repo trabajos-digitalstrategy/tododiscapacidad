@@ -1,0 +1,64 @@
+{# ============================================================
+   Editorial NAV — TodoDiscapacidad
+   Renderiza la navegación con el look "Sobre Pedro".
+   Usa las mismas collections.pages que el header antiguo.
+============================================================ #}
+<nav class="ed-nav" aria-label="Navegación principal">
+  <div class="ed-nav-inner">
+    <a href="/" class="ed-logo" aria-label="TodoDiscapacidad - Inicio">
+      <span class="ed-logo-mark" aria-hidden="true"></span>
+      <span class="ed-logo-name">Todo<span>Discapacidad</span></span>
+    </a>
+
+    <ul class="ed-nav-links" role="menubar">
+      {% set sorted_pages = collections.pages | sort(attribute='data.priority') %}
+      {% for nav_page in sorted_pages %}
+        {% if nav_page.data.seccion and nav_page.data.seccion != 'index' and nav_page.data.seccion != 'contacta' and nav_page.data.metaRobots != 'noindex, nofollow' %}
+          <li role="none">
+            <a href="{{ nav_page.url }}" role="menuitem"
+               {% if nav_page.url == page.url %}aria-current="page" class="is-current"{% endif %}>
+              {{ nav_page.data.seccion }}
+            </a>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+
+    <a href="/contacta/" class="ed-btn-contact">
+      Contacta <span class="arrow" aria-hidden="true">→</span>
+    </a>
+
+    <button class="ed-nav-toggle" type="button" id="ed-nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+      <span></span>
+    </button>
+  </div>
+</nav>
+
+{# Drawer móvil #}
+<aside class="ed-nav-mobile" id="ed-nav-mobile" aria-hidden="true">
+  <ul>
+    {% for nav_page in sorted_pages %}
+      {% if nav_page.data.seccion and nav_page.data.seccion != 'index' and nav_page.data.seccion != 'contacta' and nav_page.data.metaRobots != 'noindex, nofollow' %}
+        <li>
+          <a href="{{ nav_page.url }}" {% if nav_page.url == page.url %}aria-current="page"{% endif %}>
+            {{ nav_page.data.seccion }}
+          </a>
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+  <a href="/contacta/" class="ed-btn-contact">Contacta <span class="arrow">→</span></a>
+</aside>
+
+<script>
+  (function(){
+    var t = document.getElementById('ed-nav-toggle');
+    var m = document.getElementById('ed-nav-mobile');
+    if (!t || !m) return;
+    t.addEventListener('click', function(){
+      var open = m.classList.toggle('is-open');
+      t.setAttribute('aria-expanded', open ? 'true' : 'false');
+      m.setAttribute('aria-hidden', open ? 'false' : 'true');
+    });
+  })();
+</script>
