@@ -1,219 +1,139 @@
 ---
 layout: layout/base.njk
-colorHeader: has-dark-menu
+colorHeader: has-light-menu
+editorial: true
 ---
 
-{% set noheroimage = [] %}
 {% import "macros/_insert.njk" as insert %}
 
-<div class="main-article">
+<main class="ed-blog-index">
 
-
-
-  <!-- Sección de artículos del blog -->
-  <section class=" inview">
-    <div class="container-global mx-auto ptr-120 pbr-120">
-      <div class="row">
-        <div class="col-xs-12">
-          <header class="mb-48">
-            <h1 class="fluid-3-l mb-16">Blog sobre derechos y discapacidad en España</h1>
-            <p class="fluid-7-r text-muted">Análisis de sentencias, guías prácticas sobre incapacidad, patrimonio protegido, CUME y prestaciones por discapacidad &mdash; explicados de forma clara por un abogado experto.</p>
-          </header>
+  {# ============= HERO ============= #}
+  <section class="ed-hero ed-section">
+    <div class="ed-wrap">
+      <div class="ed-hero-grid ed-hero-grid--single">
+        <div>
+          <div class="ed-hero-eyebrow">
+            <span class="ed-eyebrow ed-eyebrow--rule">Blog · TodoDiscapacidad</span>
+          </div>
+          <h1 class="ed-display">Derechos &amp; <em>discapacidad.</em></h1>
+          <p class="ed-hero-role" style="max-width: 44ch;">
+            Análisis de sentencias, guías prácticas y casos reales sobre incapacidad permanente, ayudas y patrimonio protegido.
+          </p>
+          <p class="ed-hero-desc">
+            Todo explicado con lenguaje claro por un abogado experto en derecho laboral y discapacidad — porque el derecho, si no se entiende, no es un derecho.
+          </p>
         </div>
       </div>
-      
-      <div class="row">
-        {% set sortedPosts = collections.blog | sort(false, false, 'date') | reverse %}
-        {% for post in sortedPosts %}
-          {% if post.data.title and post.data.title != "titulo" %}
-            {% set isFirstPost = loop.first %}
-            {% set isLastPost = loop.last %}
-            
-            {% if isFirstPost %}
-              <!-- Primer post (más reciente) - Diseño hero destacado -->
-              <div class="col-xs-12 mb-32">
-                <div class="blog-card-hero bg-white radius-8 shadow-sm overflow-hidden">
-                  <div class="row no-gutters">
-                    <div class="col-xs-12 col-md-6">
-                      {% if post.data.image %}
-                      <div class="blog-card-image-hero h-100">
-                        <img src="{{ post.data.image }}" alt="{{ post.data.imageAlt or post.data.title }}" class="w-100 h-100 border-20" style="object-fit: cover; min-height: 350px;">
-                      </div>
-                      {% endif %}
-                    </div>
-                    <div class="col-xs-12 col-md-6">
-                      <div class="blog-card-content-hero p-40">
-                        <div class="blog-card-meta mb-20">
-                          <span class="featured-badge-hero">Artículo Destacado</span>
-                          <span class=" text-muted ml-16">{{ post.data.date | date('DD/MM/YYYY', 'es') }}</span>
-                        </div>
-                        
-                        <h2 class="fluid-6-b mb-20">
-                          <a href="{{ post.url }}" rel="bookmark" class="text-dark text-decoration-none">
-                            {{ post.data.title }}
-                          </a>
-                        </h2>
-                        
-                        {% if post.data.subtitle %}
-                        <p class="fluid-8-r text-muted mb-24">{{ post.data.subtitle }}</p>
-                        {% endif %}
-                        
-                        {% if post.data.descripcion %}
-                        <p class="fluid-9-r text-muted mb-32">{{ post.data.descripcion }}</p>
-                        {% endif %}
-                        
-                        <div class="blog-card-footer">
-                          <a href="{{ post.url }}" class="btn btn-primary btn-lg">
-                            Leer artículo completo
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            {% elif isLastPost %}
-              <!-- Último post (más antiguo) - Diseño full-width horizontal -->
-              <div class="col-xs-12 mb-32">
-                <div class="blog-card-featured bg-white radius-8 shadow-sm overflow-hidden">
-                  <div class="row no-gutters">
-                    <div class="col-xs-12 col-md-6">
-                      {% if post.data.image %}
-                      <div class="blog-card-image-featured">
-                        <img src="{{ post.data.image }}" alt="{{ post.data.imageAlt or post.data.title }}" class="w-100 h-100 border-20" style="object-fit: cover; min-height: 300px;">
-                      </div>
-                      {% endif %}
-                    </div>
-                    <div class="col-xs-12 col-md-6">
-                      <div class="blog-card-content-featured p-32">
-                        <div class="blog-card-meta mb-16">
-                          <span class="featured-badge-small">Artículo Anterior</span>
-                          <div class="text-12-r ml-16  mb-16">{{ post.data.date | date('DD/MM/YYYY', 'es') }}</div>
-                        </div>
-                        
-                        <h3 class="fluid-6-b mb-16">
-                          <a href="{{ post.url }}" class="text-dark text-decoration-none">
-                            {{ post.data.title }}
-                          </a>
-                        </h3>
-                        
-                        {% if post.data.subtitle %}
-                        <p class="fluid-7-r text-muted mb-20">{{ post.data.subtitle }}</p>
-                        {% endif %}
-                        
-                        {% if post.data.descripcion %}
-                        <p class="fluid-8-r text-muted mb-24">{{ post.data.descripcion }}</p>
-                        {% endif %}
-                        
-                        <div class="blog-card-footer">
-                          <a href="{{ post.url }}" class="btn btn-primary">
-                            Leer artículo completo
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            {% else %}
-              <!-- Posts regulares -->
-              <div class="col-xs-12 col-sm-6 col-md-4 mb-32">
-                <div class="blog-card bg-white p-24 radius-8 shadow-sm">
-                  {% if post.data.image %}
-                  <div class="blog-card-image mb-16">
-                    <img src="{{ post.data.image }}" alt="{{ post.data.imageAlt or post.data.title }}" class="w-100  border-20" style="height: 200px; object-fit: cover;">
-                  </div>
-                  {% endif %}
-                  
-                  <div class="blog-card-content">
-                    <div class="blog-card-meta mb-8">
-                      <div class="text-12-r mb-8">{{ post.data.date | date('DD/MM/YYYY', 'es') }}</div>
-                      {% if post.data.tags %}
-                      <div class="tag-wrapper ">
-                        {% for tag in post.data.tags %}
-                        {% if not loop.last %}<div class="tag-badge  ">{{ tag }}</div> {% else %}<div class="tag-badge  ">{{ tag }}</div>{% endif %}
-                        {% endfor %}
-                      </div>
-                      {% endif %}
-                    </div>
-                    
-                    <h3 class="fluid-8-b mb-12">
-                      <a href="{{ post.url }}" class="text-dark text-decoration-none">
-                        {{ post.data.title }}
-                      </a>
-                    </h3>
-                    
-                    {% if post.data.subtitle %}
-                    <p class="text-14-r text-muted mb-16">{{ post.data.subtitle }}</p>
-                    {% endif %}
-                    
+    </div>
+  </section>
 
-                    
-                    <div class="blog-card-footer">
-                      <a href="{{ post.url }}" class="btn btn-primary btn-sm">
-                        Leer más
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
+  {# ============= POSTS ============= #}
+  <section class="ed-section" style="padding-top: clamp(48px, 6vw, 80px);">
+    <div class="ed-wrap">
+      {% set sortedPosts = collections.blog | sort(false, false, 'date') | reverse %}
+
+      {# Post destacado: el primero del array #}
+      {% for post in sortedPosts %}
+        {% if loop.first and post.data.title and post.data.title != "titulo" %}
+          <a href="{{ post.url }}" class="ed-post-card" style="flex-direction: row; align-items: stretch; margin-bottom: 48px;">
+            {% if post.data.image %}
+            <div class="img" style="aspect-ratio: auto; flex: 1; min-height: 320px;">
+              <img src="{{ post.data.image }}" alt="{{ post.data.imageAlt or post.data.title }}" loading="eager" />
+            </div>
             {% endif %}
+            <div class="body" style="flex: 1; padding: clamp(28px, 4vw, 48px); justify-content: center;">
+              <span class="date" style="color: var(--ed-cyan);">Destacado · {{ post.data.date | date('DD/MM/YYYY', 'es') }}</span>
+              <h2 class="title" style="font-size: clamp(28px, 3.4vw, 40px); letter-spacing: -0.025em; line-height: 1.1;">{{ post.data.title }}</h2>
+              {% if post.data.subtitle %}<p class="excerpt" style="font-size: 16px;">{{ post.data.subtitle }}</p>{% endif %}
+              <span class="more">Leer artículo completo</span>
+            </div>
+          </a>
+        {% endif %}
+      {% endfor %}
+
+      {# Resto de posts en grid #}
+      <div class="ed-posts-grid">
+        {% for post in sortedPosts %}
+          {% if not loop.first and post.data.title and post.data.title != "titulo" %}
+            <a href="{{ post.url }}" class="ed-post-card">
+              {% if post.data.image %}
+              <div class="img">
+                <img src="{{ post.data.image }}" alt="{{ post.data.imageAlt or post.data.title }}" loading="lazy" />
+              </div>
+              {% endif %}
+              <div class="body">
+                <span class="date">{{ post.data.date | date('DD/MM/YYYY', 'es') }}</span>
+                <h3 class="title">{{ post.data.title }}</h3>
+                {% if post.data.subtitle %}<p class="excerpt">{{ post.data.subtitle }}</p>{% endif %}
+                <span class="more">Leer más</span>
+              </div>
+            </a>
           {% endif %}
         {% endfor %}
       </div>
-      
-      {% if collections.blog | length == 0 %}
-      <div class="row">
-        <div class="col-xs-12 text-center">
-          <p class="fluid-6-r text-muted">No hay artículos disponibles en este momento.</p>
-        </div>
+
+      {% if sortedPosts | length == 0 %}
+      <div class="ed-faq" style="text-align: center;">
+        <p class="ed-body">No hay artículos disponibles en este momento.</p>
       </div>
       {% endif %}
     </div>
   </section>
 
-  <!-- Sección de categorías -->
-  <section class="bg-white inview">
-    <div class="container-global mx-auto ptr-80 pbr-80">
-      <div class="row">
-        <div class="col-xs-12">
-          <h2 class="fluid-3-b mb-48 text-center">Categorías de contenido sobre derecho y discapacidad</h2>
+  {# ============= CATEGORÍAS ============= #}
+  <section class="ed-areas-section ed-section">
+    <div class="ed-wrap">
+      <div class="ed-areas-header">
+        <div>
+          <div class="ed-eyebrow">Explora por tema</div>
+          <h2 class="ed-section-title" style="margin-top:18px;">Categorías &amp; <em>secciones</em>.</h2>
+          <p class="ed-areas-intro">Encuentra todo lo publicado sobre cada materia en una sola página.</p>
         </div>
+        <div class="meta">04 hubs</div>
       </div>
-      
-      <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-3 mb-24">
-          <div class="category-card text-center p-24 bg-light radius-8">
-            <div class="category-icon mb-16">
-              <i class="fas fa-gavel" style="font-size: 48px; color: #007bff;"></i>
-            </div>
-            <h3 class="fluid-6-b mb-8">Sentencias Explicadas</h3>
-            <p class="fluid-8-r text-muted">Análisis de sentencias judiciales sobre discapacidad e incapacidad permanente</p>
-          </div>
-        </div>
-        
-        <div class="col-xs-12 col-sm-6 col-md-3 mb-24">
-          <div class="category-card text-center p-24 bg-light radius-8">
-            <div class="category-icon mb-16">
-              <i class="fas fa-lightbulb" style="font-size: 48px; color: #ffc107;"></i>
-            </div>
-            <h3 class="fluid-6-b mb-8">Ayudas y Prestaciones</h3>
-            <p class="fluid-8-r text-muted">Guías sobre CUME, ayudas, pensiones y prestaciones por discapacidad</p>
-          </div>
-        </div>
-        
-        <div class="col-xs-12 col-sm-6 col-md-3 mb-24">
-          <div class="category-card text-center p-24 bg-light radius-8">
-            <div class="category-icon mb-16">
-              <i class="fas fa-heart" style="font-size: 48px; color: #dc3545;"></i>
-            </div>
-            <h3 class="fluid-6-b mb-8">Patrimonio Protegido e Incapacidad</h3>
-            <p class="fluid-8-r text-muted">Cómo proteger el futuro de personas con discapacidad y entender la incapacidad permanente</p>
-          </div>
-        </div>
+
+      <div class="ed-areas-grid">
+        <a href="/incapacidad-permanente/" class="ed-area">
+          <div class="num">01</div>
+          <h4>Incapacidad permanente</h4>
+          <p>Total, absoluta, gran invalidez. Tipos, requisitos y diferencias con la discapacidad.</p>
+          <span class="ed-link">Ir al hub</span>
+        </a>
+        <a href="/ayudas-prestaciones/" class="ed-area">
+          <div class="num">02</div>
+          <h4>Ayudas &amp; prestaciones</h4>
+          <p>CUME, PNC, IMV, complementos, deducciones IRPF y ayudas autonómicas.</p>
+          <span class="ed-link">Ir al hub</span>
+        </a>
+        <a href="/patrimonio-protegido/" class="ed-area">
+          <div class="num">03</div>
+          <h4>Patrimonio protegido</h4>
+          <p>Cómo constituirlo, aportaciones, ventajas fiscales y administración.</p>
+          <span class="ed-link">Ir al hub</span>
+        </a>
+        <a href="/sentencias/" class="ed-area">
+          <div class="num">04</div>
+          <h4>Sentencias explicadas</h4>
+          <p>Resoluciones del TS, TSJ, AN y TJUE traducidas a lenguaje claro.</p>
+          <span class="ed-link">Ir al hub</span>
+        </a>
       </div>
     </div>
   </section>
 
-  {% include "components/banner.njk" %}
-</div>
+  {# ============= CTA ============= #}
+  <section class="ed-cta ed-section--flush" style="padding-top: clamp(64px, 9vw, 120px);">
+    <div class="ed-cta-card">
+      <div class="ed-cta-inner">
+        <span class="ed-eyebrow ed-eyebrow--rule">Suscríbete</span>
+        <h2>Recibe los artículos <em>antes que nadie.</em></h2>
+        <p>Newsletter ocasional con sentencias explicadas, guías prácticas y novedades legislativas. Solo cuando hay algo que merece la pena leer.</p>
+        <div class="ed-cta-actions">
+          <a href="/newsletter-1/" class="ed-btn-primary">Suscribirme <span>→</span></a>
+          <a href="/contacta/" class="ed-btn-secondary">Contactar</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

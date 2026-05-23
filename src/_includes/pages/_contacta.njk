@@ -1,24 +1,157 @@
 ---
 layout: layout/base.njk
-colorHeader: has-dark-menu
+colorHeader: has-light-menu
+editorial: true
 ---
 
-
-
-{% set noheroimage = [] %}
 {% import "macros/_insert.njk" as insert %}
 
+<main class="ed-contact-page">
 
+  {# ============= HERO ============= #}
+  <section class="ed-hero ed-section">
+    <div class="ed-wrap">
+      <div class="ed-hero-grid ed-hero-grid--single">
+        <div>
+          <div class="ed-hero-eyebrow">
+            <span class="ed-eyebrow ed-eyebrow--rule">{{ contacta_subtitle or 'Contacta con TodoDiscapacidad' }}</span>
+          </div>
+          <h1 class="ed-display">{{ contacta_title or '¿Tienes una consulta sobre' }} <em>discapacidad?</em></h1>
+          <p class="ed-hero-role" style="max-width: 44ch;">
+            Escríbenos y te respondemos en <span class="ital">menos de 48 horas</span>.
+          </p>
+          <p class="ed-hero-desc">
+            Consultas sobre incapacidad permanente, ayudas, prestaciones, CUME, patrimonio protegido, Centros Especiales de Empleo o cualquier otro tema relacionado con discapacidad.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  {# ============= CONTACTO ============= #}
+  <section class="ed-section" style="padding-top: clamp(48px, 6vw, 80px);">
+    <div class="ed-wrap">
+      <div class="ed-contact-grid">
 
-<div class="main-article">
-  
+        <aside class="ed-contact-info">
+          <div class="ed-contact-card">
+            <span class="icon" aria-hidden="true">✉</span>
+            <div>
+              <h4>Email</h4>
+              <p><a href="mailto:{{ email or global_index.email or 'info@tododiscapacidad.com' }}">{{ email or global_index.email or 'info@tododiscapacidad.com' }}</a></p>
+            </div>
+          </div>
 
-  {% include "templates_md/contacta.njk" %}
-  {% include "templates_md/contacta_5.njk" %}
+          {% if telefono %}
+          <div class="ed-contact-card">
+            <span class="icon" aria-hidden="true">☎</span>
+            <div>
+              <h4>Teléfono</h4>
+              <p><a href="tel:{{ telefono }}">{{ telefono }}</a></p>
+            </div>
+          </div>
+          {% endif %}
 
-  {% include "templates_md/maxilogo.njk" %}
+          {% if global_index.whatsapp %}
+          <div class="ed-contact-card">
+            <span class="icon" aria-hidden="true">W</span>
+            <div>
+              <h4>WhatsApp</h4>
+              <p><a href="https://wa.me/{{ global_index.whatsapp }}" target="_blank" rel="noopener">Escribir por WhatsApp</a></p>
+            </div>
+          </div>
+          {% endif %}
 
-</div>
+          <div class="ed-contact-card">
+            <span class="icon" aria-hidden="true">📍</span>
+            <div>
+              <h4>Sevilla</h4>
+              <p>Colegio de Abogados de Sevilla (ICAS).<br>Atención en remoto a toda España.</p>
+            </div>
+          </div>
 
+          <div class="ed-contact-card">
+            <span class="icon" aria-hidden="true">⏱</span>
+            <div>
+              <h4>Tiempos de respuesta</h4>
+              <p>Lun. a vie. — respuesta &lt; 48&nbsp;h.<br>Consultas urgentes por WhatsApp.</p>
+            </div>
+          </div>
+        </aside>
 
+        <form class="ed-form" name="contacto" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="contacto" />
+          <p style="display:none;"><label>No rellenar: <input name="bot-field" /></label></p>
+
+          <div class="ed-form-row">
+            <div class="ed-form-field">
+              <label for="nombre">Nombre</label>
+              <input id="nombre" name="nombre" type="text" required autocomplete="name" />
+            </div>
+            <div class="ed-form-field">
+              <label for="apellidos">Apellidos</label>
+              <input id="apellidos" name="apellidos" type="text" autocomplete="family-name" />
+            </div>
+          </div>
+
+          <div class="ed-form-row">
+            <div class="ed-form-field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" required autocomplete="email" />
+            </div>
+            <div class="ed-form-field">
+              <label for="telefono">Teléfono</label>
+              <input id="telefono" name="telefono" type="tel" autocomplete="tel" />
+            </div>
+          </div>
+
+          <div class="ed-form-field">
+            <label for="tema">Tema</label>
+            <select id="tema" name="tema">
+              <option value="">Selecciona un tema</option>
+              <option value="incapacidad">Incapacidad permanente</option>
+              <option value="ayudas">Ayudas y prestaciones</option>
+              <option value="patrimonio">Patrimonio protegido</option>
+              <option value="cume">CUME / conciliación</option>
+              <option value="cee">Centros Especiales de Empleo</option>
+              <option value="sentencias">Sentencias / jurisprudencia</option>
+              <option value="otro">Otro</option>
+            </select>
+          </div>
+
+          <div class="ed-form-field">
+            <label for="mensaje">Tu consulta</label>
+            <textarea id="mensaje" name="mensaje" required placeholder="Cuéntanos brevemente tu caso…"></textarea>
+          </div>
+
+          <div class="ed-form-field" style="flex-direction: row; align-items: flex-start; gap: 12px; margin-bottom: 24px;">
+            <input id="privacidad" name="privacidad" type="checkbox" required style="width: 18px; height: 18px; margin-top: 4px;" />
+            <label for="privacidad" style="letter-spacing: 0; text-transform: none; font-weight: 500; font-size: 13px; color: var(--ed-ink-2); line-height: 1.5;">
+              He leído y acepto la <a href="/legal/politica-de-privacidad" style="color: var(--ed-cyan-deep); font-weight: 600;">Política de Privacidad</a>.
+            </label>
+          </div>
+
+          <button type="submit" class="ed-form-submit">
+            {{ banner_button or 'Enviar consulta' }} <span aria-hidden="true">→</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  {# ============= CTA inferior ============= #}
+  <section class="ed-cta ed-section--flush" style="padding-top: clamp(48px, 6vw, 96px);">
+    <div class="ed-cta-card">
+      <div class="ed-cta-inner">
+        <span class="ed-eyebrow ed-eyebrow--rule">¿Prefieres hablar primero?</span>
+        <h2>Antes de escribirnos, mira si <em>tu caso</em> ya está respondido.</h2>
+        <p>Tenemos guías y sentencias explicadas sobre los temas más frecuentes — quizá te ahorras el correo.</p>
+        <div class="ed-cta-actions">
+          <a href="/blog/" class="ed-btn-primary">Ver el blog <span>→</span></a>
+          <a href="/sobre-pedro-lopez-cerro/" class="ed-btn-secondary">Sobre Pedro</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>

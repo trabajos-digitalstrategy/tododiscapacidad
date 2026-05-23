@@ -1,134 +1,87 @@
 ---
 layout: layout/base.njk
-colorHeader: has-dark-menu
+colorHeader: has-light-menu
+editorial: true
 ---
 
 {% import "macros/_insert.njk" as insert %}
 
-{% set isFirstPost = collections.blog[0].fileSlug === page.fileSlug %}
+<article class="ed-blog-post">
 
-{% if isFirstPost %}
-  <!-- Hero Section - Featured Post (First Post) -->
-  <section class="herohome inview o-hidden bg-hero height-full p-relative">
-    {% if image %}
-    <div class="parallax-container" style="background-image: url('{{ image }}');">
-      <div class="parallax-layer" data-speed="0.3"></div>
-    </div>
-    {% endif %}
-    
-    <div class="container-fluid">
-      <div class="row section-x align-middle height-full">
-        <div class="col-xs-12 col-md-6 col-lg-6">
-          <div class="front-text">
-            <div class="vertical-wrap mb-24">
-              <div class="vertical-inner">
-                <span class="featured-badge">Artículo Destacado</span>
-                <h1 class="fluid-5-b">{{ title }}</h1> 
-              </div>
-            </div>
-            <div class="vertical-wrap-2 pb-24">
-              <div class="vertical-inner">
-                <h2 class="fluid-8-r mb-8">{{ subtitle }}</h2>
-              </div>
-            </div>
-            <div class="hero-meta">
-              <span class="post-date">{{ page.date | date('DD/MM/YYYY', 'es') }}</span>
-              <span class="read-time">5 min de lectura</span>
-            </div>
-          </div>
-        </div>
-        <div class="col-xs-12 col-md-6 col-lg-6">
-          {% if image %}
-          <div class="hero-image-container">
-            <img class="hero-image" src="{{ image }}" alt="{{ imageAlt or title }}" />
-          </div>
-          {% endif %}
-        </div>
-      </div>
-    </div>
-  </section>
-{% else %}
-  <!-- Hero Section - Regular Post -->
-  <section class="bg-color inview">
-    <div class="container-3 mx-auto height-md ptr-120 pbr-32">
-      <div class="row section-x align-middle">
-        <div class="col-xs-12 front-text">
-
-
-          <div class="is-flex mb-32">
-            <div class="post-meta-item">
-        
-              <span class="post-date">{{ page.date | date('DD/MM/YYYY', 'es') }}</span>
-            </div>
-            <div class="post-meta-item">
-              <span class="read-time-icon"></span>
-              <span class="read-time"> | 5 min de lectura</span>
-            </div>
-          </div>
-
-          <div class="vertical-wrap mb-24">
-            <div class="vertical-inner">
-              <h1 class="fluid-5-m">{{ title }}</h1> 
-            </div>
-          </div>
-          <div class="vertical-wrap-2 pb-24">
-            <div class="vertical-inner">
-              <h2 class="fluid-8-r mb-8">{{ subtitle }}</h2>
-            </div>
-          </div>
-          
-          <!-- Post Meta Information -->
-          <div class="post-meta  mb-24">
-        
-            {% if author %}
-            <div class="post-meta-item">
-              <span class="post-author-icon">👤</span>
-              <span class="post-author">{{ author }} Abogado</span>
-            </div>
+  {# ============= HERO ============= #}
+  <section class="ed-article-hero ed-section" style="padding-bottom: 0;">
+    <div class="ed-wrap">
+      <div class="ed-article-meta">
+        <span>{{ page.date | date('DD MMM YYYY', 'es') }}</span>
+        <span class="dot">·</span>
+        <span>5 min de lectura</span>
+        {% if author %}
+        <span class="dot">·</span>
+        <span>{{ author }}</span>
+        {% endif %}
+        {% if tags %}
+          {% for t in tags %}
+            {% if t != 'blog' and t != 'pages' %}
+              <span class="dot">·</span>
+              <span>{{ t }}</span>
             {% endif %}
-
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-{% endif %}
-
-  <!-- Content Section -->
-  <article class="container-fluid pt-32 bg-light">
-    <div class="container-3 mx-auto">
-      <div class="row innermarkdown md:reverse">
-        <div class="col-xs-12 ">
-          {{ content | safe }}
-        </div>
-     
-
-          {# {{ content | toc | safe }} #}
-      
-      </div>
-    </div>
-  </article>
-
-  <!-- Pagination -->
-  <div class="container-fluid l-top bg-white">
-    <div class="col-xs-12">
-      {% set next = collections.blog | nextInCollection(page.fileSlug) %}
-      {% set previous = collections.blog | prevInCollection(page.fileSlug) %}
-      {% if next or previous %}
-      <div class="pagination">
-        {% if previous %}
-        <a href="{{ previous.url }}" class="pagination-item pagination-item-prev">
-          Post anterior
-        </a>
+          {% endfor %}
         {% endif %}
-        {% if next %}
-        <a href="{{ next.url }}" class="pagination-item pagination-item-next">
-          Siguiente post
-        </a>
-        {% endif %}
+      </div>
+
+      <h1>{{ title }}</h1>
+      {% if subtitle %}<p class="ed-article-sub">{{ subtitle }}</p>{% endif %}
+
+      {% if image %}
+      <div class="ed-article-cover">
+        <img src="{{ image }}" alt="{{ imageAlt or title }}" loading="eager" />
       </div>
       {% endif %}
     </div>
+  </section>
+
+  {# ============= CONTENIDO ============= #}
+  <div class="ed-article-body innermarkdown">
+    {{ content | safe }}
   </div>
 
+  {# ============= CTA in-article ============= #}
+  <section class="ed-cta ed-section--flush" style="padding-top: clamp(32px, 5vw, 64px);">
+    <div class="ed-cta-card">
+      <div class="ed-cta-inner">
+        <span class="ed-eyebrow ed-eyebrow--rule">¿Te ha sido útil este artículo?</span>
+        <h2>Si tienes <em>una consulta</em> sobre tu caso, escríbenos.</h2>
+        <p>Asesoramiento personalizado por un abogado especializado en derecho laboral y discapacidad. Respuesta &lt; 48&nbsp;h.</p>
+        <div class="ed-cta-actions">
+          <a href="/contacta/" class="ed-btn-primary">Contactar <span>→</span></a>
+          <a href="/sobre-pedro-lopez-cerro/" class="ed-btn-secondary">Sobre Pedro</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {# ============= PAGINACIÓN ============= #}
+  {% set next = collections.blog | nextInCollection(page.fileSlug) %}
+  {% set previous = collections.blog | prevInCollection(page.fileSlug) %}
+  {% if next or previous %}
+    <nav class="ed-pagination" aria-label="Más artículos">
+      {% if previous %}
+        <a href="{{ previous.url }}" rel="prev">
+          <div class="label">← Post anterior</div>
+          <div class="title">{{ previous.data.title }}</div>
+        </a>
+      {% else %}
+        <span></span>
+      {% endif %}
+      {% if next %}
+        <a href="{{ next.url }}" class="next" rel="next">
+          <div class="label">Siguiente post →</div>
+          <div class="title">{{ next.data.title }}</div>
+        </a>
+      {% else %}
+        <span></span>
+      {% endif %}
+    </nav>
+  {% endif %}
+
+</article>
