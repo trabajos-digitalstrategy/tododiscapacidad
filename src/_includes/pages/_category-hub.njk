@@ -1,0 +1,122 @@
+---
+layout: layout/base.njk
+colorHeader: has-dark-menu
+---
+
+{% import "macros/_insert.njk" as insert %}
+
+<main class="category-hub">
+
+  <!-- Hero -->
+  <section class="bg-color inview">
+    <div class="container-3 mx-auto height-md ptr-120 pbr-32">
+      <div class="row section-x align-middle">
+        <div class="col-xs-12">
+          {% if hero_kicker %}<p class="text-18-r c-accent mb-16">{{ hero_kicker }}</p>{% endif %}
+          <h1 class="fluid-3-b mb-16">{{ title }}</h1>
+          {% if subtitle %}<p class="fluid-6-r mb-24">{{ subtitle }}</p>{% endif %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Introducción / contenido principal -->
+  {% if intro_html %}
+  <section class="bg-light ptr-80 pbr-80">
+    <div class="container-3 mx-auto">
+      <div class="row">
+        <div class="col-xs-12 col-md-10">
+          <article class="innermarkdown">
+            {{ intro_html | safe }}
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Listado de artículos relacionados -->
+  {% if categoryTags %}
+  <section class="bg-white ptr-80 pbr-80">
+    <div class="container-3 mx-auto">
+      <div class="row">
+        <div class="col-xs-12 mb-32">
+          <h2 class="fluid-4-b mb-16">Artículos relacionados</h2>
+          <p class="p1 text-muted">Análisis y guías sobre {{ title | lower }} publicados en el blog.</p>
+        </div>
+
+        {% set sortedPosts = collections.blog | sort(false, false, 'date') | reverse %}
+        {% set foundPosts = 0 %}
+        {% for post in sortedPosts %}
+          {% if post.data.tags %}
+            {% set matches = false %}
+            {% for postTag in post.data.tags %}
+              {% for catTag in categoryTags %}
+                {% if postTag | lower == catTag | lower %}{% set matches = true %}{% endif %}
+              {% endfor %}
+            {% endfor %}
+            {% if matches and post.data.title and post.data.title != 'titulo' %}
+              {% set foundPosts = foundPosts + 1 %}
+              <div class="col-xs-12 col-sm-6 col-md-4 mb-32">
+                <article class="blog-card bg-light p-24 radius-8 shadow-sm h-100">
+                  {% if post.data.image %}
+                  <div class="blog-card-image mb-16">
+                    <img src="{{ post.data.image }}" alt="{{ post.data.imageAlt or post.data.title }}" class="w-100 border-20" style="height: 200px; object-fit: cover;" loading="lazy">
+                  </div>
+                  {% endif %}
+                  <div class="text-12-r mb-8">{{ post.data.date | date('DD/MM/YYYY', 'es') }}</div>
+                  <h3 class="fluid-8-b mb-12">
+                    <a href="{{ post.url }}" rel="bookmark" class="text-dark text-decoration-none">{{ post.data.title }}</a>
+                  </h3>
+                  {% if post.data.subtitle %}<p class="text-14-r text-muted mb-16">{{ post.data.subtitle }}</p>{% endif %}
+                  <a href="{{ post.url }}" class="btn btn-primary btn-sm">Leer artículo</a>
+                </article>
+              </div>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+
+        {% if foundPosts == 0 %}
+        <div class="col-xs-12">
+          <div class="bg-light p-24 border-20 text-center">
+            <p class="p1 text-muted mb-16">Aún no hemos publicado artículos en esta categoría, pero estamos preparando contenido.</p>
+            <a href="/blog/" class="btn btn-primary">Ver todos los artículos</a>
+          </div>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- FAQ -->
+  {% if faqs %}
+  <section class="bg-color ptr-80 pbr-80">
+    <div class="container-3 mx-auto">
+      <div class="row">
+        <div class="col-xs-12 mb-32">
+          <h2 class="fluid-4-b mb-16">Preguntas frecuentes</h2>
+        </div>
+        <div class="col-xs-12 col-md-10">
+          {% for faq in faqs %}
+          <details class="bg-light p-24 border-20 mb-16">
+            <summary class="fluid-7-b cursor-pointer">{{ faq.q }}</summary>
+            <div class="p1 mt-16">{{ faq.a | safe }}</div>
+          </details>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- CTA -->
+  <section class="bg-light ptr-80 pbr-80">
+    <div class="container-3 mx-auto text-center">
+      <h2 class="fluid-4-b mb-24">¿Necesitas asesoramiento personalizado?</h2>
+      <p class="p1 mb-32">Contacta con un abogado especializado en derecho de discapacidad para resolver tu caso concreto.</p>
+      <a href="/contacta/" class="btn btn-primary btn-lg">Contactar ahora</a>
+    </div>
+  </section>
+
+</main>

@@ -13,7 +13,7 @@
 
         <div class="menu-fixed-logo">
             <div class="logo-simple">
-                <a class="link logo simple" href="/">
+                <a class="link logo simple" href="/" aria-label="TodoDiscapacidad - Inicio">
                     <?xml version="1.0" encoding="UTF-8"?>
                     <svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1044.34 249.14">
                         <defs>
@@ -71,19 +71,19 @@
                     <rect y="13.7999" width="22" height="2.2" rx="1.1" fill="#1E1E1E" />
                 </svg>
             </button>
-            <ul class="p3 menu-desktop list-clear list-inline ttu">
+            <ul class="p3 menu-desktop list-clear list-inline ttu" role="menubar" aria-label="Navegación principal">
                 {% set sorted_pages = collections.pages | sort(attribute='data.priority') %}
                 {% for page in sorted_pages %}
-                {% if page.data.seccion != 'index' %}
-                <li>
-                    <a href="{{ page.url }}">
+                {% if page.data.seccion and page.data.seccion != 'index' and page.data.seccion != 'contacta' and page.data.metaRobots != 'noindex, nofollow' %}
+                <li role="none">
+                    <a href="{{ page.url }}" role="menuitem" {% if page.url == this.page.url %}aria-current="page"{% endif %}>
                         <span>{{ page.data.seccion }}</span>
                     </a>
                 </li>
                 {% endif %}
                 {% endfor %}
-                <li>
-                    <button class="link_a_contacta btn btn-primary">CONTACTA</button>
+                <li role="none">
+                    <a href="/contacta/" class="link_a_contacta btn btn-primary" role="menuitem">CONTACTA</a>
                 </li>
             </ul>
         </div>
@@ -150,7 +150,7 @@
     </button>
     <ul class="list-clear ptr-64 ttu">
         {% for page in sorted_pages %}
-        {% if page.data.seccion != 'index' %}
+        {% if page.data.seccion and page.data.seccion != 'index' and page.data.seccion != 'contacta' and page.data.metaRobots != 'noindex, nofollow' %}
         <li>
             <a href="{{ page.url }}">
                 <span>{{ page.data.seccion }}</span>

@@ -2,14 +2,27 @@
 permalink: /robots.txt
 eleventyExcludeFromCollections: true
 ---
-
 User-agent: *
+Allow: /
+
+# Bloqueamos rutas internas / administrativas (no contenido legal)
 Disallow: /admin/
-Disallow: /temp/
 Disallow: /private/
-Disallow: /legal/
+Disallow: /temp/
 Disallow: /site/
 Disallow: /home/
 Disallow: /ejemplohtml/
+Disallow: /password-recovery
+Disallow: /password-recovery/
+Disallow: /password-recovery.html
 
-Sitemap: {{global_index.url}}/sitemap.xml
+# Permitimos explícitamente las páginas legales para señales E-E-A-T
+Allow: /legal/
+
+# Bots agresivos / scrapers de IA — opcional, descomentar si interesa
+# User-agent: GPTBot
+# Disallow: /
+# User-agent: CCBot
+# Disallow: /
+
+Sitemap: {{ global_index.url }}/sitemap.xml

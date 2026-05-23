@@ -32,7 +32,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addTemplateFormats("njk");
   eleventyConfig.addPassthroughCopy("./src/css/style.css");
   eleventyConfig.addPassthroughCopy("./src/assets");
-  eleventyConfig.addPassthroughCopy("src/pages", "pages");
+  // eleventyConfig.addPassthroughCopy("src/pages", "pages"); // ELIMINADO: exponía los .md fuente como assets, mal para SEO
   eleventyConfig.addPassthroughCopy("src/site.webmanifest");
   eleventyConfig.addPassthroughCopy("src/robots.txt");
 

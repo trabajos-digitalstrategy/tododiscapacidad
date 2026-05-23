@@ -5,50 +5,73 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="google-site-verification" content="{{ global_index.search_console }}" />
-  <title>{{ metaTitle }} </title>
-  <meta name="robots" content="{{ metaRobots }}" />
+  <title>{{ metaTitle }}</title>
+  <meta name="robots" content="{{ metaRobots or 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' }}" />
   <meta name="description"
     content="{{ metaDescription or eleventyComputed.metaDescription or metadata.description }}" />
   <meta name="keywords" content="{{ metaKeywords or eleventyComputed.metaKeywords or metaKeywords.description }}" />
+  {% if author %}<meta name="author" content="{{ author }}" />{% else %}<meta name="author" content="Pedro López Cerro" />{% endif %}
+  <meta name="theme-color" content="{{ global_index.c_primary }}" />
   <!-- Favicon y manifest -->
   <link rel="manifest" href="/site.webmanifest">
+  <!-- Open Graph -->
   <meta property="og:locale" content="es_ES" />
-  <meta property="og:site_name"
-    content="Check - {{ metaKeywords or eleventyComputed.metaKeywords or metaKeywords.description }}" />
-  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="TodoDiscapacidad" />
+  <meta property="og:type" content="{% if page.url and page.url.startsWith('/blog/') and page.url != '/blog/' %}article{% else %}website{% endif %}" />
   <meta property="og:title" content="{{ metaTitle }}" />
   <meta property="og:description"
     content="{{ metaDescription or eleventyComputed.metaDescription or metadata.description }}" />
   <meta property="og:url" content="{{ global_index.url }}{{ page.url | url }}" />
-  <meta property="og:image" content="{{ global_index.url }}/assets/static/images/2.webp" />
-  <meta name="twitter:card" content="{{ metaTitle }}" />
+  <meta property="og:image" content="{{ global_index.url }}{% if image %}{{ image }}{% else %}/assets/static/images/2.webp{% endif %}" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="{{ imageAlt or metaTitle }}" />
+  {% if page.url and page.url.startsWith('/blog/') and page.url != '/blog/' %}
+  <meta property="article:published_time" content="{{ page.date.toISOString() }}" />
+  <meta property="article:modified_time" content="{{ page.date.toISOString() }}" />
+  <meta property="article:author" content="{{ author or 'Pedro López Cerro' }}" />
+  <meta property="article:section" content="Derecho y discapacidad" />
+  {% if tags %}{% for tag in tags %}<meta property="article:tag" content="{{ tag }}" />
+  {% endfor %}{% endif %}
+  {% endif %}
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="{{ metaTitle }}" />
   <meta name="twitter:description"
     content="{{ metaDescription or eleventyComputed.metaDescription or metadata.description }}" />
-  <meta name="twitter:image" content="{{ global_index.url }}/assets/static/favicons/favicon-96x96.png" />
+  <meta name="twitter:image" content="{{ global_index.url }}{% if image %}{{ image }}{% else %}/assets/static/images/2.webp{% endif %}" />
   <link rel="icon" type="image/png" href="{{ global_index.url }}/assets/static/favicons/favicon-32x32.png" />
   <!-- Estilos CSS -->
   <style>
     /* prettier-ignore */
     :root {
     --c-accent: {{ global_index.c_accent }};
-    --c-primary: {{ global_index.c_primary }}; 
+    --c-primary: {{ global_index.c_primary }};
     --c-secondary: {{ global_index.c_secondary }};
-    --bg-dark: {{ global_index.bg_dark }}; 
-    --c-bg-dark: {{ global_index.c_bg_dark }}; 
-    --bg-light: {{ global_index.bg_light }}; 
-    --c-bg-light: {{ global_index.c_bg_light }}; 
-    --btn-radius: {{ global_index.btn_radius }}; 
+    --bg-dark: {{ global_index.bg_dark }};
+    --c-bg-dark: {{ global_index.c_bg_dark }};
+    --bg-light: {{ global_index.bg_light }};
+    --c-bg-light: {{ global_index.c_bg_light }};
+    --btn-radius: {{ global_index.btn_radius }};
     --padding-global: {{ global_index.padding_global }};
     }
   </style>
+  <link rel="preconnect" href="https://res.cloudinary.com" crossorigin />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+  <link rel="dns-prefetch" href="https://img.youtube.com" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+  {% if page.url == '/' and home_image %}
+  <link rel="preload" as="image" href="{{ home_image }}" fetchpriority="high" />
+  {% endif %}
   <link rel="stylesheet" href="/assets/css/style.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/photoswipe.min.css">
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <!-- SEO y Open Graph -->
+  <!-- SEO y canonical -->
   <link rel="canonical" href="{{ global_index.url }}{{ page.url | url }}" />
+  <link rel="alternate" type="application/rss+xml" title="TodoDiscapacidad - Blog" href="{{ global_index.url }}/feed.xml" />
   <!-- Google Tag Manager -->
   {% if global_index.tag_manager %}
   <script>
@@ -62,39 +85,195 @@
     })(window, document, 'script', 'dataLayer', '{{ global_index.tag_manager }}');
   </script>
   {% endif %}
+
+  {# ============ SCHEMA.ORG STRUCTURED DATA ============ #}
+
+  {# 1. Organization + LegalService (sitewide) #}
   <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["Organization", "LegalService"],
+    "@id": "{{ global_index.url }}/#organization",
+    "name": "TodoDiscapacidad",
+    "alternateName": "Todo Discapacidad",
+    "url": "{{ global_index.url }}",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ global_index.url }}/assets/static/favicons/favicon-96x96.png",
+      "width": 96,
+      "height": 96
+    },
+    "image": "{{ global_index.url }}/assets/static/images/2.webp",
+    "description": "TodoDiscapacidad es un proyecto divulgativo de derecho y discapacidad en España. Explicamos sentencias, ayudas, prestaciones y derechos de forma clara y accesible.",
+    "email": "{{ global_index.email or 'info@tododiscapacidad.com' }}",
+    "areaServed": {
+      "@type": "Country",
+      "name": "España"
+    },
+    "knowsAbout": [
+      "Derecho de la discapacidad",
+      "Incapacidad permanente",
+      "Patrimonio protegido",
+      "CUME - Prestación por cuidado de menores enfermos",
+      "Ayudas y prestaciones por discapacidad",
+      "Centros Especiales de Empleo (CEE)",
+      "Conciliación familiar"
+    ],
+    "founder": {
+      "@id": "{{ global_index.url }}/sobre-pedro-lopez-cerro/#person"
+    },
+    "sameAs": [
+      {% if global_index.social_linkedin and global_index.social_linkedin != 'https://www.linkedin.com/' %}"{{ global_index.social_linkedin }}",{% endif %}
+      {% if global_index.social_youtube and global_index.social_youtube != 'https://www.youtube.com/' %}"{{ global_index.social_youtube }}",{% endif %}
+      {% if global_index.social_instagram and global_index.social_instagram != 'https://www.instagram.com/' %}"{{ global_index.social_instagram }}"{% endif %}
+    ]
+  }
+  </script>
+
+  {# 2. WebSite + SearchAction (sitewide) #}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "{{ global_index.url }}/#website",
+    "url": "{{ global_index.url }}",
+    "name": "TodoDiscapacidad",
+    "description": "Derecho y discapacidad explicados de forma clara",
+    "inLanguage": "es-ES",
+    "publisher": { "@id": "{{ global_index.url }}/#organization" },
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "{{ global_index.url }}/?s={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  {# 3. Person (Pedro López Cerro) — sitewide #}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": "{{ global_index.url }}/sobre-pedro-lopez-cerro/#person",
+    "name": "Pedro López Cerro",
+    "url": "{{ global_index.url }}/sobre-pedro-lopez-cerro/",
+    "image": "{{ global_index.url }}/assets/static/images/servicio_3.jpg",
+    "jobTitle": "Abogado experto en derecho laboral y discapacidad",
+    "worksFor": { "@id": "{{ global_index.url }}/#organization" },
+    "knowsAbout": [
+      "Derecho laboral",
+      "Derecho de la discapacidad",
+      "Incapacidad permanente",
+      "Patrimonio protegido",
+      "Conciliación familiar",
+      "Centros Especiales de Empleo"
+    ],
+    "alumniOf": [
+      { "@type": "EducationalOrganization", "name": "Licenciatura en Ciencias del Trabajo" },
+      { "@type": "EducationalOrganization", "name": "Grado en Derecho" },
+      { "@type": "EducationalOrganization", "name": "Diplomatura en Relaciones Laborales" },
+      { "@type": "EducationalOrganization", "name": "Máster Acceso a la Abogacía" }
+    ],
+    "memberOf": {
+      "@type": "Organization",
+      "name": "Ilustre Colegio de Abogados de Sevilla"
+    }
+  }
+  </script>
+
+  {# 4. BreadcrumbList (per-page, excluyendo home) #}
+  {% if page.url and page.url != '/' %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "{{ global_index.url }}/" }
+      {%- if page.url.startsWith('/blog/') and page.url != '/blog/' -%}
+      ,{ "@type": "ListItem", "position": 2, "name": "Blog", "item": "{{ global_index.url }}/blog/" }
+      ,{ "@type": "ListItem", "position": 3, "name": "{{ title or metaTitle }}", "item": "{{ global_index.url }}{{ page.url }}" }
+      {%- elif page.url == '/blog/' -%}
+      ,{ "@type": "ListItem", "position": 2, "name": "Blog", "item": "{{ global_index.url }}/blog/" }
+      {%- else -%}
+      ,{ "@type": "ListItem", "position": 2, "name": "{{ metaTitle }}", "item": "{{ global_index.url }}{{ page.url }}" }
+      {%- endif -%}
+    ]
+  }
+  </script>
+  {% endif %}
+
+  {# 5. Article schema para posts del blog #}
+  {% if page.url and page.url.startsWith('/blog/') and page.url != '/blog/' and title %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "@id": "{{ global_index.url }}{{ page.url }}#article",
+    "isPartOf": { "@id": "{{ global_index.url }}/#website" },
+    "publisher": { "@id": "{{ global_index.url }}/#organization" },
+    "author": { "@id": "{{ global_index.url }}/sobre-pedro-lopez-cerro/#person" },
+    "headline": "{{ title }}",
+    "name": "{{ title }}",
+    "description": "{{ metaDescription or descripcion }}",
+    "datePublished": "{{ page.date.toISOString() }}",
+    "dateModified": "{{ page.date.toISOString() }}",
+    "inLanguage": "es-ES",
+    "url": "{{ global_index.url }}{{ page.url }}",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "{{ global_index.url }}{{ page.url }}"
+    },
+    {% if image %}"image": {
+      "@type": "ImageObject",
+      "url": "{{ global_index.url }}{{ image }}",
+      "caption": "{{ imageAlt or title }}"
+    },{% endif %}
+    "articleSection": "Derecho y discapacidad"
+    {% if tags %},"keywords": "{{ tags | join(', ') }}"{% endif %}
+  }
+  </script>
+  {% endif %}
+
+  {# 6. CollectionPage para /blog/ #}
+  {% if page.url == '/blog/' %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "@id": "{{ global_index.url }}/blog/#collection",
+    "url": "{{ global_index.url }}/blog/",
+    "name": "Blog de TodoDiscapacidad - Derechos, ayudas y sentencias sobre discapacidad",
+    "description": "Artículos sobre derecho y discapacidad: sentencias explicadas, guías prácticas sobre incapacidad, patrimonio protegido, CUME y prestaciones.",
+    "inLanguage": "es-ES",
+    "isPartOf": { "@id": "{{ global_index.url }}/#website" }
+  }
+  </script>
+  {% endif %}
+
+  {# 7. FAQPage (si la página define preguntas frecuentes) #}
+  {% if faqs %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {% for faq in faqs %}
       {
-        "@context": "https://schema.org",
-        "@type": "LegalService",
-        "name": "TodoDiscapacidad",
-        "url": "{{ global_index.url }}",
-        "logo": "{{ global_index.url }}/assets/static/favicons/favicon-96x96.png",
-        "description": "TodoDiscapacidad - El derecho, si no se entiende, no es un derecho. Explicamos la discapacidad y el derecho de forma clara y accesible.",
-        "email": "{{ global_index.email or 'info@tododiscapacidad.com' }}",
-        "serviceOffered": [
-          {
-            "@type": "Service",
-            "serviceType": "Sentencias Explicadas",
-            "description": "Analizamos las últimas sentencias relacionadas con discapacidad y las explicamos con palabras sencillas.",
-            "offers": {
-              "@type": "Offer",
-              "url": "{{ global_index.url }}/blog/",
-              "priceCurrency": "EUR"
-            }
-          },
-          {
-            "@type": "Service",
-            "serviceType": "Asesoramiento Jurídico en Discapacidad",
-            "description": "Servicios jurídicos especializados en discapacidad e incapacidad.",
-            "offers": {
-              "@type": "Offer",
-              "url": "{{ global_index.url }}/contacta/",
-              "priceCurrency": "EUR"
-            }
-          }
-        ]
-      }
-      </script>
+        "@type": "Question",
+        "name": "{{ faq.q }}",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "{{ faq.a }}"
+        }
+      }{% if not loop.last %},{% endif %}
+      {% endfor %}
+    ]
+  }
+  </script>
+  {% endif %}
 </head>
 <body class="contain {{ colorHeader }} {% if page.url == '/' %}home{% endif %}">
   <!-- Google Tag Manager (noscript) -->
@@ -109,16 +288,16 @@
     {% include 'templates_md/footer_2.njk' %}
   </div>
   <!-- Scripts -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/photoswipe.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/photoswipe.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/photoswipe-ui-default.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js" defer></script>
   <script type="module" src="/assets/js/index.js"></script>
   <script type="module" src="/assets/js/scroll.js"></script>
   <script type="module" src="/assets/js/inview.js"></script>
-  
+
   <!-- Redirect recovery tokens to password recovery page - only on homepage -->
   {% if page.url == '/' %}
   <script>

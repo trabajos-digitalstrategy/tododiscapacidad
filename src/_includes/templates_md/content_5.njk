@@ -1,11 +1,9 @@
 <!-- content_5.njk -->
 <section class="bg-color pbr-120  "
-  id="direction">
+  id="direction" aria-labelledby="seccion-que-es">
   <div class="container-fluid pbr-64">
     <div class="row">
-      <div class="col-xs-12 full-logo">
- 
- 
+      <div class="col-xs-12 full-logo" aria-hidden="true">
         <?xml version="1.0" encoding="UTF-8"?>
         <svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1082.01 134.14">
           <g>
@@ -29,24 +27,23 @@
             <path d="M218.56,63.94c0-5.13.72-9.96,2.17-14.48,1.44-4.52,3.57-8.51,6.37-11.96,2.8-3.45,6.25-6.18,10.35-8.19,4.1-2,8.81-3.01,14.13-3.01s10.03,1,14.13,3.01c4.1,2.01,7.56,4.74,10.35,8.19,2.8,3.45,4.92,7.44,6.37,11.96,1.45,4.53,2.17,9.35,2.17,14.48s-.72,9.98-2.17,14.55c-1.45,4.57-3.57,8.56-6.37,11.96-2.8,3.41-6.25,6.11-10.35,8.12-4.11,2-8.81,3.01-14.13,3.01s-10.03-1-14.13-3.01c-4.11-2-7.56-4.71-10.35-8.12-2.8-3.4-4.92-7.39-6.37-11.96-1.45-4.57-2.17-9.42-2.17-14.55ZM223.87,63.94c0,4.29.61,8.42,1.82,12.38,1.21,3.97,2.98,7.49,5.32,10.56,2.33,3.08,5.22,5.53,8.67,7.35,3.45,1.82,7.42,2.73,11.89,2.73s8.44-.91,11.89-2.73c3.45-1.82,6.34-4.27,8.67-7.35,2.33-3.08,4.1-6.6,5.32-10.56,1.21-3.96,1.82-8.09,1.82-12.38s-.61-8.42-1.82-12.38c-1.21-3.96-2.99-7.49-5.32-10.56-2.33-3.08-5.23-5.53-8.67-7.35-3.45-1.82-7.42-2.73-11.89-2.73s-8.44.91-11.89,2.73c-3.45,1.82-6.34,4.27-8.67,7.35-2.33,3.08-4.11,6.6-5.32,10.56-1.21,3.96-1.82,8.09-1.82,12.38Z"/>
           </g>
         </svg>
-    
       </div>
     </div>
   </div>
   <div class="container-global-3 mx-auto  pb-64">
     <div class="row">
       <div class="col-xs-12 col-md-4">
-        <div class="h5 mb-16 c-accent  "> {{ whytitle1_title | mdbr | safe }}</div>
-        <div class="h2 mb-24  "> {{ whytitle1_subtitle | mdbr | safe }}</div>
+        <p class="h5 mb-16 c-accent  "> {{ whytitle1_title | mdbr | safe }}</p>
+        <h2 id="seccion-que-es" class="h2 mb-24  "> {{ whytitle1_subtitle | mdbr | safe }}</h2>
       </div>
       <div class="col-xs-12">
         <div class="row     ">
           <div class="col-xs-12 col-md-4 mb-32 md:mb-0  ">
-            <div class="h4 "> {{ whytitle1_description | mdbr | safe }}</div>
+            <p class="h4 "> {{ whytitle1_description | mdbr | safe }}</p>
           </div>
           <div class="col-xs-12 col-md-4"></div>
           <div class="col-xs-12 col-md-4 front-text ">
-            <div class="p1  "> {{ whytitle1_description2 | mdbr | safe }}</div>
+            <p class="p1  "> {{ whytitle1_description2 | mdbr | safe }}</p>
           </div>
         </div>
       </div>

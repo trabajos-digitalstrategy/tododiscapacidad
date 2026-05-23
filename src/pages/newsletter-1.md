@@ -1,5 +1,8 @@
 ---
 layout: templates_md/newsletter_1.njk
+permalink: false
+eleventyExcludeFromCollections: true
+metaRobots: "noindex, nofollow"
 title: Newsletter - Suscríbete
 description: Suscríbete a nuestra newsletter para recibir las últimas noticias sobre discapacidad y derechos
 newsletter_title: Suscríbete a la newsletter más necesaria de todo internet

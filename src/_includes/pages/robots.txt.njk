@@ -1,7 +1,15 @@
 User-agent: *
+Allow: /
+
+# Bloqueamos rutas internas (no contenido legal indexable)
 Disallow: /admin/
 Disallow: /temp/
 Disallow: /private/
-Disallow: /legal/
+Disallow: /password-recovery
+Disallow: /password-recovery/
+Disallow: /password-recovery.html
+
+# Permitimos explícitamente las páginas legales para señales E-E-A-T
+Allow: /legal/
 
 Sitemap: {{global.url}}sitemap.xml

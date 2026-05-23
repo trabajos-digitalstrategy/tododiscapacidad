@@ -4,7 +4,9 @@ title: titulo
 metaTitle: metatitulo
 metaDescription:  calidad de vida.
 metaKeywords: key1,key2
-metaRobots: index, follow
+metaRobots: "noindex, nofollow"
+eleventyExcludeFromCollections: true
+permalink: false
 date: 2023-06-23
 fecha: 23 de marzo de 2023
 author: Pedro López Cerro

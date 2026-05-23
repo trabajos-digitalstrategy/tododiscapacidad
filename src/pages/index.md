@@ -1,10 +1,10 @@
 ---
 layout: pages/_index.njk
 permalink: /
-metaTitle: TodoDiscapacidad - El derecho, si no se entiende, no es un derecho
-metaDescription: TodoDiscapacidad - El derecho, si no se entiende, no es un derecho. Explicamos la discapacidad y el derecho de forma clara y accesible.
-metaKeywords: discapacidad, derecho, accesibilidad, inclusión, prestaciones, ayudas, CUME, incapacidad, patrimonio protegido
-metaRobots: index, follow
+metaTitle: "TodoDiscapacidad | Derechos, Ayudas y Prestaciones por Discapacidad en España"
+metaDescription: "Aprende cómo funcionan las ayudas, prestaciones y sentencias sobre discapacidad en España. CUME, incapacidad permanente, patrimonio protegido y mucho más, explicado por un abogado experto. Suscríbete gratis."
+metaKeywords: "derechos discapacidad España, ayudas discapacidad, prestaciones discapacidad, CUME, incapacidad permanente, patrimonio protegido, sentencias discapacidad, abogado discapacidad"
+metaRobots: "index, follow, max-image-preview:large, max-snippet:-1"
 hero_description: BIENVENIDOS A TODODISCAPACIDAD
 hero_title: EL DERECHO, SI NO SE ^ ENTIENDE, NO ES UN ^ DERECHO
 hero_btn: CONOCE MÁS
@@ -44,12 +44,16 @@ newsletter_image_alt: Newsletter sobre discapacidad
 newsletter_privacy_text: Al suscribirte, aceptas nuestra política de privacidad y recibir emails ocasionales.
 
 # Clips Section
-clips_title: Explora los clips -más destacados-
-clips_description: Accede a la biblioteca de clips y episodios completos del podcast.
+clips_title: Clips -más destacados- sobre derechos de discapacidad
+clips_description: Vídeos breves explicando ayudas, sentencias y derechos en España.
 clips_video_1: 3rnydPf4HW8
+clips_video_1_alt: "Pedro López Cerro explicando derechos básicos de las personas con discapacidad en España"
 clips_video_2: 4KT9bH5yIBI
+clips_video_2_alt: "Clip explicando diferencias entre incapacidad permanente y grado de discapacidad"
 clips_video_3: iQlpQ-7Xs3s
-clips_video_4: 6blxNuwXoa8 
+clips_video_3_alt: "Vídeo breve sobre la prestación CUME y conciliación familiar para padres cuidadores"
+clips_video_4: 6blxNuwXoa8
+clips_video_4_alt: "Clip sobre patrimonio protegido y cómo asegurar el futuro de un hijo con discapacidad"
 
 # Servicios Section
 servicios: ¿De qué hablamos aquí?

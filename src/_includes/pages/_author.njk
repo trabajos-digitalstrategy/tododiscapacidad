@@ -1,0 +1,158 @@
+---
+layout: layout/base.njk
+colorHeader: has-dark-menu
+---
+
+{% import "macros/_insert.njk" as insert %}
+
+<article class="author-page" itemscope itemtype="https://schema.org/Person">
+
+  <!-- Hero del autor -->
+  <section class="bg-color inview">
+    <div class="container-3 mx-auto height-md ptr-120 pbr-32">
+      <div class="row section-x align-middle">
+        <div class="col-xs-12 col-md-7 front-text">
+          <p class="text-18-r c-accent mb-16">Sobre el autor</p>
+          <h1 class="fluid-3-b mb-16" itemprop="name">{{ title }}</h1>
+          <p class="fluid-6-r mb-24" itemprop="jobTitle">{{ subtitle }}</p>
+          <p class="p1 mb-24" itemprop="description">
+            Abogado colegiado en el Ilustre Colegio de Abogados de Sevilla, con más de una década dedicada al derecho laboral y de la discapacidad. Asesor habitual de entidades como Asperger, Autismo y TDAH, y conferenciante sobre incapacidad permanente, prestaciones por discapacidad y Centros Especiales de Empleo.
+          </p>
+        </div>
+        <div class="col-xs-12 col-md-5">
+          {% if image %}
+          <img src="{{ image }}" alt="{{ imageAlt }}" class="w-100 border-20" itemprop="image" loading="eager" />
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Formación y credenciales -->
+  <section class="bg-light ptr-80 pbr-80">
+    <div class="container-3 mx-auto">
+      <div class="row">
+        <div class="col-xs-12">
+          <h2 class="fluid-4-b mb-32">Formación académica y credenciales</h2>
+        </div>
+
+        <div class="col-xs-12 col-md-6">
+          <h3 class="fluid-7-b mb-16">Titulaciones</h3>
+          <ul class="list-clear mb-32">
+            <li class="mb-12" itemprop="alumniOf" itemscope itemtype="https://schema.org/EducationalOrganization">
+              <span itemprop="name">Graduado en Derecho</span>
+            </li>
+            <li class="mb-12" itemprop="alumniOf" itemscope itemtype="https://schema.org/EducationalOrganization">
+              <span itemprop="name">Licenciado en Ciencias del Trabajo</span>
+            </li>
+            <li class="mb-12" itemprop="alumniOf" itemscope itemtype="https://schema.org/EducationalOrganization">
+              <span itemprop="name">Diplomado en Relaciones Laborales</span>
+            </li>
+            <li class="mb-12" itemprop="alumniOf" itemscope itemtype="https://schema.org/EducationalOrganization">
+              <span itemprop="name">Máster Acceso a la Abogacía</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-xs-12 col-md-6">
+          <h3 class="fluid-7-b mb-16">Colegiación y experiencia</h3>
+          <ul class="list-clear mb-32">
+            <li class="mb-12" itemprop="memberOf" itemscope itemtype="https://schema.org/Organization">
+              Abogado colegiado en el <span itemprop="name">Ilustre Colegio de Abogados de Sevilla</span>
+            </li>
+            <li class="mb-12">Letrado experto en derecho laboral y discapacidad</li>
+            <li class="mb-12">Especialista en incapacidad permanente y patrimonio protegido</li>
+            <li class="mb-12">Asesor y conferenciante para Asperger, Autismo y TDAH</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Áreas de especialización -->
+  <section class="bg-white ptr-80 pbr-80">
+    <div class="container-3 mx-auto">
+      <div class="row">
+        <div class="col-xs-12 mb-32">
+          <h2 class="fluid-4-b mb-16">Áreas de especialización</h2>
+          <p class="p1 text-muted">Estas son las materias en las que Pedro acumula más experiencia y publica regularmente:</p>
+        </div>
+
+        <div class="col-xs-12 col-md-4 mb-24">
+          <div class="bg-light p-24 border-20 h-100">
+            <h3 class="fluid-7-b mb-12">Incapacidad permanente</h3>
+            <p class="p2 text-muted">Total, absoluta, gran invalidez. Procedimiento, requisitos y cómo distinguir incapacidad de discapacidad.</p>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-md-4 mb-24">
+          <div class="bg-light p-24 border-20 h-100">
+            <h3 class="fluid-7-b mb-12">Patrimonio protegido</h3>
+            <p class="p2 text-muted">Cómo constituirlo, ventajas fiscales y protección del futuro de personas con discapacidad.</p>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-md-4 mb-24">
+          <div class="bg-light p-24 border-20 h-100">
+            <h3 class="fluid-7-b mb-12">CUME y conciliación</h3>
+            <p class="p2 text-muted">Prestación por cuidado de menores con cáncer u otra enfermedad grave, jurisprudencia y casos límite.</p>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-md-4 mb-24">
+          <div class="bg-light p-24 border-20 h-100">
+            <h3 class="fluid-7-b mb-12">Centros Especiales de Empleo (CEE)</h3>
+            <p class="p2 text-muted">Bonificaciones, requisitos, contratación y cumplimiento normativo para CEE.</p>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-md-4 mb-24">
+          <div class="bg-light p-24 border-20 h-100">
+            <h3 class="fluid-7-b mb-12">Ayudas y prestaciones</h3>
+            <p class="p2 text-muted">Pensión no contributiva, IMV, dependencia, complementos por hijo a cargo y deducciones fiscales.</p>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-md-4 mb-24">
+          <div class="bg-light p-24 border-20 h-100">
+            <h3 class="fluid-7-b mb-12">Sentencias y jurisprudencia</h3>
+            <p class="p2 text-muted">Análisis de las sentencias más relevantes del TS, TSJ y AN sobre discapacidad explicadas de forma clara.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filosofía / acercamiento -->
+  <section class="bg-color ptr-80 pbr-80">
+    <div class="container-3 mx-auto">
+      <div class="row">
+        <div class="col-xs-12 col-md-8 mx-auto">
+          <h2 class="fluid-4-b mb-24 text-center">Mi forma de trabajar</h2>
+          <p class="p1 mb-16">
+            En mi desempeño profesional siempre he priorizado tres cosas: escuchar atentamente, entender profundamente y actuar con honestidad. Cada caso es único y merece una atención personalizada.
+          </p>
+          <p class="p1 mb-16">
+            He visto cómo familias enteras se rinden frente a papeles, siglas y leyes que parecen escritas en otro idioma. Y he visto también cómo empresas y Centros Especiales de Empleo quieren cumplir, pero se pierden en un mar de normas y resoluciones contradictorias.
+          </p>
+          <p class="p1 mb-16">
+            Por eso creé TodoDiscapacidad. Porque <strong>el derecho, si no se entiende, no es un derecho</strong>. Y porque explicarlo con claridad es, en sí mismo, una forma de justicia.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA contacto -->
+  <section class="bg-light ptr-80 pbr-80">
+    <div class="container-3 mx-auto text-center">
+      <h2 class="fluid-4-b mb-24">¿Tienes una consulta sobre discapacidad?</h2>
+      <p class="p1 mb-32">Si necesitas asesoramiento jurídico personalizado sobre incapacidad, prestaciones, CUME o cualquier otro tema relacionado con discapacidad, ponte en contacto.</p>
+      <a href="/contacta/" class="btn btn-primary btn-lg">Contactar con Pedro</a>
+    </div>
+  </section>
+
+  <meta itemprop="url" content="{{ global_index.url }}/sobre-pedro-lopez-cerro/" />
+  <meta itemprop="email" content="{{ global_index.email or 'info@tododiscapacidad.com' }}" />
+
+</article>
