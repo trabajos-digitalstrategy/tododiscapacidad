@@ -13,7 +13,7 @@ tags: ["pages"]
 seccion: index
 
 home_image: /assets/static/images/casa2.webp 
-home_video: https://res.cloudinary.com/manuel-ruiz/video/upload/v1758560130/tododiscapacidad33_jyfdnh.mp4
+home_video: https://media.digitalstrategy.es/tododiscapacidad.mp4
 
 introbenefits_class: bg-dark
 
