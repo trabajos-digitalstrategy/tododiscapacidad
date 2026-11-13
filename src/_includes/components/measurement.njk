@@ -1,0 +1,26 @@
+{# Identificadores de medicion. measurement.js y consentimiento.js son copia
+   exacta de los de la skill web-buena-praxis (iguales en todas las webs):
+   lo que cambia por sitio vive aqui y en global_index.json.
+
+   delivery 'gtm': GA4 se configura DENTRO del contenedor GTM-MVGKRKHM y
+   measurement.js solo deja los eventos en el dataLayer. Por eso ga4 va vacio.
+   Si algun dia se pone un G-XXXX aqui con delivery 'gtag', hay que quitar
+   antes la etiqueta de GA4 del contenedor: las dos a la vez cuentan cada dato
+   dos veces y no se puede deduplicar despues.
+
+   Bloqueo previo: no se descarga nada de Google hasta que el visitante acepta
+   la analitica. Las visitas de quien rechaza o no responde NO se miden; GA4
+   vera menos sesiones de las reales. Es el precio de cumplir la AEPD sin
+   Consent Mode avanzado, y es decision del titular, no tecnica. #}
+{% if global_index.tag_manager %}
+{% set dominio = global_index.url | replace('https://', '') | replace('http://', '') | replace('www.', '') | replace('/', '') | trim %}
+<script>window.measurementConfig = {
+  ga4: "",
+  gtm: "{{ global_index.tag_manager }}",
+  delivery: "gtm",
+  hosts: ["{{ dominio }}", "www.{{ dominio }}"]
+};</script>
+{# defer: no tiene prisa y no manda nada sin consentimiento. Los defer se
+   ejecutan en orden, asi que corre antes que consentimiento.js. #}
+<script src="/assets/js/measurement.js" defer></script>
+{% endif %}

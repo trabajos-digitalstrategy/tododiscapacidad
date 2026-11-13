@@ -1,0 +1,63 @@
+{# Banner y panel de cookies. La logica esta en assets/js/consentimiento.js
+   (copia exacta de la skill web-buena-praxis); este marcado solo tiene que
+   respetar sus identificadores.
+
+   Lo que mira la AEPD y no se puede «mejorar» en diseno:
+   · Rechazar y Aceptar son el mismo boton, del mismo tamano y en la misma
+     fila. Nada de Aceptar en color y Rechazar como enlace gris.
+   · Las casillas del panel arrancan desmarcadas.
+   · Se puede volver a abrir desde el pie («Configurar cookies») y desde la
+     politica: cualquier enlace a #cookies o con data-cookies-abrir.
+
+   Arranca oculto (style display:none) y lo muestra el script si no hay
+   eleccion guardada: asi quien ya respondio no ve un parpadeo. #}
+{% if global_index.tag_manager %}
+<div id="cookie-banner" class="ck-banner" role="region" aria-label="Aviso de cookies" style="display:none">
+  <p class="ck-texto">
+    Usamos cookies propias para que la web funcione y, si nos dejas, cookies de
+    Google para saber qué páginas se leen y mejorar los contenidos. Puedes
+    cambiar de opinión cuando quieras. <a href="/legal/cookies/">Más información</a>
+  </p>
+  <div class="ck-botones">
+    <button type="button" id="cookie-reject" class="ck-btn">Rechazar</button>
+    <button type="button" id="cookie-settings" class="ck-btn ck-btn--enlace">Configurar</button>
+    <button type="button" id="cookie-accept" class="ck-btn">Aceptar</button>
+  </div>
+</div>
+
+<div id="cookie-settings-panel" class="ck-fondo" data-display="flex" style="display:none">
+  <div class="ck-panel" role="dialog" aria-modal="true" aria-labelledby="ck-titulo">
+    <button type="button" id="cookie-settings-close" class="ck-cerrar" aria-label="Cerrar sin guardar">×</button>
+    <h2 id="ck-titulo" class="ck-titulo">Configurar cookies</h2>
+
+    <div class="ck-categoria">
+      <div class="ck-fila">
+        <strong>Necesarias</strong>
+        <span class="ck-siempre">Siempre activas</span>
+      </div>
+      <p>Guardan tu elección sobre cookies y hacen que los formularios funcionen. No se pueden desactivar.</p>
+    </div>
+
+    <div class="ck-categoria">
+      <label class="ck-fila" for="cookie-analytics">
+        <strong>Analítica</strong>
+        <input type="checkbox" id="cookie-analytics">
+      </label>
+      <p>Google Analytics, a través de Google Tag Manager: cuántas personas leen cada página y cómo llegan. Datos agregados, sin identificarte.</p>
+    </div>
+
+    <div class="ck-categoria">
+      <label class="ck-fila" for="cookie-marketing">
+        <strong>Publicidad</strong>
+        <input type="checkbox" id="cookie-marketing">
+      </label>
+      <p>Medir si los anuncios que podamos hacer en Google o redes sociales funcionan.</p>
+    </div>
+
+    <div class="ck-botones">
+      <button type="button" id="cookie-save" class="ck-btn">Guardar mi elección</button>
+    </div>
+  </div>
+</div>
+<script src="/assets/js/consentimiento.js" defer></script>
+{% endif %}

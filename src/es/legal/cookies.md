@@ -42,23 +42,35 @@ Son aquéllas que bien tratadas por nosotros o por terceros, nos permiten cuanti
 
 ## Cookies de terceros
 
-La web de {{global_index.legal_nombre_titular}} puede utilizar servicios de terceros que, por cuenta de sus respectivos propietarios, recopilarán información con fines estadísticos, de uso del Site por parte del usuario y para la prestación de otros servicios relacionados con la actividad de la web y otros servicios de Internet.
+Esta web usa Google Tag Manager y, a través de él, Google Analytics, servicios de Google Ireland Limited (Gordon House, Barrow Street, Dublín 4, Irlanda). Sirven para saber, de forma agregada, cuántas personas leen cada página, desde dónde llegan y qué contenidos resultan útiles. No los usamos para identificarte.
 
-En particular, esta página web utiliza Google Analytics, un servicio analítico de tráfico que ayuda a los propietarios de los sitios web a comprender cómo interactúan, de forma anónima, los visitantes con su sitio web. Este servicio es prestado por Google, Inc., una compañía de Delaware cuya oficina principal está en 1600 Amphitheatre Parkway, Mountain View (California), CA 94043, Estados Unidos ("Google"). Google Analytics utiliza "cookies", que son archivos de texto ubicados en su ordenador, para ayudar al website a analizar el uso que hacen los usuarios del sitio web.
+**Solo se cargan si las aceptas.** Hasta que respondas al aviso de cookies no se descarga nada de Google ni se instala ninguna cookie suya. Si rechazas o no respondes, no se instalan.
 
-La información que genera la cookie acerca de su uso del website será directamente transmitida y archivada por Google en los servidores de Estados Unidos. Google usará esta información por cuenta nuestra con el propósito de permitirnos analizar patrones de comportamiento y uso del website, recopilando informes de la actividad del website y prestando otros servicios relacionados con la actividad del website orientados a mejorar la experiencia del usuario en el sitio web y optimizar su rendimiento. Google podrá transmitir dicha información a terceros cuando así se lo requiera la legislación, o cuando dichos terceros procesen la información por cuenta de Google. Google no asociará su dirección IP con ningún otro dato del que disponga Google.
+Las cookies que Google Analytics puede instalar si das tu consentimiento son:
 
-Usted puede rechazar el tratamiento de los datos o la información rechazando el uso de cookies mediante la selección de la configuración apropiada de su navegador, sin embargo, debe Usted saber que si lo hace puede ser que no pueda usar la plena funcionalidad de este website. Al utilizar este website Usted consiente el tratamiento de información acerca de Usted por Google en la forma y para los fines arriba indicados. [Términos de Google Analytics](https://www.google.com/analytics/terms/es.html)
+| Cookie | Para qué sirve | Duración |
+|---|---|---|
+| `_ga` | Distinguir visitantes de forma anónima | 2 años |
+| `_ga_*` | Mantener el estado de la sesión | 2 años |
 
-{{global_index.legal_nombre_titular}} informa a sus usuarios que (i) la captación de la información sobre el uso de este sitio web por nuestros usuarios a través de Google Analytics sólo la hace Google en su propio nombre (y no lo hace ni en nombre ni por cuenta de {{global_index.legal_nombre_titular}}), no teniendo {{global_index.legal_nombre_titular}} acceso en ningún momento a tal información (sino tan sólo a información agregada que le facilita posteriormente Google y que no está asociada a ninguna dirección IP); (ii) Google (y no {{global_index.legal_nombre_titular}}) es quien determina la finalidad del tratamiento y uso de la información captada por Google Analytics en todo momento, así como el funcionamiento y duración de las cookies; (iii) conforme a la información proporcionada por Google, el usuario puede evitar la captación de esa información, rechazando la instalación de cookies configurando su navegador para ello (en [Opt-out de Google Analytics](https://tools.google.com/dlpage/gaoptout?hl=es) encontrará más información sobre cómo rechazar la instalación de cookies de Google Analytics); y (iv) deben saber que únicamente los países de la Unión Europea comparten -como regla general- estándares similares en materia de cookies y protección de datos de carácter personal.
+Más información en la [política de privacidad de Google](https://policies.google.com/privacy?hl=es).
 
-## Aceptación del uso de cookies
+## Cookies propias
 
-Al utilizar esta web, el Usuario acepta expresamente el tratamiento de la información recabada en la forma y con los fines anteriormente mencionados. Y asimismo, reconoce conocer la posibilidad de rechazar el tratamiento de tales datos o información rechazando el uso de Cookies mediante la selección de la configuración apropiada a tal fin en su navegador. Si bien esta opción de bloqueo de Cookies en su navegador puede no permitirle el uso pleno de todas las funcionalidades del Website.
+Guardamos tu elección en estas cookies, necesarias para no volver a preguntarte en cada página. No requieren consentimiento:
+
+| Cookie | Para qué sirve | Duración |
+|---|---|---|
+| `cookie_consent` | Saber que ya has respondido al aviso | 1 año |
+| `cookie_necessary`, `cookie_analytics`, `cookie_marketing` | Recordar qué categorías has aceptado | 1 año |
+
+## Cómo dar, cambiar o retirar tu consentimiento
+
+Puedes cambiar tu elección en cualquier momento desde el enlace **«Configurar cookies»** del pie de página o desde aquí: <a href="#cookies">abrir la configuración de cookies</a>. Retirar el consentimiento es tan fácil como darlo: al hacerlo, borramos las cookies de Google Analytics de tu navegador.
 
 ## Cómo impedir el uso de cookies y cómo borrar las cookies
 
-Para revocar el consentimiento otorgado, tiene la posibilidad de deshabilitar las cookies modificando la configuración de su navegador. En los enlaces que se detallan a continuación, encontrará más información sobre qué cookies tiene instaladas, cómo permitir su instalación, bloquearlas o eliminarlas de su equipo. Dependiendo de qué navegador utilice dispone de los siguientes enlaces:
+Además del panel de configuración, también puede bloquear o borrar las cookies desde su navegador. En los enlaces que se detallan a continuación, encontrará más información sobre qué cookies tiene instaladas, cómo permitir su instalación, bloquearlas o eliminarlas de su equipo. Dependiendo de qué navegador utilice dispone de los siguientes enlaces:
 
 - [Chrome](https://support.google.com/chrome/bin/answer.py?hl=es&amp;answer=95647)
 - [Explorer](https://windows.microsoft.com/es-es/windows7/how-to-manage-cookies-in-internet-explorer-9)

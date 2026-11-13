@@ -22,7 +22,7 @@
              como el de contacto: los correos quedan en Netlify > Forms > newsletter.
              Si mas adelante se usa un proveedor (Mailchimp, Brevo...), cambiar aqui
              el action y quitar data-netlify, no tener los dos. #}
-          <form name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="newsletter-form" data-success="{{ newsletter_success_message }}"
+          <form name="newsletter" method="POST" data-lead="newsletter" data-netlify="true" netlify-honeypot="bot-field" class="newsletter-form" data-success="{{ newsletter_success_message }}"
             data-error="{{ newsletter_error_message }}">
             <input type="hidden" name="form-name" value="newsletter">
             <p hidden><label>No rellenar: <input name="bot-field"></label></p>
