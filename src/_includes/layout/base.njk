@@ -65,16 +65,9 @@
     }
   </style>
   {# Cloudinary y jsDelivr ya no se usan (los videos estan en media.digitalstrategy.es
-     y Swiper/Locomotive se han quitado). cdnjs sigue sirviendo GSAP, pero va con
-     defer al final: no merece un preconnect que compite con la hoja principal. #}
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  {# Mulish no bloquea el pintado: la hoja de Google se aplica al cargar. Con
-     display=swap el texto sale antes en la fuente del sistema y cambia despues;
-     bloqueando costaba ~0,9 s de LCP en 4G lenta por ser otro dominio. #}
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700;800&display=swap" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'" />
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700;800&display=swap" /></noscript>
+     y Swiper/Locomotive/GSAP se han quitado): ya no hay preconnect a esos dominios. #}
+  {# Sin Google Fonts: Mulish era la fuente de las paginas editoriales y ahora
+     todas usan las de la portada (font-regular / font-bold, en /assets/fonts). #}
   <link rel="dns-prefetch" href="https://img.youtube.com" />
   <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
   {% if page.url == '/' and home_image %}
@@ -274,26 +267,19 @@
 <body class="contain {{ colorHeader }} {% if page.url == '/' %}home{% endif %} {% if editorial %}editorial{% endif %}">
   {# Sin el <noscript> de GTM: ese iframe carga el contenedor sin preguntar, y
      sin JavaScript no hay banner con el que pedir permiso. #}
-  {% if editorial %}
-    {% include 'components/header-editorial.njk' %}
-  {% else %}
-    {% include 'components/header.njk' %}
-  {% endif %}
+  {# Una sola cabecera y un solo pie para toda la web: las paginas editoriales
+     tenian los suyos (otro logo, otro menu) y no parecian la misma web. #}
+  {% include 'components/header.njk' %}
   <div data-scroll-container>
     {{ content | safe }}
-    {% if editorial %}
-      {% include 'templates_md/footer-editorial.njk' %}
-    {% else %}
-      {% include 'templates_md/footer_2.njk' %}
-    {% endif %}
+    {% include 'templates_md/footer_2.njk' %}
   </div>
   {% include 'components/cookies.njk' %}
   <!-- Scripts -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
-  {# Fuera Swiper, PhotoSwipe y Locomotive (sin uso) y scroll.js (no existe, 404). #}
+  {# Fuera Swiper, PhotoSwipe y Locomotive (sin uso), scroll.js (no existe, 404),
+     y GSAP + inview.js: las animaciones de entrada dejaban cajas en blanco. #}
   <script type="module" src="/assets/js/index.js"></script>
-  <script type="module" src="/assets/js/inview.js"></script>
 
 </body>
 </html>

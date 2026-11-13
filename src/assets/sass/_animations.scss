@@ -1,28 +1,20 @@
-@mixin delay-anim() {
-    @for $i from 1 through 500 {
-      $delay-value: $i * 140ms;
-      .inview .word:nth-child(#{$i}) {
-        animation-delay: $delay-value;
-      }
-    }
-  }
-
-@keyframes fadein {
-  from {
-    transform: translateY(15%);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-.is-inview .word {
-  animation: fadein 1.5s cubic-bezier(0.16, 1, 0.3, 1) both;
-}
+// Animaciones de entrada quitadas (13/11/2026). El texto arrancaba con
+// opacity: 0 y solo aparecia cuando inview.js/GSAP lo animaba al entrar en
+// pantalla; si el observador no se disparaba (caja ya visible al cargar, alto
+// fijo, scroll rapido) la caja se quedaba en blanco. Ademas el contenido salia
+// tarde en el LCP. Ahora todo se ve desde el primer pintado.
+//
+// .word se mantiene solo por el display: las plantillas siguen usando la clase.
 .word {
   display: inline-block;
-  opacity: 0;
 }
 
-@include delay-anim;
+// Quien pida menos movimiento no ve transiciones de ningun tipo.
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

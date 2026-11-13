@@ -1746,3 +1746,27 @@ ul>li.special-class{
 }
 
 @import "./_cookies.scss";
+
+// Caja de Pedro (box_img.njk). Reutiliza .herohome.height-full, que fija la
+// altura a la de la pantalla con overflow hidden: con el texto de Pedro el
+// boton quedaba fuera en todos los anchos (700 px de caja para 900 de
+// contenido en escritorio, 696 para 1.112 en movil). Aqui la altura de
+// pantalla es solo un minimo y la caja crece con el contenido.
+.herohome.height-full.box-autor {
+  height: auto;
+  max-height: none;
+  min-height: 0;
+
+  .parallax-container {
+    position: relative;
+    height: auto;
+    min-height: calc(100vh - 116px);
+    @supports (height: 100dvh) { min-height: calc(100dvh - 116px); }
+    @media (min-width: $break-sm) {
+      min-height: calc(100vh - 200px);
+      @supports (height: 100dvh) { min-height: calc(100dvh - 200px); }
+    }
+  }
+
+  .box_img { padding-top: 32px; padding-bottom: 32px; }
+}

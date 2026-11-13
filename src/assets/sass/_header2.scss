@@ -10,7 +10,8 @@ $header-desktop: 200px;
   height: $header-mobile;
   transition: all ease 0.3s;
   transform: translateY(-100%);
-  background: rgba(255, 255, 255, 0.52);
+  // Al 52 % se volvia gris sobre las secciones oscuras y el logo no se leia.
+  background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(12.15px);
   display: flex;
   align-items: center;
