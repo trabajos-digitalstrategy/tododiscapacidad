@@ -41,7 +41,14 @@
   <meta name="twitter:description"
     content="{{ metaDescription or eleventyComputed.metaDescription or metadata.description }}" />
   <meta name="twitter:image" content="{{ global_index.url }}{% if image %}{{ image }}{% else %}/assets/static/images/og-tododiscapacidad.jpg{% endif %}" />
-  <link rel="icon" type="image/png" href="{{ global_index.url }}/assets/static/favicons/favicon-32x32.png" />
+  {# Favicons de TodoDiscapacidad, generados desde el simbolo del logo (td-favicon.svg).
+     Nombres con prefijo td- a proposito: /assets/static/ se cachea 30 dias y
+     sobrescribir los viejos dejaba la M un mes. favicon.ico va en la raiz
+     porque muchos navegadores lo piden ahi sin leer estas etiquetas. #}
+  <link rel="icon" href="/favicon.ico" sizes="48x48" />
+  <link rel="icon" type="image/svg+xml" href="/assets/static/favicons/td-favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/static/favicons/td-favicon-32.png" />
+  <link rel="apple-touch-icon" href="/assets/static/favicons/td-apple-touch-icon.png" />
   <!-- Estilos CSS -->
   <style>
     /* prettier-ignore */
@@ -96,9 +103,9 @@
     "url": "{{ global_index.url }}",
     "logo": {
       "@type": "ImageObject",
-      "url": "{{ global_index.url }}/assets/static/favicons/android-chrome-512x512.png",
-      "width": 512,
-      "height": 512
+      "url": "{{ global_index.url }}/assets/static/images/logomaxi.png",
+      "width": 258,
+      "height": 329
     },
     "image": "{{ global_index.url }}/assets/static/images/og-tododiscapacidad.jpg",
     "description": "TodoDiscapacidad es un proyecto divulgativo de derecho y discapacidad en España. Explicamos sentencias, ayudas, prestaciones y derechos de forma clara y accesible.",
@@ -288,15 +295,5 @@
   <script type="module" src="/assets/js/index.js"></script>
   <script type="module" src="/assets/js/inview.js"></script>
 
-  <!-- Redirect recovery tokens to password recovery page - only on homepage -->
-  {% if page.url == '/' %}
-  <script>
-    (function() {
-      if (window.location.hash.includes("recovery_token")) {
-        window.location.href = "/password-recovery.html" + window.location.hash;
-      }
-    })();
-  </script>
-  {% endif %}
 </body>
 </html>

@@ -6,7 +6,7 @@ eleventyExcludeFromCollections: true
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-    {%- set excludedPaths = ['/admin/', '/site/', '/site.html', '/templates/', '/password-recovery/', '/password-recovery.html', '/home/', '/ejemplohtml/', '/private/', '/temp/'] -%}
+    {%- set excludedPaths = ['/admin/', '/site/', '/site.html', '/templates/', '/home/', '/ejemplohtml/', '/private/', '/temp/'] -%}
     {%- for page in collections.all -%}
         {%- set url = page.url -%}
         {%- set isExcluded = false -%}

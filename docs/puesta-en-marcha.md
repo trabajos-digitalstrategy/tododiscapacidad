@@ -24,17 +24,27 @@ marca la casilla, no está hecho.
 
 ## Analítica y cookies (pendiente de decidir)
 
-- [ ] Hoy **no hay ninguna medición** instalada (`tag_manager` vacío en
-      `src/_data/global_index.json`), pero `/legal/cookies/` dice que se usa
-      Google Analytics y que navegar equivale a consentir. Las dos cosas a la vez
-      están mal: o se quita GA de la política, o se instala GA4 con banner de
-      consentimiento previo (rechazar tan fácil como aceptar).
-- [ ] Si se instala: GA4 recibe datos de **una sola fuente** (código o Tag Manager,
-      no los dos) y la suscripción a la newsletter se marca como conversión.
+Instalado: GTM-MVGKRKHM con banner y bloqueo previo (solo carga tras aceptar).
+Comprobado en producción el 13/11/2026: sin aceptar no se descarga nada de
+Google; al aceptar carga el contenedor y GA4 (`_ga_2HPLPTDR3N`); al retirar el
+consentimiento se borran las `_ga`.
 
-## Restos de otro proyecto (Magna Urbis)
+- [ ] En GTM: que GA4 viva **solo** en el contenedor (la web entrega por
+      `delivery: 'gtm'`, nunca también por gtag en el código).
+- [ ] En GTM: etiqueta de evento GA4 para `generate_lead` (con `form_id`:
+      `newsletter` o `contacto`) y marcarlo como evento clave en GA4.
+- [ ] En GA4: registrar como dimensiones `form_id`, `page_type` y `traffic_type`
+      y activar el filtro de tráfico interno.
+- [ ] Quien trabaje en la web: abrirla una vez con `?equipo=1` en cada
+      navegador para que sus visitas no cuenten.
 
-- [ ] `src/admin/index.html`, `src/admin/config.yml` y `src/pages/password-recovery.md`
-      siguen con textos y estilos de magnaurbis.com.
+## Netlify
+
+- [ ] El CMS de `/admin` y la recuperación de contraseña se han quitado (eran de
+      otro proyecto y no funcionaban). Si Netlify Identity sigue activado en el
+      panel del sitio, desactivarlo.
+
+## Datos legales
+
 - [ ] `global_index.json` tiene `legal_nif_titular` y `legal_direccion_titular` con
       texto de relleno: el aviso legal está obligado a mostrarlos (LSSI art. 10).
