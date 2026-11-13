@@ -82,6 +82,25 @@
   {# Quitado el <link> a /feed.xml: no hay feed y daba 404. Si se crea, volver a ponerlo. #}
   <!-- Google Tag Manager -->
   {% if global_index.tag_manager %}
+  {# Consent Mode v2: todo denegado ANTES de cargar el contenedor. La AEPD exige
+     consentimiento previo para cookies de analitica y publicidad. Mientras no
+     haya banner que llame a gtag('consent','update',...), GA4 solo recibe pings
+     sin cookies (sin usuarios ni sesiones reales). Al poner el banner, no tocar
+     esto: el banner solo actualiza. Y GA4 se configura SOLO dentro de GTM, nunca
+     tambien con gtag.js en el codigo, o cada dato se cuenta dos veces. #}
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied',
+      functionality_storage: 'granted',
+      security_storage: 'granted',
+      wait_for_update: 500
+    });
+  </script>
   <script>
     (function (w, d, s, l, i) {
       w[l] = w[l] || []; w[l].push({
