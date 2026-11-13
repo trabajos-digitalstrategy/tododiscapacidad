@@ -1,5 +1,6 @@
 ---
-metaRobots: "noindex, nofollow"
+metaRobots: "index, follow"
+metaDescription: "Aviso legal de TodoDiscapacidad: titularidad del sitio, condiciones de uso y responsabilidad sobre los contenidos divulgativos."
 metaTitle:  Legal | Aviso Legal
     
 layout: legal/_legales
@@ -9,7 +10,6 @@ author: man
 realizada:  ✅
 date: 2024-02-02
 tags: ["legal", "aviso"]
-image: /assets/static/images/3.jpg
 imageAlt: aviso legal
 description: 
 

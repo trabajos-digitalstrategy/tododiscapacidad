@@ -1,8 +1,8 @@
 ---
 layout: pages/_category-hub.njk
 permalink: /patrimonio-protegido/
-metaTitle: "Patrimonio Protegido para Personas con Discapacidad: Guía Completa | TodoDiscapacidad"
-metaDescription: "Cómo constituir un patrimonio protegido para una persona con discapacidad: requisitos, aportaciones, ventajas fiscales (deducción IRPF hasta 10.000 €), administración y modelos. Explicado por un abogado experto."
+metaTitle: "Patrimonio Protegido: Guía Completa | TodoDiscapacidad"
+metaDescription: "Cómo constituir un patrimonio protegido para una persona con discapacidad: requisitos, aportaciones, ventajas fiscales y administración paso a paso."
 metaKeywords: "patrimonio protegido discapacidad, constituir patrimonio protegido, aportaciones patrimonio protegido, fiscalidad patrimonio protegido, Ley 41/2003"
 metaRobots: "index, follow"
 seccion: "Patrimonio"

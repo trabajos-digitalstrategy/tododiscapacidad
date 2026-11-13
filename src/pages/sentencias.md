@@ -2,7 +2,7 @@
 layout: pages/_category-hub.njk
 permalink: /sentencias/
 metaTitle: "Sentencias sobre Discapacidad Explicadas | TodoDiscapacidad"
-metaDescription: "Análisis de sentencias del Tribunal Supremo, TSJ y Audiencia Nacional sobre discapacidad: CUME, incapacidad permanente, patrimonio protegido, conciliación familiar y prestaciones. Sentencias explicadas con lenguaje claro."
+metaDescription: "Sentencias del Supremo, TSJ y TJUE sobre discapacidad, CUME, incapacidad permanente y patrimonio protegido, explicadas en lenguaje claro."
 metaKeywords: "sentencias discapacidad, sentencias incapacidad permanente, jurisprudencia discapacidad, sentencias CUME, sentencias TSJ discapacidad, sentencias Tribunal Supremo discapacidad"
 metaRobots: "index, follow"
 seccion: "Sentencias"

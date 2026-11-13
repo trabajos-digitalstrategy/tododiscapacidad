@@ -1455,6 +1455,9 @@ ul>li.special-class{
 }
 .menu-logo{
   width: 200px;
+  // La regla global `svg { fill }` pisa el atributo fill del SVG: el menu es
+  // oscuro y el logo tiene que ir en blanco.
+  svg { fill: #fff; }
 
   position: absolute;
   @media (min-width: $break-sm) {

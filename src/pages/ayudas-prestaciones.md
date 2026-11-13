@@ -1,8 +1,8 @@
 ---
 layout: pages/_category-hub.njk
 permalink: /ayudas-prestaciones/
-metaTitle: "Ayudas y Prestaciones por Discapacidad en España 2025-2026 | TodoDiscapacidad"
-metaDescription: "Todas las ayudas y prestaciones por discapacidad en España: CUME, PNC, IMV, prestación por hijo a cargo, complementos, deducciones IRPF y ayudas autonómicas. Guías actualizadas por un abogado experto."
+metaTitle: "Ayudas y Prestaciones por Discapacidad 2026 | TodoDiscapacidad"
+metaDescription: "Guía de ayudas por discapacidad en España: CUME, pensión no contributiva, IMV, complementos por hijo a cargo y deducciones IRPF, explicadas por un abogado."
 metaKeywords: "ayudas discapacidad, prestaciones discapacidad, CUME, pensión no contributiva, IMV discapacidad, complemento hijo a cargo, deducciones IRPF discapacidad, ayudas autonómicas discapacidad"
 metaRobots: "index, follow"
 seccion: "Ayudas"

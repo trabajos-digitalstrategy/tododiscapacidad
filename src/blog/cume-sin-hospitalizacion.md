@@ -14,7 +14,6 @@ imageAlt: "CUME sin hospitalización"
 descripcion: "Las últimas sentencias judiciales confirman que la CUME no requiere hospitalización de la persona dependiente."
 ---
 
-# CUME sin hospitalización: Lo que dicen las últimas sentencias
 
 Una de las creencias más extendidas sobre la **CUME (Cuidador de Personas en Situación de Dependencia)** es que solo se puede cobrar cuando la persona dependiente está hospitalizada. **Esto es falso**, y las últimas sentencias judiciales lo confirman.
 

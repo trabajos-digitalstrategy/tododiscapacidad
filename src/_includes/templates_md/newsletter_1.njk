@@ -1,5 +1,5 @@
 <!-- newsletter_1.njk -->
-<section class="ptr-120 pbr-120">
+<section id="newsletter" class="ptr-120 pbr-120">
   <div class="container ">
     <div class="bg-light border-20 height-sm p-32">
       <div class="row">
@@ -17,10 +17,17 @@
             </p>
           </div>
           {% endif %}
-          <form action="#" method="post" class="newsletter-form" data-success="{{ newsletter_success_message }}"
+          {# Antes era action="#": el POST iba a "/" y Netlify devolvia 404, asi que
+             cada suscripcion se perdia sin aviso. Ahora es un formulario de Netlify,
+             como el de contacto: los correos quedan en Netlify > Forms > newsletter.
+             Si mas adelante se usa un proveedor (Mailchimp, Brevo...), cambiar aqui
+             el action y quitar data-netlify, no tener los dos. #}
+          <form name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="newsletter-form" data-success="{{ newsletter_success_message }}"
             data-error="{{ newsletter_error_message }}">
+            <input type="hidden" name="form-name" value="newsletter">
+            <p hidden><label>No rellenar: <input name="bot-field"></label></p>
             <div class="form-group mb-16 is-flex gap-16">
-              <input class="input flex-1" type="email" name="email" placeholder="{{ newsletter_placeholder }}" required>
+              <input class="input flex-1" type="email" name="email" autocomplete="email" aria-label="Tu correo electrónico" placeholder="{{ newsletter_placeholder }}" required>
               <button class="btn btn-primary btn--sm" type="submit">
                 {{ newsletter_button }}
               </button>

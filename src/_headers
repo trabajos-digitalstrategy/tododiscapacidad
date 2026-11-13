@@ -1,0 +1,21 @@
+# Cabeceras de cache para Netlify. Se copia tal cual a public/_headers
+# (addPassthroughCopy en .eleventy.js). Las de /admin/* siguen en netlify.toml:
+# Netlify aplica las dos fuentes.
+#
+# Antes todo salia con max-age=0: cada visita volvia a preguntar por cada
+# fuente e imagen. Netlify aplica la ultima regla que casa, no la mas
+# especifica, asi que el orden importa: lo general arriba, lo concreto abajo.
+
+# Fuentes: no cambian nunca. Si se cambia una, cambiarle el nombre.
+/assets/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Imagenes: 30 dias. TRAMPA: si se sobrescribe una imagen con el mismo nombre,
+# quien ya la tenga vera la vieja hasta un mes. Para cambiar una imagen,
+# renombrarla (por eso el poster nuevo se llama hero-poster-tododiscapacidad).
+/assets/static/*
+  Cache-Control: public, max-age=2592000
+
+# CSS y JS NO se cachean largo: la URL no lleva huella del contenido, y con
+# max-age alto un cambio en style.css o index.js tardaria dias en llegar.
+# Se quedan con la revalidacion por ETag que Netlify hace por defecto.

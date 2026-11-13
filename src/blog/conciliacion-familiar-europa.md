@@ -2,7 +2,7 @@
 layout: "pages/_blog-post.njk"
 title: "Europa reconoce a los padres y madres cuidadores: Un derecho que cambia la conciliación"
 subtitle: "Europa ha reconocido el derecho a la conciliación familiar como un derecho fundamental"
-metaTitle: "Europa reconoce a los padres y madres cuidadores: Un derecho que cambia la conciliación"
+metaTitle: "Europa reconoce a los padres cuidadores: conciliación"
 metaDescription: "Europa ha reconocido el derecho de los padres y madres cuidadores a la conciliación familiar. Te explicamos qué significa esto y cómo afecta a las familias."
 metaKeywords: "conciliación familiar, Europa, padres cuidadores, derechos, trabajo, discapacidad"
 metaRobots: "index, follow"
@@ -15,7 +15,6 @@ imageAlt: "Conciliación familiar en Europa"
 descripcion: "Europa ha reconocido el derecho de los padres y madres cuidadores a la conciliación familiar. Te explicamos qué significa esto."
 ---
 
-# Europa reconoce a los padres y madres cuidadores: Un derecho que cambia la conciliación
 
 La conciliación familiar ha sido durante años un tema pendiente en España. Sin embargo, **Europa ha dado un paso decisivo** reconociendo el derecho de los padres y madres cuidadores a conciliar su vida laboral y familiar.
 

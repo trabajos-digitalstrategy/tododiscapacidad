@@ -1,6 +1,6 @@
 ---
 metaTitle: "Blog sobre Derecho y Discapacidad en España | TodoDiscapacidad"
-metaDescription: "Blog especializado en derecho y discapacidad: sentencias explicadas, guías prácticas sobre CUME, incapacidad permanente, patrimonio protegido y prestaciones por discapacidad en España."
+metaDescription: "Sentencias explicadas y guías sobre CUME, incapacidad permanente, patrimonio protegido y prestaciones por discapacidad en España."
 metaKeywords: "blog discapacidad, derecho discapacidad España, sentencias discapacidad, CUME, patrimonio protegido, incapacidad permanente, ayudas discapacidad"
 metaRobots: "index, follow, max-image-preview:large"
 seccion: "Blog"

@@ -15,6 +15,9 @@ eleventyExcludeFromCollections: true
                 {%- set isExcluded = true -%}
             {%- endif -%}
         {%- endfor -%}
+        {%- if page.data.metaRobots and 'noindex' in page.data.metaRobots -%}
+            {%- set isExcluded = true -%}
+        {%- endif -%}
         {%- if url and not isExcluded and url != false -%}
     <url>
         <loc>{{ global_index.url }}{{ url | url }}</loc>

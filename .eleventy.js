@@ -35,6 +35,7 @@ module.exports = function (eleventyConfig) {
   // eleventyConfig.addPassthroughCopy("src/pages", "pages"); // ELIMINADO: exponía los .md fuente como assets, mal para SEO
   eleventyConfig.addPassthroughCopy("src/site.webmanifest");
   eleventyConfig.addPassthroughCopy("src/robots.txt");
+  eleventyConfig.addPassthroughCopy({ "src/_headers": "_headers" }); // cache por tipo de fichero
 
   // Netlify CMS
   eleventyConfig.addPassthroughCopy("./admin");

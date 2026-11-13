@@ -9,7 +9,7 @@
     "build:eleventy": "eleventy",
     "build:sass": "sass  --no-source-map --style=compressed src//assets/sass:src//assets/css",
     "start": "npm-run-all build:sass --parallel watch:*",
-    "build": "npm-run-all build:*",
+    "build": "npm-run-all build:sass build:eleventy",
     "debug": "DEBUG=* npx eleventy"
   },
   "repository": {

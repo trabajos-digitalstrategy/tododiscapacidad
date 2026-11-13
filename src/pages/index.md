@@ -1,8 +1,8 @@
 ---
 layout: pages/_index.njk
 permalink: /
-metaTitle: "TodoDiscapacidad | Derechos, Ayudas y Prestaciones por Discapacidad en España"
-metaDescription: "Aprende cómo funcionan las ayudas, prestaciones y sentencias sobre discapacidad en España. CUME, incapacidad permanente, patrimonio protegido y mucho más, explicado por un abogado experto. Suscríbete gratis."
+metaTitle: "Derechos y Ayudas por Discapacidad en España | TodoDiscapacidad"
+metaDescription: "Ayudas, prestaciones y sentencias sobre discapacidad explicadas por un abogado: CUME, incapacidad permanente y patrimonio protegido. Suscríbete gratis."
 metaKeywords: "derechos discapacidad España, ayudas discapacidad, prestaciones discapacidad, CUME, incapacidad permanente, patrimonio protegido, sentencias discapacidad, abogado discapacidad"
 metaRobots: "index, follow, max-image-preview:large, max-snippet:-1"
 hero_description: BIENVENIDOS A TODODISCAPACIDAD
@@ -12,7 +12,7 @@ hero_btn: CONOCE MÁS
 tags: ["pages"]
 seccion: index
 
-home_image: /assets/static/images/casa2.webp 
+home_image: /assets/static/images/hero-poster-tododiscapacidad.webp
 home_video: https://media.digitalstrategy.es/tododiscapacidad.mp4
 
 introbenefits_class: bg-dark

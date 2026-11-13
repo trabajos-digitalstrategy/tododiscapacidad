@@ -1,5 +1,4 @@
 
-console.log("Hola, mundo!");
 
 document.body.onscroll = function () {
   if (
@@ -12,7 +11,12 @@ document.body.onscroll = function () {
   }
 };
 
-var swiper = new Swiper(".swiper-container", {
+// Swiper y PhotoSwipe ya no se cargan en base.njk: ninguna pagina los usa y
+// costaban dos hojas bloqueantes de dos dominios distintos. Si una plantilla
+// vuelve a usar .swiper-container o .my-gallery, hay que anadir su <script> y
+// su <link> en esa plantilla. Sin la guarda, new Swiper lanzaba ReferenceError
+// y se paraba todo el fichero, menu movil incluido.
+var swiper = typeof Swiper !== "undefined" && new Swiper(".swiper-container", {
   spaceBetween: 15,
   slidesPerView: "1.5",
 
@@ -62,7 +66,6 @@ $(document).ready(function () {
   initvideo();
   $("#menu-toggle, .menu-mobile-overlay, .link_cierre").click(function () {
     $("body").toggleClass("menu-open");
-    console.log("menu-open");
   });
 });
 
@@ -110,7 +113,7 @@ const handleScroll = () => {
 // Agregar el listener al evento de scroll
 window.addEventListener("scroll", handleScroll);
 
-var mySwiper = new Swiper(".swiper-container-img", {
+var mySwiper = typeof Swiper !== "undefined" && new Swiper(".swiper-container-img", {
   // If loop true set photoswipe - counterEl: false
   loop: false,
   /* slidesPerView || auto - if you want to set width by css like flickity.js layout - in this case width:80% by CSS */
@@ -389,7 +392,7 @@ var initPhotoSwipeFromDOM = function (gallerySelector) {
 };
 
 // execute above function
-initPhotoSwipeFromDOM(".my-gallery");
+if (typeof PhotoSwipe !== "undefined") initPhotoSwipeFromDOM(".my-gallery");
 
 
 

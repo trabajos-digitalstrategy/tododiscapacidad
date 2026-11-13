@@ -8,6 +8,7 @@
   font-family: "font-regular";
   src: url("/assets/fonts/satoshi/Satoshi-Regular.woff2") format("woff2"),
     url("/assets/fonts/satoshi/Satoshi-Regular.woff") format("woff");
+  font-display: swap;
 }
 
 @font-face {
@@ -18,4 +19,5 @@
 }
 
 
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap');
+// Caveat quitada: solo la usaba .script, que no aparece en ninguna pagina, y el
+// @import dentro de la hoja encadenaba dos peticiones mas antes de pintar.

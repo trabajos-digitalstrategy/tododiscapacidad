@@ -26,10 +26,10 @@
 
 # Netlify Identity Configuration
 [context.production.environment]
-  NETLIFY_IDENTITY_RECOVERY_URL = "https://magnaurbis.com/password-recovery.html"
+  NETLIFY_IDENTITY_RECOVERY_URL = "https://tododiscapacidad.com/password-recovery.html"
 
 [context.deploy-preview.environment]
-  NETLIFY_IDENTITY_RECOVERY_URL = "https://magnaurbis.com/password-recovery.html"
+  NETLIFY_IDENTITY_RECOVERY_URL = "https://tododiscapacidad.com/password-recovery.html"
 
 [[headers]]
   for = "/admin/*"

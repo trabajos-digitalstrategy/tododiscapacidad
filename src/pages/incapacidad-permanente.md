@@ -1,8 +1,8 @@
 ---
 layout: pages/_category-hub.njk
 permalink: /incapacidad-permanente/
-metaTitle: "Incapacidad Permanente: Tipos, Requisitos y Diferencias con Discapacidad | TodoDiscapacidad"
-metaDescription: "Guía completa sobre la incapacidad permanente en España: parcial, total, absoluta y gran invalidez. Diferencias con la discapacidad, requisitos, cuantías y procedimiento explicado por un abogado."
+metaTitle: "Incapacidad Permanente: Tipos y Requisitos | TodoDiscapacidad"
+metaDescription: "Incapacidad permanente parcial, total, absoluta y gran invalidez: requisitos, cuantías, procedimiento y diferencias con la discapacidad. Guía de un abogado."
 metaKeywords: "incapacidad permanente, incapacidad total, incapacidad absoluta, gran invalidez, diferencia incapacidad discapacidad, requisitos incapacidad permanente"
 metaRobots: "index, follow"
 seccion: "Incapacidad"

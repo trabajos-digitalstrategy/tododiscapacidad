@@ -1,7 +1,7 @@
 ---
 title: "Discapacidad e incapacidad: No son lo mismo y es importante saberlo"
 subtitle: "Conoce las diferencias entre discapacidad e incapacidad para ejercer todos tus derechos"
-metaTitle: "Discapacidad e incapacidad: No son lo mismo y es importante saberlo"
+metaTitle: "Discapacidad e incapacidad: no son lo mismo"
 metaDescription: "Discapacidad e incapacidad son conceptos diferentes que confunden a muchas familias. Te explicamos las diferencias y por qué es crucial distinguirlos."
 metaKeywords: "discapacidad, incapacidad, diferencia, sentencias, derechos, prestaciones"
 metaRobots: "index, follow"
@@ -14,7 +14,6 @@ imageAlt: "Discapacidad e incapacidad"
 descripcion: "Discapacidad e incapacidad son conceptos diferentes que confunden a muchas familias. Te explicamos las diferencias."
 ---
 
-# Discapacidad e incapacidad: No son lo mismo y es importante saberlo
 
 Una de las confusiones más frecuentes en el ámbito jurídico es la diferencia entre **discapacidad** e **incapacidad**. Aunque parezcan similares, son conceptos completamente distintos que tienen implicaciones legales muy diferentes.
 

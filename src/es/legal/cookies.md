@@ -1,6 +1,7 @@
 ---
 
-metaRobots: "noindex, nofollow"
+metaRobots: "index, follow"
+metaDescription: "Política de cookies de TodoDiscapacidad: qué cookies usamos, para qué sirven y cómo puedes configurarlas o desactivarlas."
 metaTitle:  Legal | Política de Cookies 
 
 
@@ -10,13 +11,14 @@ permalink: /legal/cookies/
 author: man
 date: 2024-02-02
 tags: ["legal", "cookies"]
-image: /assets/static/images/4.jpg
 imageAlt: cookies
 description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis accusantium sit illo neque rem omnis quaerat, nam similique vitae delectus ad magni vel quo maxime, magnam placeat. Reprehenderit, distinctio aliquam?
 
 ---
 
-# ¿Qué son las Cookies?
+# Política de Cookies
+
+## ¿Qué son las Cookies?
 
 Las cookies son ficheros que se descargan en su ordenador al acceder a determinadas páginas web. Las cookies permiten a una página web, entre otras cosas, almacenar y recuperar información sobre los hábitos de navegación de un usuario o de su equipo y, dependiendo de la información que contengan y de la forma en que utilice su equipo, pueden utilizarse para reconocer al usuario.
 
@@ -24,7 +26,7 @@ El navegador del usuario memoriza cookies en el disco duro solamente durante la 
 
 La mayoría de los navegadores aceptan como estándar a las cookies y, con independencia de las mismas, permiten o impiden en los ajustes de seguridad las cookies temporales o memorizadas. Sin su expreso consentimiento –mediante la activación de las cookies en su navegador– {{global_index.legal_nombre_titular}} no enlazará en las cookies los datos memorizados con sus datos personales proporcionados en el momento de la utilización de la misma. TodoDiscapacidad se compromete a proteger la privacidad de sus usuarios.
 
-# ¿Qué tipos de cookies utiliza esta página web?
+## ¿Qué tipos de cookies utiliza esta página web?
 
 ## Cookies técnicas
 

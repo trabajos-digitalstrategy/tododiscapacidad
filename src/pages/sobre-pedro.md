@@ -1,8 +1,8 @@
 ---
 layout: pages/_author.njk
 permalink: /sobre-pedro-lopez-cerro/
-metaTitle: "Pedro López Cerro | Abogado experto en Derecho y Discapacidad - TodoDiscapacidad"
-metaDescription: "Pedro López Cerro, abogado colegiado en Sevilla y experto en derecho laboral y discapacidad. Conoce su trayectoria, formación, áreas de especialización y publicaciones sobre discapacidad e incapacidad en España."
+metaTitle: "Pedro López Cerro, Abogado de Discapacidad | TodoDiscapacidad"
+metaDescription: "Pedro López Cerro, abogado colegiado en Sevilla experto en derecho laboral y discapacidad: formación, experiencia y áreas de especialización."
 metaKeywords: "Pedro López Cerro, abogado discapacidad Sevilla, abogado derecho laboral, experto incapacidad permanente, abogado autismo, abogado TDAH, abogado Asperger"
 metaRobots: "index, follow"
 seccion: "Sobre Pedro"
